@@ -175,46 +175,6 @@ entries:
                   product: all
                   print: false
 
-          fourthlevel:
-            - title: Data Types
-              audience: writers, designers
-              platform: all
-              version: all
-              product: all
-              print: false
-              fourthlevelitems:
-                - title: Compact Payout
-                  url: /doc_compact_payout.html
-                  audience: writers, designers
-                  platform: all
-                  version: all
-                  product: all
-                  print: false
-
-                - title: Compact Item
-                  url: /doc_compact_item.html
-                  audience: writers, designers
-                  platform: all
-                  version: all
-                  product: all
-                  print: false
-
-                - title: Compact Block
-                  url: /doc_compact_block.html
-                  audience: writers, designers
-                  platform: all
-                  version: all
-                  product: all
-                  print: false
-
-                - title: Compact Payment
-                  url: /doc_compact_payment_.html
-                  audience: writers, designers
-                  platform: all
-                  version: all
-                  product: all
-                  print: false
-
           fifthlevel:
             - title: RPC Requests
               audience: writers, designers
