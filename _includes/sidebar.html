@@ -80,6 +80,46 @@
                     </li>
                     {% endif %}
                     {% endfor %}
+                    {% for fourthlevel in item.fourthlevel %}
+                    {% if fourthlevel.audience contains audience and fourthlevel.product contains product and fourthlevel.platform contains platform and fourthlevel.version contains version and fourthlevel.web != false %}
+                    <li class="fourthlevel"><a href="#">{{ fourthlevel.title }}</a>
+                        <ul>
+                            {% for deeplevel in fourthlevel.fourthlevelitems %}
+                            {% if deeplevel.audience contains audience and deeplevel.product contains product and deeplevel.platform contains platform and deeplevel.version contains version and deeplevel.web != false %}
+                            {% if deeplevel.external_url %}
+                            <li><a href="{{deeplevel.external_url}}" target="_blank">{{deeplevel.title}}</a></li>
+                            {% elsif page.url == deeplevel.url %}
+                            <li class="active"><a href="{{deeplevel.url | replace: "/",""}}">{{deeplevel.title}}</a></li>
+                            {% else %}
+                            <li><a href="{{deeplevel.url | replace: "/",""}}">{{deeplevel.title}}</a></li>
+                            {% endif %}
+
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% for fifthlevel in item.fifthlevel %}
+                    {% if fifthlevel.audience contains audience and fifthlevel.product contains product and fifthlevel.platform contains platform and fifthlevel.version contains version and fifthlevel.web != false %}
+                    <li class="fifthlevel"><a href="#">{{ fifthlevel.title }}</a>
+                        <ul>
+                            {% for deeplevel in fifthlevel.fifthlevelitems %}
+                            {% if deeplevel.audience contains audience and deeplevel.product contains product and deeplevel.platform contains platform and deeplevel.version contains version and deeplevel.web != false %}
+                            {% if deeplevel.external_url %}
+                            <li><a href="{{deeplevel.external_url}}" target="_blank">{{deeplevel.title}}</a></li>
+                            {% elsif page.url == deeplevel.url %}
+                            <li class="active"><a href="{{deeplevel.url | replace: "/",""}}">{{deeplevel.title}}</a></li>
+                            {% else %}
+                            <li><a href="{{deeplevel.url | replace: "/",""}}">{{deeplevel.title}}</a></li>
+                            {% endif %}
+
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
 
             {% endif %}
             {% endfor %}

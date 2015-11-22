@@ -5,18 +5,18 @@ product: all
 platform: all
 version: all
 destination: ../doc_designers
-topnav_title: Jekyll Documentation Theme
-homepage_title: Jekyll Documentation Theme &mdash; Designers
-site_title: Jekyll Documentation Theme &mdash; Designers
-disqus_shortname: idrbwjekyll
-google_analytics: UA-66296557-1
+topnav_title: Coindroids Documentation
+homepage_title: Coindroids Documentation 
+site_title: Coindroids Documentation
+disqus_shortname: 
+google_analytics: 
 github_editme_path: tomjohnson1492/documentation-theme-jekyll/blob/gh-pages
 # don't use a slash before or after the above path. here's how this url gets written out in page.html: https://github.com/{{site.github_editme_path}}{{page.url | replace: '.html', '.md'}}
 
 # variables
 
-sidebar_tagline: designers
-sidebar_version: version 3.0
+sidebar_tagline: 
+sidebar_version: version 2.0
 project_file_name: doc
 
 port: 4001
@@ -29,7 +29,7 @@ exclude:
 
 # same for all
 host: 127.0.0.1
-feedback_email: tomjohnson1492@gmail.com
+feedback_email: contact@coindroids.com
 markdown: redcarpet
 print: false
 theme_file: theme-blue.css
