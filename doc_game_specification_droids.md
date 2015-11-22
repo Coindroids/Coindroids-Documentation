@@ -1,5 +1,5 @@
 ---
-title: Game Specifications - Droid 
+title: Droids 
 tags: [Droids, Game-Specifications]
 keywords: droids 
 last_updated: November 21, 2015

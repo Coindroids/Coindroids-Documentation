@@ -1,5 +1,5 @@
 ---
-title: Game Specifications - Game Progression
+title: Game Progression
 tags: [game-specifications]
 keywords: game, flow, execution 
 last_updated: November 21, 2015

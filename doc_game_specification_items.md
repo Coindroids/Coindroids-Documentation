@@ -1,5 +1,5 @@
 ---
-title: Game Specifications - Items
+title: Items
 tags: [items, game-specifications]
 keywords: game, items 
 last_updated: November 21, 2015
