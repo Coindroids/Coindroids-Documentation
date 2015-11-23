@@ -41,31 +41,7 @@ If an enemy droid's health is depleted by your attack, you've defeated that droi
 
 If you need to become a more effective killing machine, you can buy items to augment your abilities. In Coindroids, you buy items by sending the required number of tokens to an item’s address. You can find item addresses by visiting the Unlocks page.
 
-### Item types
-
-#### Primary Weapons
-
-Increase your attack damage.
-
-#### Secondary Weapons
-
-Increase your attack damage but to a lesser extent. If it was to the same extent, they would just be primary weapons.
-
-#### Armour
-
-Reduces the amount of incoming damage.
-
-Some armour provides additional benefits such as the ability to automatically evade attacks or counter-attack.
-
-#### Shield
-
-Like Armour it also reduces the amount of incoming damage.
-
-Some shields also provide additional benefits.
-
-#### Item
-
-These items are unique and typically have their effects limited for a certain number of blocks. For example, a repair kit may repair you in 1 block only, whereas an advanced repair kit can heal you 4 times over 4 blocks.
+For more information on Items, view the [Item](doc_game_specification_items.html) page within Core Rules
 
 ## Statistics
 

@@ -16,10 +16,10 @@ Attempting to purchase an item that requires a higher level droid, or not includ
 |   Type | Description  |  
 |------------------|----|
 |Primary Weapon| A droids main weaponry. Damage done by this item is performed with a 2x multiplier |
-|Secondary Weapon|| A droids secondary weapon.| 
-|Shield| |
-|Armour||
-|Item| Items are held in the droid's inventory until they are removed, expired or broken. |
+|Secondary Weapon|| A droids secondary weapon| 
+|Shield| Like Armour it also reduces the amount of incoming damage. Some shields also provide additional benefits.|
+|Armour|Reduces the amount of incoming damage. Some armour provides additional benefits such as the ability to automatically evade attacks or counter-attack.|
+|Item| Items are held in the droid's inventory until they are removed, expired or broken.  |
 |Model| A droid model with the build pre-specified |
 |Model Bonus| A bonus given to a droid with the entirity of a model equiped |
 |Head| |
