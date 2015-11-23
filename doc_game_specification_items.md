@@ -43,8 +43,8 @@ Attempting to purchase an item that requires a higher level droid, or not includ
 |Lasts	|L||
 |Stage Damage Modifier	|SDM||
 |Drop Frequency	| DF| |
-|Drop Scope	| DS| |
-|Equip Scope| ES||
+|Drop Scope	| DS| _See Drop Scope table below_ |
+|Equip Scope| ES| _See Equip Scope table below_ |
 
 ## Equip Scopes
 
