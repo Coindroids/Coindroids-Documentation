@@ -55,7 +55,7 @@ _Item drops are not active yet_
 
 ### Primary Weapons
 
-| Name                       | cost    | Level Required | Damage | Accuracy | Defense | Evasion | Counter Attack | Health Increase | Lasts | Stage Damage Modifier | Drop Frequency | Drop Scope | Equip Scope |
+| Name                       | $    | lvl | Dmg | Acc | Dfns | Evasion | Counter | Health | Lasts | SDM | Drop Freq. | Drop Scope | Equip Scope |
 |----------------------------|---------|----------------|--------|----------|---------|---------|----------------|-----------------|-------|-----------------------|----------------|------------|-------------|
 | Ballistic Slug Gatling Gun | 34200   | 28             | 53     | 62%      | 0       | 0%      | 0%             | 0%              | 0     | 0.00                  | 0%             | NPC        | Global      |
 | Ballistic Slug Gun         | 31600   | 22             | 40     | 64%      | 0       | 0%      | 0%             | 0%              | 0     | 0.00                  | 0%             | NPC        | Global      |
