@@ -7,12 +7,10 @@ homepage: true
 published: true
 ---
 
-## Overview 
+## What is Coindroids?
 
-Coindroids is a unique battle game that is played through cryptocurrency transactions. Purchasing items, upgrading your character and even attacking other players are all performed by creating transactions that involve special game addresses and a player’s own wallet.
+After the robotic uprising and humanity's falls (typical humans), the androids have since learned quite a bit from their once squishy overlords and now conduct war purely with money, specifically the blunt ample currencies Bitcoin & Defcoin. Androids, as it turns out, haven't really mastered the art of friendship but have developed quite a fondness for battle.
 
-The entire specifications of the game, along with details on how to interact with our infrastructure, are laid out in this document to allow a player to make informed decisions throughout their interaction with the game.
-
-_This document will assume the reader’s understanding of cryptocurrency technology and comfort with sending and receiving cryptocurrency transactions._
+Coindroids is a robot based battle game played within a blockchain. If you're new to crypto currencies this is good way to get started.
 
 
