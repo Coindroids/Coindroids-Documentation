@@ -8,7 +8,7 @@ destination: ../doc_designers
 topnav_title: Coindroids Documentation
 homepage_title: Coindroids Documentation 
 site_title: Coindroids Documentation
-disqus_shortname:coindroids 
+disqus_shortname: coindroids 
 google_analytics: 
 github_editme_path: Coindroids/Coindroids-Documentation/blob/gh-pages
 # don't use a slash before or after the above path. here's how this url gets written out in page.html: https://github.com/{{site.github_editme_path}}{{page.url | replace: '.html', '.md'}}
