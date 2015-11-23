@@ -28,6 +28,23 @@ Attempting to purchase an item that requires a higher level droid, or not includ
 |Legs	||
 |Armament||
 
+## Item Attributes
+
+|Name | Shortform| Description|
+|----|----|----|
+|Cost| Cost |	|
+|Level Required	| LVL ||
+| Damage| DMG| |	
+| Accuracy| ACC|
+|Defense| DFNS||	
+|Evasion|EV||	
+|Counter Attack	|CA||
+|Health Increase| HI||	
+|Lasts	|L||
+|Stage Damage Modifier	|SDM||
+|Drop Frequency	| DF| |
+|Drop Scope	| DS| |
+|Equip Scope| ES||
 
 ## Equip Scopes
 
@@ -55,8 +72,8 @@ _Item drops are not active yet_
 
 ### Primary Weapons
 
-| Name                       | $    | lvl | Dmg | Acc | Dfns | Evasion | Counter | Health | Lasts | SDM | Drop Freq. | Drop Scope | Equip Scope |
-|----------------------------|---------|----------------|--------|----------|---------|---------|----------------|-----------------|-------|-----------------------|----------------|------------|-------------|
+| Name                       | Cost    | lvl | Dmg | Acc | Dfns | EV | CA | HI | L | SDM | DF | DS | ES |
+|----------------------------|---------|-----|----|----|----|----|----|-----|-----|----|----|----|----|
 | Ballistic Slug Gatling Gun | 34200   | 28             | 53     | 62%      | 0       | 0%      | 0%             | 0%              | 0     | 0.00                  | 0%             | NPC        | Global      |
 | Ballistic Slug Gun         | 31600   | 22             | 40     | 64%      | 0       | 0%      | 0%             | 0%              | 0     | 0.00                  | 0%             | NPC        | Global      |
 | Charging Gauss Slug Rifle  | 78100   | 69             | 82     | 91%      | 0       | 0%      | 0%             | 0%              | 0     | 0.25                  | 0%             | NPC        | Global      |
