@@ -4,7 +4,7 @@
 How to use this documentation locally
 
 
-	git clone https://<username>@bitbucket.org/coindroids/coindroids-documentation.git
+	git clone <https://repo.address>
 	cd coindroids-documentation 
 	jekyll serve -config configs/config_designers.yml 
 

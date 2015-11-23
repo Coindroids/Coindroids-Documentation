@@ -16,7 +16,7 @@ GET https://api.coindroids.com/item
 ## Response Details
 
 |Name|Data Type|Description|
-|---|---|---|
+|---|-------|-------|
 |id| Whole Number| The unique numeric identifier |
 |name| String| The name of the item |
 |droid_class| Droid Class | _[Heavy, Infantry, Rogue]_|
@@ -24,18 +24,18 @@ GET https://api.coindroids.com/item
 |description| String | A description of the item |
 |image| URL | |
 |level_required| Whole Number| The level a driod must be to equip or use this item|
-|damage| ||
-|accuracy||
-|defense||
-|evasion||
-|counter_attack||
-|health_increase||
-|lasts||
-|stages||
-|stage_damage_modifier||
-|drop_scope||
-|equip_scope||
-|pricing||
+|damage| Whole Number ||
+|accuracy|Numeric||
+|defense|Whole Number|
+|evasion|Nueric||
+|counter_attack|Numeric||
+|health_increase|Numeric||
+|lasts|Whole Number||
+|stages|Whole Number||
+|stage_damage_modifier|Numeric||
+|drop_scope| String | _[NPC, Never, Always]_|
+|equip_scope|String| _[Model, Inventory, Class, Global, Character]_| 
+|pricing| Payment Option[] | A list of prices per available currency |
 
 
 ## Example
