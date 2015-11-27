@@ -37,9 +37,63 @@ GET https://api.coindroids.com/droid
 | build | Items[] | A description of the items which make up the build of this droid |
 | inventory| Items[] | A list of all active items available to the droid during the next block processing| 
 
-## Example
+## Examples
 
-### Request
+### Javascript
+
+```javascript
+// View specific droid (GET http://104.37.194.182:3000/droid)
+
+jQuery.ajax({
+    url: "http://104.37.194.182:3000/droid",
+    type: "GET",
+    data: {
+        "name": "eq.cmdr",
+    },
+})
+.done(function(data, textStatus, jqXHR) {
+    console.log("HTTP Request Succeeded: " + jqXHR.status);
+    console.log(data);
+})
+.fail(function(jqXHR, textStatus, errorThrown) {
+    console.log("HTTP Request Failed");
+})
+.always(function() {
+    /* ... */
+});
+```
+
+### Python
+
+```python
+# Install the Python Requests library:
+# `pip install requests`
+
+import requests
+
+
+def send_request():
+    # View specific droid
+    # GET http://104.37.194.182:3000/droid
+
+    try:
+        response = requests.get(
+            url="http://104.37.194.182:3000/droid",
+            params={
+                "name": "eq.cmdr",
+            },
+        )
+        print('Response HTTP Status Code: {status_code}'.format(
+            status_code=response.status_code))
+        print('Response HTTP Response Body: {content}'.format(
+            content=response.content))
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
+```
+
+### HTTP Request
+
+#### Request
 
 ```HTTP
 GET /droid?name=eq.cmdr HTTP/1.1
@@ -48,7 +102,7 @@ Connection: close
 User-Agent: YourBrowser
 ```
 
-### Response header
+#### Response header
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -60,7 +114,7 @@ Content-Range: 0-0/1
 Content-Location: /droid?name=eq.cmdr
 ```
 
-### Response Body
+#### Response Body
 ```JSON
 [
   {
