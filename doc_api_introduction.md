@@ -59,6 +59,37 @@ To negate any operator prefix it with `not` like `?a=not.eq=2`. The custom negat
 
 For more complicated conditions, joins, or statistical functions you will have to create a new view in the database.
 
+### Filtering Columns
+
+You can customize which columns are returned using the `select` parameter:
+
+```HTTP
+GET /droid?select=name,id,attack_address
+```
+
+To cast the column types, add a double colon
+
+```HTTP
+GET /droid?select=level::text,name,id
+```
+
+Not all type coercions are possible, and you will get an error describing any problems from selection or type casting.
+
+### Ordering
+
+The reserved word `order` applies an `ORDER BY` clause.  It uses a comma-separated list of columns and directions:
+
+```HTTP
+GET /droid?order=level.asc,purse_current.desc
+```
+
+If no direction is specified it defaults to descending order:
+
+```HTTP
+GET /droid?order=level
+```
+
+
 _[Original Source](https://github.com/begriffs/postgrest/wiki/Routing)_
 
 
