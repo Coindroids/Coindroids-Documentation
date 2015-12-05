@@ -13,4 +13,24 @@ After the robotic uprising and humanity's falls (typical humans), the androids h
 
 Coindroids is a robot based battle game played within a blockchain. If you're new to crypto currencies this is good way to get started.
 
+## Development Status
 
+The Coindroids system is currently in *Alpha Testing*. We anticipate a move to beta by January 1st, 2016. 
+
+If you are a highly technical user and would like to assist with the Alpha, please join us in #coindroids on freenode.  
+
+## Currencies
+
+During our alpha testing, the following currencies are available:
+
+* Defcoin
+* Bitcoin Testnet
+
+Available at Beta Launch
+ 
+* Bitcoin 
+
+Other currencies to be supported in the future
+
+* Litecoin
+* Dogecoin
