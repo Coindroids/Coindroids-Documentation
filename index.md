@@ -23,14 +23,16 @@ If you are a highly technical user and would like to assist with the Alpha, plea
 
 During our alpha testing, the following currencies are available:
 
-* Defcoin
-* Bitcoin Testnet
+### Defcoin
 
-Available at Beta Launch
+
+### Bitcoin Testnet
+
+
+http://testnetwallet.com/wallet#
+
+
+## Available at Launch
  
 * Bitcoin 
 
-Other currencies to be supported in the future
-
-* Litecoin
-* Dogecoin
