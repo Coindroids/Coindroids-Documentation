@@ -32,7 +32,7 @@ POST https://api.coindroids.com/registration
 ### Javascript
 
 
-This is a working example of the Registration RPC call. 
+This is a working example of the Registration RPC call. If you need an Invite Code to pass, come visit us at #coindroids in freenode. 
 
 <div id='RegistrationFormContent'>
 <form class="pure-form" id="registration-form">
@@ -95,7 +95,7 @@ $("#submit-registration").click(function( event ) {
 			})
 		.done(function(data, textStatus, jqXHR) {
 		    $("#RegistrationFormContent").html("<p>Registration Complete!</p>");
-		    
+		    $("#RegistrationFormContent").append("<p><textarea disabled>"+ data.token +"</textarea></p>"); 
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
 		})
@@ -136,6 +136,7 @@ $("#submit-registration").click(function( event ) {
 			})
 		.done(function(data, textStatus, jqXHR) {
 		    $("#RegistrationFormContent").html("<p>Registration Complete!</p>");
+		    $("#RegistrationFormContent").append("<p><textarea disabled>"+ data.token +"</textarea></p>"); 
 		    
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
