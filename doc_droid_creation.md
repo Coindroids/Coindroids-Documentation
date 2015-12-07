@@ -241,7 +241,6 @@ When creating a new droid, you have the option to chosoe from three different ba
 		<div class="col-sm-10">				
 			<select class="form-control" name='Currency' id='Currency'  type='text' >
 				<option value='1'> Bitcoin Testnet </option> 
-				<option value='3'> Bitcoin </option> 
 				<option value='4'> Defcoin </option> 
 			</select>
 		</div>
