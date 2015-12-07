@@ -76,6 +76,8 @@ $("#submit-login").click(function( event ) {
 		    
 		    
 		       $("#reg-warning").hide();
+		       	$("#user-box").show();
+			   	$("#username_display").html(localStorage.Username)
 		    
 
 		    
@@ -99,7 +101,7 @@ $("#submit-login").click(function( event ) {
 <script> 
 $(document).ready(function(){
 
-if (localStorage.Username === null && typeof localStorage.Username === "object")
+if (localStorage.Username == null)
 {
 	$("#reg-warning").show();
 	$("#user-box").hide();
