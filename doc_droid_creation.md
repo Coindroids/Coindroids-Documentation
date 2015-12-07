@@ -102,6 +102,7 @@ $(document).ready(function(){
 if (localStorage.Username === null && typeof localStorage.Username === "object")
 {
 	$("#reg-warning").show();
+	$("#user-box").hide();
 	
 } else {
 	$("#reg-warning").hide();
