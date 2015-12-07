@@ -13,50 +13,109 @@ summary: "Registration and droid creation"
 <script> 
 $(document).ready(function(){
 $("#submit-creation-hidden").hide();
+$("#submit-login-hidden").hide();
+$("#user-box").hide();
+$("#reg-warning").hide();
 });
+
 </script>
 
+ 
+
+<div id='creation-section'>
+
+<div id='user-box'>
+<i>Currently signed in as <span id='username_display'></span></i>
+</div>
+
+<div id='reg-warning'>
+If you haven't already, first head over to the Registration section and create your player account. Players have droids, droids belong to players. 
+
+If you have Registered already, then you can also login here:
+
+<form class="pure-form" id="login-form">
+				<fieldset class="form-group">
+					<div>
+						<label for='Username'> Username: </label><input class="form-control" name='Username' id='Username' type='text'>
+
+						<label for='Password'>Password:</label><input class="form-control" name='Password' id='Password' type='password' placeholder="">
+						
+					</div>
+				</fieldset>
+
+				
+				<button type="submit" id="submit-login">Login</button>
+				<button type="button"  id="submit-login-hidden" disabled>
+					<span class='fa fa-gear fa-spin'></	span>
+				</button>
+</form>
+
 <script>
-$("#submit-creation").click(function( event ) {
-   $("#submit-creation").hide();
-   $("#submit-creation-hidden").show();
+$("#submit-login").click(function( event ) {
+   $("#submit-login").hide();
+   $("#submit-login-hidden").show();
    event.preventDefault();
 
-	   var creationData = {
-	           "name" : $("#Name").val(),
-	           "currency" : $("#Currency").val(),
-	           "Model" : $("#Model").val() 
-	       };
 
-	   jQuery.ajax({
-	    url: "http://api.coindroids.com:3000/rpc/register",
-	    type: "POST",
-	    processData: false,
-	       contentType: 'application/json',
-	    data: JSON.stringify(creationData)
+
+		   var registrationData = {
+		           "username" : $("#Username").val(),
+		           "password" : $("#Password").val()
+		       };
+		   jQuery.ajax({
+		    url: "http://api.coindroids.com:3000/rpc/identify",
+		    type: "POST",
+		    processData: false,
+		       contentType: 'application/json',
+		    data: JSON.stringify(registrationData)
+			})
+		.done(function(data, textStatus, jqXHR) {
+
+		    localStorage.Username = $("#Username").val();
+		    localStorage.AuthToken = 'Bearer ' + data.token;
+		    
+		    
+		       $("#reg-warning").hide();
+		    
+
+		    
+		    console.log("HTTP Request Succeeded: " + jqXHR.status);
+		    console.log(data);
 		})
-	.done(function(data, textStatus, jqXHR) {
-	
-	    $("#CreationFormContent").html("<p>Creation Complete!</p>");
-	
-		
-	
-	    console.log("HTTP Request Succeeded: " + jqXHR.status);
-	    console.log(data);
-	})
-	.fail(function(jqXHR, textStatus, errorThrown) {
-	    console.log("HTTP Request Failed");
-	})
-	.always(function() {
-	    /* ... */
-	});
+		.fail(function(jqXHR, textStatus, errorThrown) {
+		    console.log("HTTP Request Failed");
+		})
+		.always(function() {
+		    /* ... */
+		});
+
+
+   
 });
 
-</script>   
+</script>  
+</div>
+
+<script> 
+$(document).ready(function(){
+
+if (localStorage.Username === null && typeof localStorage.Username === "object")
+{
+	$("#reg-warning").show();
+	
+} else {
+	$("#reg-warning").hide();
+	$("#user-box").show();
+	$("#username_display").html(localStorage.Username)
+}
+
+});
+
+</script>
 
 
 
-## Choosing your Droid Model
+<h2> Choosing your Droid Model </h2>
 
 When creating a new droid, you have the option to chosoe from three different base models. These are all basically the same currently but that will change as the game evolves. 
 
@@ -162,9 +221,9 @@ When creating a new droid, you have the option to chosoe from three different ba
 <br />
 
 <div class="container">
-<div class="row">
-<div id='CreationFormContent' class='col-md-2'>
-</div>
+	<div class="row">
+		<div id='' class='col-md-2'>
+		</div>
 
 <div id='CreationFormContent' class='col-md-6'>
 <form id="creation-form">
@@ -179,15 +238,26 @@ When creating a new droid, you have the option to chosoe from three different ba
 		<div class="col-sm-10">				
 			<select class="form-control" name='Currency' id='Currency'  type='text' >
 				<option value='1'> Bitcoin Testnet </option> 
-				<option value='2'> Dogecoin </option> 
 				<option value='3'> Bitcoin </option> 
 				<option value='4'> Defcoin </option> 
 			</select>
 		</div>
 	</div>
+
+	<div class="form-group row">
+		<label for='Model' class="col-md-2 form-control-label text-right">Model:</label>
+		<div class="col-sm-10">				
+			<select class="form-control" name='Model' id='Model'  type='text' >
+				<option value='3'> Base Assault  </option> 
+				<option value='4'> Base Artillery </option> 
+				<option value='5'> Base Scout </option> 
+			</select>
+		</div>
+	</div>
+
 		<div class="form-group row">
 		<div class="col-sm-offset-2 col-md-10">
-				<button type="submit" id="submit-creation">Create</button>
+				<button type="button" id="submit-creation">Create</button>
 				<button type="button"  id="submit-creation-hidden" disabled>
 					<span class='fa fa-gear fa-spin'></	span>
 				</button>
@@ -198,4 +268,81 @@ When creating a new droid, you have the option to chosoe from three different ba
 </div>
 </div>
 </div>
+</div>
 <hr />
+
+<script>
+
+function get_reg_qr(droid_id){
+	 var qrData = {
+	           "droid_id" : droid_id
+	       };
+
+
+    jQuery.ajax({
+	    url: "http://api.coindroids.com:3000/rpc/get_droid_registration_address",
+	    headers:  {
+			"Authorization": localStorage.AuthToken
+		},
+	    type: "POST",
+	    contentType: 'application/json',
+	    data: JSON.stringify(qrData)
+		})
+	.done(function(data, textStatus, jqXHR) {
+	
+	    $("#creation-section").append("<p>Your registration address is: " + data[0].get_droid_registration_address + "<br>Sending 0.0001 to this address will sync your wallet to the Coindroids sytstem, allowing it to monitor for actions such as attacks and item purchases. Your droid will not be active until this is step is complete. <br><a rel='nofollow' href='http://www.qrcode-generator.de' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl="+data[0].get_droid_registration_address+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
+	
+		console.log("HTTP Request Succeeded: " + jqXHR.status);
+	    console.log(data);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) {
+		    $("#CreationFormContent").html("<p>Creation Failed!</p>");
+	    console.log("HTTP Request Failed");
+	})
+	.always(function() {
+	    /* ... */
+	});
+
+}
+
+$("#submit-creation").click(function( event ) {
+   $("#submit-creation").hide();
+   $("#submit-creation-hidden").show();
+   event.preventDefault();
+
+	 var creationData = {
+	           "name" : $("#Name").val(),
+	           "currency_id" : $("#Currency").val(),
+	           "model_id" : $("#Model").val() 
+	       };
+
+
+    jQuery.ajax({
+	    url: "http://api.coindroids.com:3000/rpc/create_droid",
+	    headers:  {
+			"Authorization": localStorage.AuthToken
+		},
+	    type: "POST",
+	    contentType: 'application/json',
+	    data: JSON.stringify(creationData)
+		})
+	.done(function(data, textStatus, jqXHR) {
+	
+	    $("#creation-section").html("<p>Creation Complete!</p>");
+	
+		get_reg_qr(data[0].id);
+	
+	    console.log("HTTP Request Succeeded: " + jqXHR.status);
+	    console.log(data);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) {
+		    $("#CreationFormContent").html("<p>Creation Failed!</p>");
+	    console.log("HTTP Request Failed");
+	})
+	.always(function() {
+	    /* ... */
+	});
+});
+
+</script>  
+

@@ -73,8 +73,16 @@ $("#submit-registration").click(function( event ) {
 		    data: JSON.stringify(registrationData)
 			})
 		.done(function(data, textStatus, jqXHR) {
+
+		    localStorage.Username = $("#Username").val();
+		    localStorage.AuthToken = 'Bearer ' + data.token;
+		    
+		    
 		    $("#RegistrationFormContent").html("<p>Registration Complete!</p>");
 		    $("#RegistrationFormContent").append("<p><textarea disabled>"+ data.token +"</textarea> <br> You will need this token for any authorized API requests. You can also always generate a new token with the identify call.  </p>"); 
+		    
+
+		    
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
 		})
