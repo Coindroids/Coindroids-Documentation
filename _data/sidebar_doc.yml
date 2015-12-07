@@ -53,14 +53,20 @@ entries:
           product: all
           version: all
 
-        - title: Starting Droid Models
-          url: /doc_starting_droid_models.html
+        - title: Account Registration
+          url: /doc_account_registration.html
           audience: writers, designers
           platform: all
           product: all
           version: all
 
-
+        - title: Droid Creation
+          url: /doc_droid_creation.html
+          audience: writers, designers
+          platform: all
+          product: all
+          version: all
+          
     - title: Core Rules
       audience: writers, designers
       platform: all

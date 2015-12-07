@@ -1,38 +1,15 @@
 ---
-title: /rpc/registration
-tags: [objects]
-keywords: json, droid, object, patch, get
+title: Account Registration
+tags: [starting, droids, model]
+keywords: starting, droid, models 
 last_updated: November 21, 2015
-summary: "This function is used to register users to the system"
+summary: "Registration and droid creation"
 
 ---
 
-## Response Details
 
-|Name | Description|
-|----|----|
-|Token| The JWT authorization token for API requests|
+Before you can create your first droid, you will need a Coindroids user account. If you need an Invite Code, come visit us at #coindroids in freenode. 
 
-## Examples
-
-### HTTP Request
-
-
-```HTTP
-POST https://api.coindroids.com/registration
-{ 
-	"username":"Abstract",
-	"password":"password",
-	"email":"josh@coindroids.com",
-	"invite_code":"37764f2a-da1b-40ea-a054-ef1c8021196a"
-}
-```
-
-
-### Javascript
-
-
-This is a working example of the Registration RPC call. If you need an Invite Code to pass, come visit us at #coindroids in freenode. 
 
 <div id='RegistrationFormContent'>
 <form class="pure-form" id="registration-form">
@@ -64,6 +41,8 @@ This is a working example of the Registration RPC call. If you need an Invite Co
 					<span class='fa fa-gear fa-spin'></	span>
 				</button>
 </form>
+ 
+
 </div>
 
 <script> 
@@ -112,79 +91,9 @@ $("#submit-registration").click(function( event ) {
 
 </script>   
 
+<br />
 
-```javascript
-$("#submit-registration").click(function( event ) {
-   $("#submit-registration").hide();
-   $("#submit-registration-hidden").show();
-   event.preventDefault();
+The token provided after a successful registration is needed later on. 
 
-
-   if ($("#Password").val() == $("#RepeatPassword").val()) {
-		var registrationData = {
-		           "username" : $("#Username").val(),
-		           "password" : $("#Password").val(),
-		           "email" : $("#Email").val(),
-		           "invite_code":$("#InviteCode").val() 
-		};
-		jQuery.ajax({
-		    url: "http://api.coindroids.com:3000/rpc/register",
-		    type: "POST",
-		    processData: false,
-		       contentType: 'application/json',
-		    data: JSON.stringify(registrationData)
-			})
-		.done(function(data, textStatus, jqXHR) {
-		    $("#RegistrationFormContent").html("<p>Registration Complete!</p>");
-		    $("#RegistrationFormContent").append("<p><textarea disabled>"+ data.token +"</textarea></p>"); 
-		    
-		    console.log("HTTP Request Succeeded: " + jqXHR.status);
-		    console.log(data);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) {
-		    console.log("HTTP Request Failed");
-		})
-		.always(function() {
-		    /* ... */
-		});
-
-	}
-   
-});
-```
-
-### Python
-
-```python
-# Install the Python Requests library:
-# `pip install requests`
-
-import requests
-
-
-def send_request():
-    # Register a player
-    # POST http://104.37.194.182:3000/rpc/register
-
-    try:
-        response = requests.post(
-            url="http://104.37.194.182:3000/rpc/register",
-            data="{ 
-	\"username\":\"Abstract\",
-	\"password\":\"password\",
-	\"email\":\"josh@coindroids.com\",
-	\"invite_code\":\"37764f2a-da1b-40ea-a054-ef1c8021196a\"
-
-}"
-        )
-        print('Response HTTP Status Code: {status_code}'.format(
-            status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
-    except requests.exceptions.RequestException:
-        print('HTTP Request failed')
-
-```
-
-
+<br />
 
