@@ -17,14 +17,14 @@ Every player in the game is a Droid, a futuristic robot with many attributes. Th
 
 |Name|Description|Starting Value|
 |----|----|----|
-| Level|The current level of the player. The level of a player dictates some other elements including Purse Maximum, Health Maximum, as well as what items can be purchased. | 1 |
+|Level|The current level of the player. The level of a player dictates some other elements including Purse Maximum, Health Maximum, as well as what items can be purchased. | 1 |
 |Experience| This value is increased every time the droid is involved in a battle. More of this will be described in the Attack Process section.|0|
 |Purse|The current amount of cryptocurrency that will be distributed to the droid’s next murderer(s).|0|
 |Purse Maximum|The amount of cryptocurrency the purse will hold before paying out excess funds to the droid’s owner.|Dependant on cryptocurrency|
 |Health|The amount of health remaining for the droid.|100|
 |Health Maximum|The amount of health the droid will have upon resurrection|100|
 |Build| The collection of items that make up the droids equipment| Base Model of the users choice|
-|Iventory| The collection of usable items active on the droid| |
+|Inventory| The collection of usable items active on the droid| |
 
 
 ### Build & Inventory Influencing Attributes 

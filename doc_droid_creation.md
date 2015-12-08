@@ -292,7 +292,7 @@ function get_reg_qr(droid_id){
 		})
 	.done(function(data, textStatus, jqXHR) {
 	
-	    $("#creation-section").append("<p>Your registration address is: " + data[0].get_droid_registration_address + "<br>Sending 0.0001 to this address will sync your wallet to the Coindroids sytstem, allowing it to monitor for actions such as attacks and item purchases. Your droid will not be active until this is step is complete. <br><a rel='nofollow' href='http://www.qrcode-generator.de' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl="+data[0].get_droid_registration_address+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
+	    $("#creation-section").append("<p>Your registration address is: " + data[0].get_droid_registration_address + "<br>Sending 0.0001 to this address will sync your wallet to the Coindroids sytstem, allowing it to monitor for actions such as attacks and item purchases. Your droid will not be active until this is step is complete. <br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+data[0].get_droid_registration_address+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
 	
 		console.log("HTTP Request Succeeded: " + jqXHR.status);
 	    console.log(data);
