@@ -16,6 +16,9 @@ $("#submit-creation-hidden").hide();
 $("#submit-login-hidden").hide();
 $("#user-box").hide();
 $("#reg-warning").hide();
+$("#droid_details_1").hide();
+$("#droid_details_2").hide();
+
 });
 
 </script>
@@ -81,6 +84,8 @@ $("#submit-login").click(function( event ) {
 			   	$("#username_display").html(localStorage.Username)
 		    
 
+		 	$("#login-form").submit();
+		    
 		    
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
@@ -113,6 +118,9 @@ if (localStorage.Username == null)
 	$("#user-box").show();
 	$("#username_display").html(localStorage.Username)
 	
+	$("#droid_details_1").show();
+	$("#droid_details_2").show();
+		    
 	
 		jQuery.ajax({
 		    url: "http://api.coindroids.com:3000/droid?username=eq."+localStorage.Username,
@@ -155,7 +163,8 @@ if (localStorage.Username == null)
 		  		}
 	
 		 	get_reg_qr(data[index].id);
-		    
+		 	
+
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
 		})
@@ -212,7 +221,7 @@ function get_reg_qr(droid_id){
 
 <br>
 
-<div class="container">
+<div class="container"  id='droid_details_1'>
 
  <div class="row">
  	<div >
@@ -242,7 +251,7 @@ function get_reg_qr(droid_id){
   <div>
   
 </div>
-<div class="container">
+<div class="container" id='droid_details_2'>
  <div class="row">
  <h3>Build</h3>
  <table id='build'>
