@@ -53,25 +53,33 @@ Both of these values can each be calculated using the same algorithm. The value 
 
 Get the hash of the last solved block for the blockchain in use. As an example, this can be done with bitcoind like so:
 
+```
 	./bitcoind getbestblockhash 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9
+```
 
 #### Step 2 – Perform a SHA256 Hash of the known details
 
 Using the hash found in step one, referred to as <highest block hash>, concatenate this value along with the name of the attribute being calculated, and the username of the player. Finally, perform a SHA256 hash of this value.
 
+```
 	SHA256(<best block hash> + <Attribute Name> + <User Name>)
+```
 
 Continuing on with a real example, the sha256 function for each attribute would be calculated like so:
 
 ##### Energy
 
+```
 	SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9EnergyPlayerName )
 	74c3d885e20bd2cbf5973b1afd6160f6bdcaad414fe2e6b51631f1b63e8ee157
+```
 
 ##### Focus
 
+```
 	SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9FocusPlayerName )
 	8dbd21f7df72af01b0a9cf229f4435ed3780ca5fc63a534de6eeb1f3e1527f61
+```
 
 #### Step 3 – Convert a portion to decimal
 
@@ -79,18 +87,24 @@ Using the result from Step 2, take the first byte (i.e. the first 2 characters) 
 
 ##### Energy
 
+```
 	74 Hexadecimal = 116 Decimal
+```
 
 ##### Focus
 
+```
 	8d Hexadecimal = 141 Decimal
+```
 
 #### Step 3 – Evaluate the final Results through modulo and division
 
 Finally, with the decimal value, calculate the modulo over 100, then divide by 100 to get the attribute value for each variable during this block of transactions.
 
-	Energy = (116 modulo 100) / 100 = 16% Focus = (141 modulo 100) / 100 = 41%
-
+```
+	Energy = (116 modulo 100) / 100 = 16% 
+	Focus = (141 modulo 100) / 100 = 41%
+```
 
 Programmatically, this looks like the following:
 
