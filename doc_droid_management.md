@@ -238,14 +238,14 @@ function get_reg_qr(droid_id){
 		 <div>Purse: <span id='droid_purse'></span></div>
 	 </div>
 	 <div >
-		<h3>Attack Address</h3>
+		<h3>Attack Address - What your enemies use to attack you</h3>
 		<span id='droid_attack_address'></span>
 		<br>This address is very public. Attacks are a good thing!	 	
 	 </div>	
 	 <div >
-	 	<h3>Wallet Sync Address</h3>
+	 	<h3>Wallet Sync Address - What you use to add another wallet address</h3>
 		<span id='droid_wallet_sync'></span>
-		<br>This Address should only be used if your attacks and purchases are not being asocaited with your player. Sending 0.0001 here will syncronize your wallet with our servers again. if this is your first time registering a wallet, it will also active the droid - assigning it an attack address. 
+		<br>This Address should only be used if your attacks and purchases are not being associated with your player. You may notice this when trying to attack or purchase an item, only to have your money returned to you minus the transaction fee. Sending 1 token here will syncronize your wallet with our servers again. If this is your first time registering a wallet, it will also activate your droid and assign it an attack address. 
 		
 	 </div>
   <div>
