@@ -20,6 +20,8 @@ Coindroids is a strategy game that is played with cryptocurrency transactions. W
 
 A "token" within Coindroids is a base amount of coins that are required to do something. Whenever you send any transaction, make sure it is in multiples of the token amount for that cryptocurrency. 
 
+Here is a list of token sizes within the Coindroids system:
+
 | Currency | Netcode | Token Size |
 | ---- | ---- | ---- |
 | Bitcoin Testnet | XTN | 0.0001 XTN |
@@ -28,6 +30,7 @@ A "token" within Coindroids is a base amount of coins that are required to do so
 
 Any additional coins over a token amount are considered a donation to help keep the Coindroids servers running. (i.e. with XTN that has a token size of 0.0001, if you send 0.00045678 XTN, only 0.0004 XTN will count as 4 tokens towards your action, while the remaining 0.00005678 XTN will be considered a donation)
 
+You can retrieve a list of these token sizes programmatically by analyzing the [Currency](doc_object_currency.html) view of the API.
 
 ### Block
 
