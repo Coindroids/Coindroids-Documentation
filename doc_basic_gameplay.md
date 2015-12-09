@@ -44,9 +44,9 @@ The hardest part about Coindroids is choosing who to attack this block - if anyo
 
 ## Buying Items
 
-If you need to become a more effective killing machine, you can buy items to augment your abilities. New weapons can increase your attacks by a multiplier (so you can deal the same damage by sending 2 tokens instead of sending 4!), or increase your droid's defensive abilities (so enemies need to send more coins to deal the same amount of damage against you). Other items can give your droid a counter-attack ability (you damage whoever attacks you!), as well as other neat duration effects that last multiple blocks (i.e. heal 50 hitpoints per block for the next 3 blocks).
+If you need to become a more effective killing machine, you can buy items to augment your abilities. New weapons can increase your attacks with a multiplier (so you can deal the same damage by sending 2 tokens instead of sending 4!), or increase your droid's defensive abilities with a multiplier (so enemies need to send more coins to deal the same amount of damage against you). Other items can give your droid a counter-attack ability (you damage whoever attacks you!), as well as other neat duration effects that last multiple blocks (i.e. heal 50 hitpoints per block for the next 3 blocks).
 
-In Coindroids, you buy items by sending the required number of tokens to an item’s address. You can find item addresses by visiting the Unlocks page on the site, or querying the Item view on the API.
+In Coindroids, you buy items by sending the required number of tokens to an item’s address. You can find item addresses by visiting the Unlocks page on the site, or querying the [Item](doc_object_item.html) view on the API.
 
 For more information on Items, view the [Item](doc_game_specification_items.html) page within Core Rules
 
