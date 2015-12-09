@@ -18,10 +18,16 @@ Coindroids is a strategy game that is played with cryptocurrency transactions. W
 
 ### Token
 
-A "token" within Coindroids is a base amount of coins that are required to do something. For Testnet, one token is 0.0001 XTN. For DEFCOIN, one token is 0.01 DFC. These values may change as Coindroids progresses through testing to production.
+A "token" within Coindroids is a base amount of coins that are required to do something. Whenever you send any transaction, make sure it is in multiples of the token amount for that cryptocurrency. 
 
+| Currency | Netcode | Token Size |
+| ---- | ---- | ---- |
+| Bitcoin Testnet | XTN | 0.0001 XTN |
+| DEFCOIN | DFC | 0.01 DFC |
+| Bitcoin Mainnet | BTC | 0.0001 BTC |
 
-Whenever you send any transaction, make sure it is in multiples of the token amount for that cryptocurrency. Any additional coins are considered a donation to help keep the Coindroids servers running. (i.e. with XTN that has a token size of 0.0001, if you send 0.00045678, only 0.0004 will count as 4 tokens towards your action, while the remaining 0.00005678 will be considered a donation)
+Any additional coins over a token amount are considered a donation to help keep the Coindroids servers running. (i.e. with XTN that has a token size of 0.0001, if you send 0.00045678 XTN, only 0.0004 XTN will count as 4 tokens towards your action, while the remaining 0.00005678 XTN will be considered a donation)
+
 
 ### Block
 
