@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 	
 		jQuery.ajax({
-		    url: "http://api.coindroids.com:3000/event?order=block_height.desc,action_type.desc",
+		    url: "http://api.coindroids.com/event?order=block_height.desc,action_type.desc",
 		    type: "GET",
 		    processData: false,
 		       contentType: 'application/json',

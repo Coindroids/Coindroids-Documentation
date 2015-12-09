@@ -63,7 +63,7 @@ $("#submit-login").click(function( event ) {
 		           "password" : $("#Password").val()
 		       };
 		   jQuery.ajax({
-		    url: "http://api.coindroids.com:3000/rpc/identify",
+		    url: "http://api.coindroids.com/rpc/identify",
 		    type: "POST",
 		    processData: false,
 		       contentType: 'application/json',
@@ -282,7 +282,7 @@ function get_reg_qr(droid_id){
 
 
     jQuery.ajax({
-	    url: "http://api.coindroids.com:3000/rpc/get_droid_registration_address",
+	    url: "http://api.coindroids.com/rpc/get_droid_registration_address",
 	    headers:  {
 			"Authorization": localStorage.AuthToken
 		},
@@ -320,7 +320,7 @@ $("#submit-creation").click(function( event ) {
 
 
     jQuery.ajax({
-	    url: "http://api.coindroids.com:3000/rpc/create_droid",
+	    url: "http://api.coindroids.com/rpc/create_droid",
 	    headers:  {
 			"Authorization": localStorage.AuthToken
 		},
