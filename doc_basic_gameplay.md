@@ -14,7 +14,8 @@ Coindroids is a battle game where your objective is to attack and destroy other 
 
 ## Why would I spend money to attack a virtual robot?
 
-Coindroids is a strategy game that is played with cryptocurrency transactions. When you kill another droid, you win the contents of their purse. If your attack spent 3 tokens to kill a robot with 5 tokens in his purse, you just earned a profit of 2 tokens! Your profitability depends entirely on the strategy you use to choose which droid to attack, how much to spend on your attack, and whether or not you should attack now or wait for another block that has a better 'environment' ([FOCUS and ENERGY](doc_game_specification_droids.html#dynamic-attributes)) for your robot.
+Coindroids is a strategy game that is played with cryptocurrency transactions. When you kill another droid, you win the contents of their purse.
+For example, if your attack spent 3 tokens to kill a robot with 5 tokens in his purse, you just earned a profit of 2 tokens! Your profitability depends entirely on the strategy you use to choose which droid to attack, how much to spend on your attack, and whether or not you should attack now or wait for another block that has a better 'environment' ([FOCUS and ENERGY](doc_game_specification_droids.html#dynamic-attributes)) for your robot.
 
 ### Token
 
