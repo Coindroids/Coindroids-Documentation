@@ -31,7 +31,7 @@ GET https://api.coindroids.com/badge
 
 ```HTTP
 GET /badge HTTP/1.1
-Host: api.coindroids.com:3000
+Host: api.coindroids.com
 Connection: close
 User-Agent: YourBrowser
 ```

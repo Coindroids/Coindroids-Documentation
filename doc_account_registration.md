@@ -66,7 +66,7 @@ $("#submit-registration").click(function( event ) {
 		           "invite_code":$("#InviteCode").val() 
 		       };
 		   jQuery.ajax({
-		    url: "http://api.coindroids.com/rpc/register",
+		    url: "https://api.coindroids.com/rpc/register",
 		    type: "POST",
 		    processData: false,
 		       contentType: 'application/json',

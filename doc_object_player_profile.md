@@ -44,10 +44,10 @@ PATCH https://api.coindroids.com/profile
 
 ```javascript
 
-// Updating a password or email (PATCH http://104.37.194.182:3000/profile)
+// Updating a password or email (PATCH https://api.coindroids.com/profile)
 
 jQuery.ajax({
-    url: "http://104.37.194.182:3000/profile",
+    url: "https://api.coindroids.com/profile",
     type: "PATCH",
     headers: {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....C-FoIbJJxw2I",
@@ -81,11 +81,11 @@ import requests
 
 def send_request():
     # Updating a password or email
-    # PATCH http://104.37.194.182:3000/profile
+    # PATCH https://api.coindroids.com/profile
 
     try:
         response = requests.patch(
-            url="http://104.37.194.182:3000/profile",
+            url="https://api.coindroids.com/profile",
             headers={
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6.....un0JC-FoIbJJxw2I",
             },

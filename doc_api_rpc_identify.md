@@ -39,10 +39,10 @@ POST https://api.coindroids.com/identify
 #### Username & Password
 
 ```javascript
-// Identify (POST http://104.37.194.182:3000/rpc/identify)
+// Identify (POST https://api.coindroids.com/rpc/identify)
 
 jQuery.ajax({
-    url: "http://104.37.194.182:3000/rpc/identify",
+    url: "https://api.coindroids.com/rpc/identify",
     type: "POST",
     processData: false,
     data: "{\"username\":\"Abstract\", \"password\":\"password\"}",
@@ -63,10 +63,10 @@ jQuery.ajax({
 #### Token Authorization
 
 ```javascript
-// Identify (update with authenticate session) (POST http://104.37.194.182:3000/rpc/identify)
+// Identify (update with authenticate session) (POST https://api.coindroids.com/rpc/identify)
 
 jQuery.ajax({
-    url: "http://104.37.194.182:3000/rpc/identify",
+    url: "https://api.coindroids.com/rpc/identify",
     type: "POST",
     headers: {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp...-tV89N7sPiz4bn4gYu2gs",
@@ -98,11 +98,11 @@ import requests
 
 def send_request():
     # Identify
-    # POST http://104.37.194.182:3000/rpc/identify
+    # POST https://api.coindroids.com/rpc/identify
 
     try:
         response = requests.post(
-            url="http://104.37.194.182:3000/rpc/identify",
+            url="https://api.coindroids.com/rpc/identify",
             data="{\"username\":\"Abstract\", \"password\":\"password\"}"
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -125,11 +125,11 @@ import requests
 
 def send_request():
     # Identify (update with authenticate session)
-    # POST http://104.37.194.182:3000/rpc/identify
+    # POST https://api.coindroids.com/rpc/identify
 
     try:
         response = requests.post(
-            url="http://104.37.194.182:3000/rpc/identify",
+            url="https://api.coindroids.com/rpc/identify",
             headers={
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicGxheWVycyIsImlkIjoiY2ZmYzZkYzQtMDY0ZS00OWRiLTllODgtNzgwNjY4ZjQ0ZTBjIn0.05yM5ihI5gyoh6bQoG6Kus-tV89N7sPiz4bn4gYu2gs",
             },

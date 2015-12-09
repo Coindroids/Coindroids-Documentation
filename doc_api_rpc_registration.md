@@ -87,7 +87,7 @@ $("#submit-registration").click(function( event ) {
 		           "invite_code":$("#InviteCode").val() 
 		       };
 		   jQuery.ajax({
-		    url: "http://api.coindroids.com:3000/rpc/register",
+		    url: "https://api.coindroids.com/rpc/register",
 		    type: "POST",
 		    processData: false,
 		       contentType: 'application/json',
@@ -128,7 +128,7 @@ $("#submit-registration").click(function( event ) {
 		           "invite_code":$("#InviteCode").val() 
 		};
 		jQuery.ajax({
-		    url: "http://api.coindroids.com:3000/rpc/register",
+		    url: "https://api.coindroids.com/rpc/register",
 		    type: "POST",
 		    processData: false,
 		       contentType: 'application/json',
@@ -164,11 +164,11 @@ import requests
 
 def send_request():
     # Register a player
-    # POST http://104.37.194.182:3000/rpc/register
+    # POST https://api.coindroids.com/rpc/register
 
     try:
         response = requests.post(
-            url="http://104.37.194.182:3000/rpc/register",
+            url="https://api.coindroids.com/rpc/register",
             data="{ 
 	\"username\":\"Abstract\",
 	\"password\":\"password\",

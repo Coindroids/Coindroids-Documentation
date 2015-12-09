@@ -44,7 +44,7 @@ GET https://api.coindroids.com/item
 
 ```HTTP
 GET /item?item_type=eq.Primary%20Weapon&level_required=lt.10 HTTP/1.1
-Host: api.coindroids.com:3000
+Host: api.coindroids.com
 Connection: close
 User-Agent: YourBrowser
 ```
