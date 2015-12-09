@@ -48,7 +48,7 @@ If you need to become a more effective killing machine, you can buy items to aug
 
 In Coindroids, you buy items by sending the required number of tokens to an item’s address. You can find item addresses by visiting the Unlocks page on the site, or querying the [Item](doc_object_item.html) view on the API.
 
-For more information on Items, view the [Item](doc_game_specification_items.html) page within Core Rules
+For information about how Items work, take a look at the [Item](doc_game_specification_items.html) documentation within the Core Rules section.
 
 ## Statistics
 
