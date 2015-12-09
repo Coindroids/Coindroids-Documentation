@@ -1,8 +1,8 @@
 ---
 title: Basic Gameplay
 tags: [rules, help]
-keywords: api, authentication 
-last_updated: November 21, 2015
+keywords: help, play, what, how, token, attack 
+last_updated: December 9, 2015
 summary: "An intro to Coindroids gameplay"
 
 ---
