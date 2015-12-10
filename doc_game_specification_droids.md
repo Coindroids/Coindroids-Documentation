@@ -59,10 +59,10 @@ Get the hash of the last solved block for the blockchain in use. As an example, 
 
 #### Step 2 – Perform a SHA256 Hash of the known details
 
-Using the hash found in step one, referred to as <highest block hash>, concatenate this value along with the name of the attribute being calculated, and the username of the player. Finally, perform a SHA256 hash of this value.
+Using the hash found in step one, referred to as `<highest block hash>`, concatenate this value along with the capitalized name of the attribute being calculated, and the ID of the droid as a single text string. Finally, perform a SHA256 hash of this value.
 
 ```
-	SHA256(<best block hash> + <Attribute Name> + <User Name>)
+	SHA256(<best block hash> + <Attribute Name> + <Droid ID>)
 ```
 
 Continuing on with a real example, the sha256 function for each attribute would be calculated like so:
@@ -70,15 +70,15 @@ Continuing on with a real example, the sha256 function for each attribute would 
 ##### Energy
 
 ```
-	SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9EnergyPlayerName )
-	74c3d885e20bd2cbf5973b1afd6160f6bdcaad414fe2e6b51631f1b63e8ee157
+	SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9ENERGY4 )
+	88435b0191439b818d5bee558dbc8ed4831f43df17748ee4a8f22b4be1542bf5
 ```
 
 ##### Focus
 
 ```
-	SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9FocusPlayerName )
-	8dbd21f7df72af01b0a9cf229f4435ed3780ca5fc63a534de6eeb1f3e1527f61
+	SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9FOCUS4 )
+	e106950e4cb0ca0d87a0c74a1d6862a6c9bfda6dcebd71480ddb04f68cad85de
 ```
 
 #### Step 3 – Convert a portion to decimal
@@ -88,28 +88,44 @@ Using the result from Step 2, take the first byte (i.e. the first 2 characters) 
 ##### Energy
 
 ```
-	74 Hexadecimal = 116 Decimal
+	88 Hexadecimal = 136 Decimal
 ```
 
 ##### Focus
 
 ```
-	8d Hexadecimal = 141 Decimal
+	e1 Hexadecimal = 225 Decimal
 ```
 
-#### Step 3 – Evaluate the final Results through modulo and division
+#### Step 3 – Evaluate the final Results as a percentage
 
-Finally, with the decimal value, calculate the modulo over 100, then divide by 100 to get the attribute value for each variable during this block of transactions.
-
-```
-	Energy = (116 modulo 100) / 100 = 16% 
-	Focus = (141 modulo 100) / 100 = 41%
-```
-
-Programmatically, this looks like the following:
+Finally: with the decimal value, calculate the percentage based on a byte's maximum value to get the attribute value for each variable during this block of transactions.
 
 ```
-TODO - Codes
+	Energy = 136 / 255 = 53.3% 
+	Focus = 225 / 255 = 88.2%
+```
+
+Programmatically (and pythonically...), this looks like the following:
+
+```
+import hashlib
+
+def calculate_energy(previous_block_hash, droid_id):
+    energy_input = previous_block_hash + 'ENERGY' + str(droid_id)
+    energy_hash = hashlib.sha256(energy_input).hexdigest()
+    first_byte = int(energy_hash[0:2], 16)
+    energy_value = first_byte / 255.0
+    
+    return energy_value
+
+def calculate_focus(previous_block_hash, droid_id):
+    focus_input = previous_block_hash + 'FOCUS' + str(droid_id)
+    focus_hash = hashlib.sha256(focus_input).hexdigest()
+    first_byte = int(focus_hash[0:2], 16)
+    focus_value = first_byte / 255.0
+    
+    return focus_value
 ```
 
 ## Leveling

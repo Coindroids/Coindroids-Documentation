@@ -101,7 +101,9 @@ $("#submit-registration").click(function( event ) {
 
 <br />
 
-The token provided after a successful registration is needed later on. 
+After you submit this form, it will yield an authentication token that will be active for 24 hours of play. You will need this string for future actions within Coindroids, so don't forget to copy/paste it somewhere safe!
+
+If you lose it, don't fret. Your username and password can be used at any time to grab another authentication token to keep you playing for day. You can also renew the length of an existing token once per day to keep playing with it indefinitely
 
 <br />
 

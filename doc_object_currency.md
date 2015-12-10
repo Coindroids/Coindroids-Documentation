@@ -66,7 +66,7 @@ Content-Location: /currency
     "id": 2,
     "name": "Defcoin Mainnet",
     "starting_height": 332812,
-    "netcode": "DOGE",
+    "netcode": "DFC",
     "token_size": 1000000,
     "registration_fee": 1,
     "satoshis_per_coin": 100000000,
