@@ -32,10 +32,11 @@ $(document).ready(function(){
 			current_block = '';
 			for (index = data.length - 1; index >= 0; --index) { 
 				if (current_block != data[index].block_hash) {
-					$("#event_log").prepend("<div id='"+data[index].block_hash+"'><h2>"+data[index].block_hash+" ("+data[index].block_height+")</h2></div>")
+					$("#event_log").prepend("<div id='"+data[index].block_hash+"'><div class='row'><div class='col-lg-1' ><b>"+data[index].block_height+"</b></div><div class='col-lg-7 text-right'>("+data[index].block_hash+")</div></div></div>")
 					current_block = data[index].block_hash;
-				} 
-				$("#"+data[index].block_hash).append("<div>"+ data[index].action_type + " (" + data[index].txid +","+data[index].tx_vout+ ")</div>");
+				}
+ 
+				$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-2'>"+ data[index].droid_name + " ("+ data[index].player_username+")</div><div class='col-md-1'>"+ data[index].action_type + "</div><div class='col-md-1'>"+ data[index].value/100000000 + "TBTC</div><div class='col-md-6 text-right'>" + data[index].txid +"</div><div class='col-md-1 text-left'><i>Vout "+data[index].tx_vout+ "</i></div></div>");
 			}		 	
 
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
@@ -55,7 +56,6 @@ $(document).ready(function(){
 
 <div class="container" id='event_logs'>
 
-<div>"+ data[index].action_type + " (" + data[index].txid +","+data[index].tx_vout+ ")</div>
 
 </div>
 
