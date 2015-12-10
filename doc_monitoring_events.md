@@ -53,6 +53,12 @@ $(document).ready(function(){
 
 </script>
 
+<div class="container" id='event_logs'>
+
+<div>"+ data[index].action_type + " (" + data[index].txid +","+data[index].tx_vout+ ")</div>
+
+</div>
+
 
 <div class="container" id='event_log'>
 

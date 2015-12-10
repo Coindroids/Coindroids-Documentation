@@ -25,7 +25,7 @@ $("#reg-warning").hide();
 <div id='creation-section'>
 
 <div id='user-box'>
-<i>Currently signed in as <span id='username_display'></span></i>
+<i>Currently signed in as <span id='username_display'></span></i> <form><button type='submit' id='log_out'>Log Out</button></form>
 </div>
 
 <div id='reg-warning'>
@@ -95,6 +95,10 @@ $("#submit-login").click(function( event ) {
    
 });
 
+$("#log_out").click(function( event ) {
+	localStorage.clear();
+
+});
 </script>  
 </div>
 

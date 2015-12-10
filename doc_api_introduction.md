@@ -17,6 +17,9 @@ summary: "An introduction to the Coindroids REST API"
 |DELETE| Deletes one or more objects |
 |OPTIONS| Describe the object and receive a programmatic version of this document | 
 
+### SSL Issues
+
+If you have issues validating our certificate, you may need to install the [AlphaSSL Intermediate CA](https://www.alphassl.com/support/install-root-certificate.html).
 
 ### Filtering Rows
 
