@@ -54,11 +54,6 @@ $(document).ready(function(){
 
 </script>
 
-<div class="container" id='event_logs'>
-
-
-</div>
-
 
 <div class="container" id='event_log'>
 
