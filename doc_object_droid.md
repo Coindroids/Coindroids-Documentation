@@ -42,10 +42,10 @@ GET https://api.coindroids.com/droid
 ### Javascript
 
 ```javascript
-// View specific droid (GET http://104.37.194.182:3000/droid)
+// View specific droid (GET https://api.coindroids.com/droid)
 
 jQuery.ajax({
-    url: "http://104.37.194.182:3000/droid",
+    url: "https://api.coindroids.com/droid",
     type: "GET",
     data: {
         "name": "eq.cmdr",
@@ -74,11 +74,11 @@ import requests
 
 def send_request():
     # View specific droid
-    # GET http://104.37.194.182:3000/droid
+    # GET https://api.coindroids.com/droid
 
     try:
         response = requests.get(
-            url="http://104.37.194.182:3000/droid",
+            url="https://api.coindroids.com/droid",
             params={
                 "name": "eq.cmdr",
             },
@@ -97,7 +97,7 @@ def send_request():
 
 ```HTTP
 GET /droid?name=eq.cmdr HTTP/1.1
-Host: api.coindroids.com:3000
+Host: api.coindroids.com
 Connection: close
 User-Agent: YourBrowser
 ```
