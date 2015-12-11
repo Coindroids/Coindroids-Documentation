@@ -205,8 +205,8 @@ function get_reg_qr(droid_id){
 	    data: JSON.stringify(qrData)
 		})
 	.done(function(data, textStatus, jqXHR) {
-	
-	    $("#droid_wallet_sync").html(data[0].get_droid_registration_address + "<br><br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+data[0].get_droid_registration_address+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
+	    var qrtext = encodeURI("bitcoin://" + data[0].get_droid_registration_address + "?amount=0.0001&message=Droid%20Registration");
+	    $("#droid_wallet_sync").html(data[0].get_droid_registration_address + "<br><br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+qrtext+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
 	
 		console.log("HTTP Request Succeeded: " + jqXHR.status);
 	    console.log(data);
