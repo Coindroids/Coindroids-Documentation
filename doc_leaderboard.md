@@ -37,10 +37,10 @@ $(document).ready(function(){
 					$("#"+data[index].block_hash).append("<div class='row'><div class='col-lg-4'>Purse "+create_progress_bar((data[index].purse_current/10000),(data[index].purse_max/10000))+"</div><div class='col-lg-4 '>Health "+create_progress_bar(data[index].health_current,data[index].health_max)+"</div></div>");
 
 					
-					$("#"+data[index].block_hash).append("<div class='row'>"+((data[index].attack_address == null)?'Inactive':('<img src="https://chart.googleapis.com/chart?cht=qr&chl='+data[index].attack_address+'&chs=180x180&choe=UTF-8&chld=L|2" alt=""></p>'))+""+data[index].attack_address+"</div>");
+					$("#"+data[index].block_hash).append("<div class='row'><div class='col-lg-8 text-center'>"+((data[index].attack_address == null)?'Inactive':('<img src="https://chart.googleapis.com/chart?cht=qr&chl='+data[index].attack_address+'&chs=180x180&choe=UTF-8&chld=L|2" alt="">'+data[index].attack_address+'</p>'))+"</div></div>");
 
 						
-					$("#droid_list").prepend("<hr>");	
+					$("#"+data[index].block_hash).append("<div class='row'><div class='col-lg-8'><hr></div></div>");	
 					
 					current_droid = data[index].id;
 					
@@ -78,4 +78,4 @@ function create_progress_bar(now, max){
 
 
 <br />
-<hr />
+
