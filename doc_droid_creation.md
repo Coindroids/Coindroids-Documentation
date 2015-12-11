@@ -295,7 +295,7 @@ function get_reg_qr(droid_id){
 	    data: JSON.stringify(qrData)
 		})
 	.done(function(data, textStatus, jqXHR) {
-	    var qrtext = encodeURIComponent("bitcoin://" + data[0].get_droid_registration_address + "?amount=0.0001&message=Droid%20Registration");
+	    var qrtext = encodeURI("bitcoin://" + data[0].get_droid_registration_address + "?amount=0.0001&message=Droid%20Registration");
 	    $("#creation-section").append("<p>Your registration address is: " + data[0].get_droid_registration_address + "<br>Sending 0.0001 to this address will sync your wallet to the Coindroids sytstem, allowing it to monitor for actions such as attacks and item purchases. Your droid will not be active until this is step is complete. <br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+qrtext+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
 	
 		console.log("HTTP Request Succeeded: " + jqXHR.status);
