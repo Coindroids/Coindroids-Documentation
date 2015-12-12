@@ -250,8 +250,15 @@ function get_reg_qr(droid_id){
 	 <div >
 	 	<h3>Wallet Sync Address - What you use to add another wallet address</h3>
 		<span id='droid_wallet_sync'></span>
-		<br>This Address should only be used if your attacks and purchases are not being associated with your player. You may notice this when trying to attack or purchase an item, only to have your money returned to you minus the transaction fee. Sending 1 token here will syncronize your wallet with our servers again. If this is your first time registering a wallet, it will also activate your droid and assign it an attack address. 
-		
+		<p>This Address should only be used if your attacks and purchases are not being associated with your player. You may notice this when trying to attack or purchase an item, only to have your money returned to you minus a transaction/mining fee. Sending 1 token here will syncronize your wallet with our servers again. If this is your first time registering a wallet, it will also activate your droid and assign it an attack address.</p> 
+		<h3>Wallet Sync Issues</h3>
+		<p>When you first register your droid with Coindroids, the system will identify 2 of your addresses:
+		<ul><li>Your &quot;From&quot; address of your registration transaction. This is your droid's primary_ammunition_clip.</li>
+		<li>Your &quot;Change&quot; address where the rest of your coins ended up. This is your droid's first address in its  additional_ammunition_clips list.</li></ul></p>
+		<p>Coindroids will continue to watch the change addresses of all of your gameplay transactions so it can recognize your attacks in the future. These are added to your additional_ammunition_clips. However, if you send a non-Coindroids transaction to any other address, the rest of your funds will end up in a change address that is unknown to Coindroids. As a result, when you try to play again, Coindroids doesn't know who you are, so it will return your funds without processing your action. Essentially, you've broken your "change chain" that Coindroids was using to keep track of you by following your coins.</p>
+		<p>To resolve this situation, you have two options:
+		<ol><li>Send one token's worth of coins to your droid's Wallet Sync Address (above).</li>
+		<li>Send all of your funds to one of your old addresses that Coindroids already recognizes (primary_ammunition_clip or additional_ammunition_clips)</li></ol>Coindroids will again be able to recognize your actions.</p>
 	 </div>
   <div>
   
