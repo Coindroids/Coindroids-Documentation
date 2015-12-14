@@ -36,11 +36,17 @@ $(document).ready(function(){
 					current_block = data[index].block_hash;
 				}
  
-				$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-2'>"+ data[index].droid_name + " ("+ data[index].player_username+")</div><div class='col-md-1'>"+ data[index].action_type + "</div><div class='col-md-1'>"+ data[index].value/100000000 + "TBTC</div><div class='col-md-6 text-right'><a href='https://www.blocktrail.com/tBTC/tx/" + data[index].txid +"'>" + data[index].txid.substring(1,10) +"</a></div><div class='col-md-1 text-left'><i>Vout "+data[index].tx_vout+ "</i></div></div><div id='tx_" + data[index].txid +"' class='container'></div>");
+				$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-2'>"+ data[index].droid_name + " ("+ data[index].player_username+")</div><div class='col-md-1'>"+ data[index].action_type + "</div><div class='col-md-1'>"+ data[index].value/100000000 + "TBTC</div><div class='col-md-6 text-right'><a href='https://www.blocktrail.com/tBTC/tx/" + data[index].txid +"'>" + data[index].txid.substring(1,10) +"</a></div><div class='col-md-1 text-left'><i>Vout "+data[index].tx_vout+ "</i></div></div><div id='tx_oc_" + data[index].txid +"' class='container'></div><div id='tx_po_" + data[index].txid +"' class='container'></div>");
 
 				for (outcome_index = data[index].outcomes.length - 1; outcome_index >= 0; --outcome_index) {
-					$("#tx_"+data[index].txid).append("<div class='row'><div class='col-md-1'></div><div class='col-md-2 '>"+ data[index].outcomes[outcome_index].outcome_type+ " </div><div class='col-md-1 '>Droid ID:"+ data[index].outcomes[outcome_index].droid_id+ "  </div><div class='col-md-1 '>Result:"+ data[index].outcomes[outcome_index].value_to+ "</div></div>");
+					$("#tx_oc_"+data[index].txid).append("<div class='row'><div class='col-md-1'></div><div class='col-md-2 '>"+ data[index].outcomes[outcome_index].outcome_type+ " </div><div class='col-md-1 '>Droid ID:"+ data[index].outcomes[outcome_index].droid_id+ "  </div><div class='col-md-1 '>Result:"+ data[index].outcomes[outcome_index].value_to+ "</div></div>");
 
+				}
+
+				if (data[index].payouts != null){
+					for (payout_index = data[index].payouts.length - 1; payout_index >= 0; --payout_index) {
+						$("#tx_po_"+data[index].txid).append("<b>Payout</b> (ID "+ data[index].payouts[payout_index].payout_id+ ")<div class='row'><div class='col-md-1'></div><div class='col-md-4 '>"+ data[index].payouts[payout_index].address+ " </div><div class='col-md-2 '>Player ID:"+ data[index].payouts[payout_index].player_id+ "  </div><div class='col-md-1 '>Amount:"+ (data[index].payouts[payout_index].amount/100000000)+ "</div></div>");
+						}
 				}
 
 			}		 	
