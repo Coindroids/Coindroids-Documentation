@@ -16,7 +16,7 @@ Although anonymous access to the API is permitted, an unauthorized account will 
 ##### REST Request
 
 ```HTTP
-POST /rpc/registration
+POST /rpc/register
 { 
 	"username":"Somebody",
 	"password":"password",
