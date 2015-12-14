@@ -8,7 +8,7 @@ summary: "Authentication to the Coindroids REST API"
 ---
 
 
-Although anonymous access to the API is permitted, an unauthorized account will have additional functionality available to them. This section explains initial account creation along with management of the API authorization tokens required to make authenticated requests. 
+Although anonymous access to the API is permitted, an authorized account will have additional functionality available to them. This section explains initial account creation along with management of the API authorization tokens required to make authenticated requests. 
 
 
 ### Registration
