@@ -234,8 +234,8 @@ entries:
               product: all
               print: false
               fifthlevelitems:
-                - title: /rpc/registration
-                  url: /doc_api_rpc_registration.html
+                - title: /rpc/register
+                  url: /doc_api_rpc_register.html
                   audience: writers, designers
                   platform: all
                   version: all

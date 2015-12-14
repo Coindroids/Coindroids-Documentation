@@ -1,5 +1,5 @@
 ---
-title: /rpc/registration
+title: /rpc/register
 tags: [objects]
 keywords: json, droid, object, patch, get
 last_updated: November 21, 2015
@@ -19,7 +19,7 @@ summary: "This function is used to register users to the system"
 
 
 ```HTTP
-POST https://api.coindroids.com/registration
+POST https://api.coindroids.com/register
 { 
 	"username":"Abstract",
 	"password":"password",
