@@ -35,7 +35,7 @@ If you haven't already, first head over to the Registration section and create y
 
 If you have Registered already, then you can also login here:
 
-<form class="pure-form" id="login-form" >
+<form class="pure-form" id="login-form">
 				<fieldset class="form-group">
 					<div>
 						<label for='Username'> Username: </label><input class="form-control" name='Username' id='Username' type='text'>
