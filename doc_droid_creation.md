@@ -25,7 +25,7 @@ $("#reg-warning").hide();
 <div id='creation-section'>
 
 <div id='user-box'>
-<i>Currently signed in as <span id='username_display'></span></i> <form><button type='submit' id='log_out'>Log Out</button></form>
+<i>Currently signed in as <span id='username_display'></span></i> <form method="post"><button type='submit' id='log_out'>Log Out</button></form>
 </div>
 
 <div id='reg-warning'>
@@ -33,7 +33,7 @@ If you haven't already, first head over to the Registration section and create y
 
 If you have Registered already, then you can also login here:
 
-<form class="pure-form" id="login-form">
+<form class="pure-form" id="login-form" method="post">
 				<fieldset class="form-group">
 					<div>
 						<label for='Username'> Username: </label><input class="form-control" name='Username' id='Username' type='text'>
