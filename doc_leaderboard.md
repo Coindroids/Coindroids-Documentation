@@ -72,7 +72,7 @@ $(document).ready(function(){
         });
 	
 		jQuery.ajax({
-		    url: "https://api.coindroids.com/droid?order=purse_current.desc,level.asc",
+		    url: "https://api.coindroids.com/droid?is_active=is.true&order=purse_current.desc,level.asc",
 		    type: "GET",
 		    processData: false,
 		    contentType: 'application/json',
