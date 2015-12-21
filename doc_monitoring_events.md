@@ -32,6 +32,7 @@ $(document).ready(function(){
 			current_block = '';
 			for (index = data.length - 1; index >= 0; --index) { 
 				if (current_block != data[index].block_hash) {
+	
 					$("#event_log").prepend("<div id='"+data[index].block_hash+"'><div class='row'><div class='col-lg-1' ><b><a href='https://www.blocktrail.com/tBTC/block/"+data[index].block_hash+"'>"+data[index].block_height+"</a></b></div><div class='col-lg-7 text-right'></div></div></div>")
 					current_block = data[index].block_hash;
 				}
@@ -45,9 +46,10 @@ $(document).ready(function(){
 
 				if (data[index].payouts != null){
 					for (payout_index = data[index].payouts.length - 1; payout_index >= 0; --payout_index) {
-						$("#tx_po_"+data[index].txid).append("<b>Payout</b> (ID "+ data[index].payouts[payout_index].payout_id+ ")<div class='row'><div class='col-md-1'></div><div class='col-md-4 '>"+ data[index].payouts[payout_index].address+ " </div><div class='col-md-2 '>Player ID:"+ data[index].payouts[payout_index].player_id+ "  </div><div class='col-md-1 '>Amount:"+ (data[index].payouts[payout_index].amount/100000000)+ "</div></div>");
+						$("#tx_po_"+data[index].txid).append("<b>Payout</b> (ID "+ data[index].payouts[payout_index].payout_id+ ")<div class='row'><div class='col-md-4 '>"+ data[index].payouts[payout_index].address+ " </div><div class='col-md-2 '>Player ID:"+ data[index].payouts[payout_index].player_id+ "  </div><div class='col-md-1 text-left'>Amount:"+ (data[index].payouts[payout_index].amount/100000000)+ "</div></div>");
 						}
 				}
+			
 
 			}		 	
 
