@@ -195,7 +195,7 @@ $("#droid_name").change(function( event ) {
 		  	    $("#droid_health").html(data[index].health_current + "/" + data[0].health_max);
 		  	    
 		  	    if (data[index].attack_address == null) {
-		  	    	$("#droid_attack_address").html("<i>Your attack address has not be assigned. You need to complete you first wallet syncronization process first.");
+		  	    	$("#droid_attack_address").html("<i>Attack address has not be assigned. This droid has not been synced with a wallet.");
 		  	    } else {
 		  	    	$("#droid_attack_address").html(data[index].attack_address + "<br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+data[index].attack_address+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''>")
 		  	    }
