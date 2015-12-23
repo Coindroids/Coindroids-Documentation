@@ -17,37 +17,29 @@ Coindroids is a battle game where your objective is to attack and destroy other 
 Coindroids is a strategy game that is played with cryptocurrency transactions. When you kill another droid, you win the contents of their purse.
 For example, if your attack spent 3 tokens to kill a robot with 5 tokens in his purse, you just earned a profit of 2 tokens! Your profitability depends entirely on the strategy you use to choose which droid to attack, how much to spend on your attack, and whether or not you should attack now or wait for another block that has a better 'environment' ([FOCUS and ENERGY](doc_game_specification_droids.html#dynamic-attributes)) for your robot.
 
-### Token
 
-A "token" within Coindroids is a base amount of coins that are required to do something. Whenever you send any transaction, make sure it is in multiples of the token amount for that cryptocurrency. 
+### Round
 
-Here is a list of token sizes within the Coindroids system:
-
-| Currency | Netcode | Token Size |
-| ---- | ---- | ---- |
-| Bitcoin Testnet | XTN | 0.0001 XTN |
-| DEFCOIN | DFC | 0.01 DFC |
-| Bitcoin Mainnet | BTC | 0.0001 BTC |
-
-Any additional coins over a token amount are considered a donation to help keep the Coindroids servers running. (i.e. with XTN that has a token size of 0.0001, if you send 0.00045678 XTN, only 0.0004 XTN will count as 4 tokens towards your action, while the remaining 0.00005678 XTN will be considered a donation)
-
-You can retrieve a list of these token sizes programmatically by analyzing the [Currency](doc_object_currency.html) view of the API.
-
-### Block
-
-
-A "block" within Coindroids is one unit of time as measured by the blockchain. Actions (i.e. transactions) that occur within the same block can be considered to all be occurring simultaneously. If two people attack and kill the same target, the target's purse is split proportionally amongst all attackers.
+A round within Coindroids is one unit of time as measured by a block in the blockchain. Actions (i.e. transactions) that occur within the same block all "occur" simultaneously. If two people attack and kill the same target, the target's purse is split proportionally amongst all attackers.
 
 ## Attacking Other Players
 
-The hardest part about Coindroids is choosing who to attack this block - if anyone. Details of every droid in the Coindroids universe is available from the Coindroids website or the API. You will want to look at the `health_current` of the droid to get an idea of how much damage you need to deal to kill them, as well as their `purse_current` to get an idea of how much would be won when they die. Your damage will be multiplied by bonuses found on any item you have equipped, and divided by bonuses found on any item your target has equipped. Every block has a unique environment as well (you can think of this as "it's snowing" or "it's sunny") that may make it harder/easier for you to attack, or easier/harder for your target to defend. Details about these calculations can be found in the [Attack](doc_game_specification_attack_process.html#Attack) section of this documentation.
+The hardest part about Coindroids is choosing who to attack this round - if anyone. Details of every droid in the Coindroids universe is available from the Coindroids website or the API. You will want to look at the `health_current` of the droid to get an idea of how much damage you need to deal to kill them, as well as their `purse_current` to get an idea of how much would be won when they die.
+
+### Minimum Attack Size
+
+There is a minimum attack size of 0.0001 BTC. All attacks smaller than this are considered "dust" and are accepted as donations and will not be returned.
+
+### Attack Bonuses
+
+Your damage will be multiplied by bonuses found on any item you have equipped, and divided by bonuses found on any item your target has equipped. Your droid is affected by two environment variables: `focus` and `energy` which alter your weapons' damage and the strength of your defensive armaments. Details about these calculations can be found in the [Attack](doc_game_specification_attack_process.html#Attack) section of this documentation.
 
 
 ## Buying Items
 
-If you need to become a more effective killing machine, you can buy items to augment your abilities. New weapons can increase your attacks with a multiplier (so you can deal the same damage by sending 2 tokens instead of sending 4!), or increase your droid's defensive abilities with a multiplier (so enemies need to send more coins to deal the same amount of damage against you). Other items can give your droid a counter-attack ability (you damage whoever attacks you!), as well as other neat duration effects that last multiple blocks (i.e. heal 50 hitpoints per block for the next 3 blocks).
+If you need to become a more effective killing machine, you can buy items to augment your abilities. New weapons can increase your attacks with a multiplier (so you can deal the same damage by sending 0.0002 instead of sending 0.0004!), or increase your droid's defensive abilities with a multiplier (so enemies need to send more coins to deal the same amount of damage against you). Other items can give your droid a counter-attack ability that damages everyone who attacks you, as well as other neat duration effects that last multiple blocks (i.e. heal 50 hitpoints per block for the next 3 blocks, or give me 20% chance to evade attacks for the next 5 blocks).
 
-In Coindroids, you buy items by sending the required number of tokens to an item’s address. You can find item addresses by visiting the Unlocks page on the site, or querying the [Item](doc_object_item.html) view on the API.
+In Coindroids, you buy items by sending the purchase price to an item’s purchase address. You can find the purchase addresses for all items by visiting the Unlocks page on the site, or querying the [Item](doc_object_item.html) view on the API.
 
 For information about how Items work, take a look at the [Item](doc_game_specification_items.html) documentation within the Core Rules section.
 
