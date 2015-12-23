@@ -85,7 +85,7 @@ $(document).ready(function(){
                     var droidID = data[index].id;
 					$("#droid_list").prepend("<div id='droid_"+droidID+"'><div class='row'><div class='col-lg-2' ><b>"+data[index].name+"</b> id: " + data[index].id + ", <i>Level "+data[index].level+" </i></div><div class='col-lg-6 text-right' ></div></div></div>")
 
-					$("#droid_"+droidID).append("<div class='row'><div class='col-lg-4'>Purse "+create_progress_bar((data[index].purse_current/10000),(data[index].purse_max/10000))+"</div><div class='col-lg-4 '>Health "+create_progress_bar(data[index].health_current,data[index].health_max)+"</div></div>");
+					$("#droid_"+droidID).append("<div class='row'><div class='col-lg-4'>Purse "+create_progress_bar((data[index].purse_current/100),(data[index].purse_max/100))+" bits</div><div class='col-lg-4 '>Health "+create_progress_bar(data[index].health_current,data[index].health_max)+"</div></div>");
 
                     var focus_name = "focusChart_" + droidID.toString();
                     var energy_name = "energyChart_" + droidID.toString();
