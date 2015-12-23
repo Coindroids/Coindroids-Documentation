@@ -162,13 +162,13 @@ When creating a new droid, you have the option to chosoe from three different ba
 	</div>
 
     <div class="col-md-2 text-center">
-    100 bits (i.e. 0.0001 XTN)
+    <span title="100 bits = 10000 satoshis = 0.000001 XTN">100 bits</span>
     </div>
     <div class="col-md-2 text-center">
-    100 bits (i.e. 0.0001 XTN)
+    <span title="100 bits = 10000 satoshis = 0.000001 XTN">100 bits</span>
     </div>
     <div class="col-md-2 text-center">
-    100 bits (i.e. 0.0001 XTN)
+    <span title="100 bits = 10000 satoshis = 0.000001 XTN">100 bits</span>
     </div>
   </div>
   
@@ -180,13 +180,13 @@ When creating a new droid, you have the option to chosoe from three different ba
 	</div>
 
     <div class="col-md-2 text-center">
-    100
+    <span title="100 bits = 10000 satoshis = 0.000001 XTN">100 bits</span>
     </div>
     <div class="col-md-2 text-center">
-    100
+    <span title="100 bits = 10000 satoshis = 0.000001 XTN">100 bits</span>
     </div>
     <div class="col-md-2 text-center">
-    100
+    <span title="100 bits = 10000 satoshis = 0.000001 XTN">100 bits</span>
     </div>
   </div>
   
