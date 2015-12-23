@@ -28,7 +28,16 @@ The hardest part about Coindroids is choosing who to attack this round - if anyo
 
 ### Minimum Attack Size
 
-There is a minimum attack size of 0.0001 BTC. All attacks smaller than this are considered "dust" and are accepted as donations and will not be returned.
+There is a minimum attack size that is dependant on the currency you're playing with. The minimums are listed in the below chart:
+
+| Currency Code | Currency        | Minimum                                        |
+|---------------|-----------------|------------------------------------------------|
+| XTN           | Bitcoin Testnet | 100 bits (i.e. 10000 satoshis or 0.0001 XTN)   |
+| DFC           | DEFCOIN         | 10000 bits (i.e. 1000000 satoshis or 0.01 DFC) |
+| BTC           | Bitcoin Mainnet | 100 bits (i.e. 10000 satoshis or 0.0001 BTC)   |
+
+All attacks smaller than these minimums are considered "dust" and are accepted as donations and will not be returned.
+
 
 ### Attack Bonuses
 
