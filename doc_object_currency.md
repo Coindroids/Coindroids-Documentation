@@ -2,7 +2,7 @@
 title: Currency
 tags: [objects]
 keywords: json, droid, object, patch, get
-last_updated: November 21, 2015
+last_updated: December 23, 2015
 summary: "Interacting with the avialable currencies through the REST API"
 
 ---
@@ -15,12 +15,13 @@ GET https://api.coindroids.com/currency
 
 ## Response Details
 
-|Name|Data Type|Description|
----|---|---|
-| id | Whole Number| The ID of the Currency|
-| name | String| The science-given name of the Currency |
-|token_size| Whole Number | |
-|regsitration_fee| Whole Number | The token amout to register a droid under this currency|
+|Name             |Data Type     |Description            |
+------------------|--------------|-----------------------|
+| id              | Whole Number | The ID of the Currency|
+| name            | String       | The science-given name of the Currency |
+|min_attack_size  | Whole Number | The minimum number of satoshis required for an attack. Smaller amounts are considered donations. |
+|max_attack_size  | Whole Number | The maximum number of satoshis that will be recognized as a valid attack. Larger attacks will be returned. |
+|registration_fee | Whole Number | The number of satoshis required to register a droid under this currency |
 |satoshis_per_coin| Whole Number | The amount of satoshis in one coin|
 
 
@@ -56,8 +57,9 @@ Content-Location: /currency
     "name": "Bitcoin Testnet",
     "starting_height": 579230,
     "netcode": "XTN",
-    "token_size": 10000,
-    "registration_fee": 1,
+    "min_attack_size": 10000,
+    "max_attack_size": 314159265,
+    "registration_fee": 10000,
     "satoshis_per_coin": 100000000,
     "last_ingested": null,
     "last_processed": null
@@ -67,8 +69,9 @@ Content-Location: /currency
     "name": "Defcoin Mainnet",
     "starting_height": 332812,
     "netcode": "DFC",
-    "token_size": 1000000,
-    "registration_fee": 1,
+    "min_attack_size": 10000,
+    "max_attack_size": 3141592653,
+    "registration_fee": 1000000,
     "satoshis_per_coin": 100000000,
     "last_ingested": null,
     "last_processed": null
@@ -78,8 +81,9 @@ Content-Location: /currency
     "name": "Bitcoin Mainnet",
     "starting_height": 377312,
     "netcode": "BTC",
-    "token_size": 10000,
-    "registration_fee": 1,
+    "min_attack_size": 10000,
+    "max_attack_size": 314159265,
+    "registration_fee": 100000,
     "satoshis_per_coin": 100000000,
     "last_ingested": null,
     "last_processed": null
