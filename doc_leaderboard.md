@@ -138,7 +138,7 @@ $(document).ready(function(){
 
 function create_progress_bar(now, max){
 	
-	return '<div class="progress"><div class="progress-bar" role="progressbar"  style=" color: black; width: ' + Math.round((now/max)*100) + '%;" ><span style="min-width: 100px; overflow:visible; ">' + now+'/'+max +' bits</span></div></div>';
+	return '<div class="progress"><div class="progress-bar" role="progressbar"  style=" color: black; width: ' + Math.round((now/max)*100) + '%;" ><span style="min-width: 100px; overflow:visible; ">' + now.toLocaleString('en')+'/'+max.toLocaleString('en') +' bits</span></div></div>';
 
 }
 
