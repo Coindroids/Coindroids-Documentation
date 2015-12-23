@@ -118,7 +118,7 @@ if (localStorage.Username == null)
 		
 		 <div>Health: <span id='droid_health'></span></div>
 		
-		 <div>Purse: <span id='droid_purse'></span></div>
+		 <div>Purse: <span id='droid_purse'  title="100 bits = 10000 satoshis = 0.0001 XTN"></span></div>
 	 </div>
 	 <div >
 		<h3>Attack Address </h3>
