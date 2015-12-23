@@ -162,13 +162,13 @@ When creating a new droid, you have the option to chosoe from three different ba
 	</div>
 
     <div class="col-md-2 text-center">
-    0.0001 TBTC 
+    100 bits (i.e. 0.0001 XTN)
     </div>
     <div class="col-md-2 text-center">
-    0.0001 TBTC
+    100 bits (i.e. 0.0001 XTN)
     </div>
     <div class="col-md-2 text-center">
-    0.0001 TBTC
+    100 bits (i.e. 0.0001 XTN)
     </div>
   </div>
   
@@ -299,7 +299,7 @@ function get_reg_qr(droid_id){
 		})
 	.done(function(data, textStatus, jqXHR) {
 	    var qrtext = encodeURIComponent("bitcoin://" + data[0].get_droid_registration_address + "?amount=0.0001&message=Droid%20Registration");
-	    $("#creation-section").append("<p>Your registration address is: " + data[0].get_droid_registration_address + "<br>Sending 0.0001 to this address will sync your wallet to the Coindroids sytstem, allowing it to monitor for actions such as attacks and item purchases. Your droid will not be active until this is step is complete. <br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+qrtext+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
+	    $("#creation-section").append("<p>Your registration address is: " + data[0].get_droid_registration_address + "<br>Sending 100 bits to this address will sync your wallet to the Coindroids system, allowing it to monitor for actions such as attacks and item purchases. Your droid will not be active until this step is complete. <br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+qrtext+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''></p>");
 	
 		console.log("HTTP Request Succeeded: " + jqXHR.status);
 	    console.log(data);
