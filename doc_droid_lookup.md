@@ -58,7 +58,7 @@ if (localStorage.Username == null)
 				$("#droid_class").html(data[index].droid_class);
 				$("#droid_experience").html(data[index].experience);
 				$("#droid_level").html(data[index].level);
-				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " TBTC");
+				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " bits");
 		  	    $("#droid_health").html(data[index].health_current + "/" + data[0].health_max);
 		  	    
 		  	    if (data[index].attack_address == null) {
@@ -191,7 +191,7 @@ $("#droid_name").change(function( event ) {
 				$("#droid_class").html(data[index].droid_class);
 				$("#droid_experience").html(data[index].experience);
 				$("#droid_level").html(data[index].level);
-				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " TBTC");
+				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " bits");
 		  	    $("#droid_health").html(data[index].health_current + "/" + data[0].health_max);
 		  	    
 		  	    if (data[index].attack_address == null) {
