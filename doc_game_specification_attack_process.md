@@ -34,8 +34,8 @@ MathJax.Hub.Queue(function() {
 The amount transferred to the Attack Address is split up and applied to the relevant purses across the system. 
 
 * 75% into the purse of the defending droid
-* 20% as spilled ammunition 
-* 5% as service fees
+* 24.5% as spilled ammunition 
+* 0.5% as service fees
 
 _Purse Check: If any of the updated purses now have more than their Purse Maximum, the difference is immediately paid out to those players and their Purse is deducted to reflect that._  
 
