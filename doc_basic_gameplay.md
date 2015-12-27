@@ -1,7 +1,7 @@
 ---
 title: Basic Gameplay
 tags: [rules, help]
-keywords: help, play, what, how, token, attack 
+keywords: help, play, what, how, attack 
 last_updated: December 9, 2015
 summary: "An intro to Coindroids gameplay"
 
@@ -15,7 +15,7 @@ Coindroids is a battle game where your objective is to attack and destroy other 
 ## Why would I spend money to attack a virtual robot?
 
 Coindroids is a strategy game that is played with cryptocurrency transactions. When you kill another droid, you win the contents of their purse.
-For example, if your attack spent 3 tokens to kill a robot with 5 tokens in his purse, you just earned a profit of 2 tokens! Your profitability depends entirely on the strategy you use to choose which droid to attack, how much to spend on your attack, and whether or not you should attack now or wait for another block that has a better 'environment' ([FOCUS and ENERGY](doc_game_specification_droids.html#dynamic-attributes)) for your robot.
+For example, if your attack spent 300 bits to kill a robot with 500 bits in his purse, you just earned a profit of 200 bits! Your profitability depends entirely on the strategy you use to choose which droid to attack, how much to spend on your attack, and whether or not you should attack now or wait for another block that has a better 'environment' ([FOCUS and ENERGY](doc_game_specification_droids.html#dynamic-attributes)) for your robot.
 
 
 ### Round
@@ -58,7 +58,7 @@ Droids have a number of attributes but these are the two key to understand.
 
 ### Health
 
-* Level 1 players have a maximum of 100 health points
+* Level 1 players have a maximum of 2,000,000 health points
 
 * This limit increases as you level up.
 
@@ -70,13 +70,13 @@ Droids have a number of attributes but these are the two key to understand.
 
 ### Purse
 
-* Level 1 players can hold up to 100 tokens in their purse
+* Level 1 players can hold up to 10000 bits (i.e. 1,000,000 satoshis or 0.01 BTC) in their purse
 
 * This limit increases as you level up.
 
-* Players start the game with 0 tokens in their purse
+* Players start the game with 0 satoshis in their purse
 
-* Tokens are added to your purse whenever you or your enemies buy items or attack each other
+* Satoshis are added to your purse whenever you or your enemies buy items or attack each other
 
-* When your purse is full, all tokens that can’t fit will be sent to your payout address immediately. This means that if your droid's purse is full, everyone who attacks your droid will be giving money to you! Stay alive to keep your purse filled and your profits flowing!
+* When your purse is full, all satoshis that can’t fit will be sent to your payout address immediately. This means that if your droid's purse is full, everyone who attacks your droid will be giving money to you! Stay alive to keep your purse filled and your profits flowing!
 
