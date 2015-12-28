@@ -198,7 +198,8 @@ $("#droid_name").change(function( event ) {
 		  	    if (data[index].attack_address == null) {
 		  	    	$("#droid_attack_address").html("<i>Attack address has not be assigned. This droid has not been synced with a wallet.");
 		  	    } else {
-		  	    	$("#droid_attack_address").html(data[index].attack_address + "<br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+data[index].attack_address+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''>")
+		  	    	var qrtext = encodeURIComponent("bitcoin://" + data[index].attack_address + "?message=Attack " + data[index].name);
+		  	    	$("#droid_attack_address").html(data[index].attack_address + "<br><img src='https://chart.googleapis.com/chart?cht=qr&chl="+qrtext+"&chs=180x180&choe=UTF-8&chld=L|2' alt=''>")
 		  	    }
 		  	    
 		  	    $("#droid_build").empty();
