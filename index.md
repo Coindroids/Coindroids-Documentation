@@ -15,24 +15,14 @@ Coindroids is a robot based battle game played within a blockchain. If you're ne
 
 ## Development Status
 
-The Coindroids system is currently in *Alpha Testing*. We anticipate a move to beta by January 1st, 2016. 
+The Coindroids system is currently in *Alpha Testing*. We anticipate a move to beta by January 15st, 2016. 
 
-If you are a highly technical user and would like to assist with the Alpha, please join us in #coindroids on freenode.  
+If you are a highly technical user and would like to assist with the Alpha, please get in touch with us via @coindroids on twitter.   
 
 ## Currencies
 
-During our alpha testing, the following currencies are available:
+During our alpha testing, only Bitcoin Testnet is available. 
 
-### Defcoin
+We suggest the use of [CoPay](https://copay.io), but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. 
 
-
-### Bitcoin Testnet
-
-
-http://testnetwallet.com/wallet#
-
-
-## Available at Launch
- 
-* Bitcoin 
 
