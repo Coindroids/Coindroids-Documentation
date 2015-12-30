@@ -111,19 +111,21 @@ Programmatically (and pythonically...), this looks like the following:
 ```
 import hashlib
 
-def calculate_energy(previous_block_hash, droid_id):
-    energy_input = previous_block_hash + 'ENERGY' + str(droid_id)
-    energy_hash = hashlib.sha256(energy_input).hexdigest()
-    first_byte = int(energy_hash[0:2], 16)
-    energy_value = first_byte / 255.0
-    
-    return energy_value
-
 def calculate_focus(previous_block_hash, droid_id):
     focus_input = previous_block_hash + 'FOCUS' + str(droid_id)
     focus_hash = hashlib.sha256(focus_input).hexdigest()
     first_byte = int(focus_hash[0:2], 16)
     focus_value = first_byte / 255.0
+    focus_value = round(focus_value, 4)
+
+def calculate_energy(previous_block_hash, droid_id):
+    energy_input = previous_block_hash + 'ENERGY' + str(droid_id)
+    energy_hash = hashlib.sha256(energy_input).hexdigest()
+    first_byte = int(energy_hash[0:2], 16)
+    energy_value = first_byte / 255.0
+    energy_value = round(energy_value, 4)
+    
+    return energy_value
     
     return focus_value
 ```
