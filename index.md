@@ -15,7 +15,7 @@ Coindroids is a robot based battle game played within a blockchain. If you're ne
 
 ## Development Status
 
-The Coindroids system is currently in *Alpha Testing*. We anticipate a move to beta by January 15st, 2016. 
+The Coindroids system is currently in *Alpha Testing*. We anticipate a move to beta by January 15th, 2016. 
 
 If you are a highly technical user and would like to assist with the Alpha, please get in touch with us via @coindroids on twitter.   
 
