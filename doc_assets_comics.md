@@ -7,7 +7,7 @@ summary: "A description of comic storage specifications"
 
 ---
 
-# Loading Assets
+## Loading Assets
 
 All static content is available via the static.coindroids.com domain, accessible over HTTP and HTTPS protocols.  
 

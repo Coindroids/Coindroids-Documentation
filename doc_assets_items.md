@@ -9,7 +9,7 @@ summary: "A description of item storage specifications and a list of items avail
  
  
  
-# Loading Assets
+## Loading Assets
 
 All static content is available via the static.coindroids.com domain, accessible over HTTP and HTTPS protocols.  
 
@@ -24,11 +24,11 @@ Images can be loaded through the following url formats:
 
 _Where Item Type and Item Image can be found in the /Item endpoint_ 
 
-## Supported Item Types
+### Supported Item Types
 
 * Model
 
-## Unsupported Item Types
+### Unsupported Item Types
 
 * Secondary Weapon
 * Primary Weapon
