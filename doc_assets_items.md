@@ -13,7 +13,7 @@ summary: "A description of item storage specifications and a list of items avail
 
 All static content is available via the static.coindroids.com domain, accessible over HTTP and HTTPS protocols.  
 
-_Assets are still in development. Designs and the format of their retrieval can change at any time._
+_Note: Assets are still in development. Designs and the format of their retrieval can change at any time._
 
 Images can be loaded through the following url formats:
 
