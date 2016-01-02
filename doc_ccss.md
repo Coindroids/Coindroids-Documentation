@@ -32,7 +32,7 @@ Our current security grade is *Uncertified*, our target is *Level I*. Our rebutt
     <th id='header_aspect'>Aspect</th>
     <th id='header_component'>Component</th>
     <th id='header_uncertifiable'>Uncertified</th>
-    <th id='header_level_i'>Level I</th>
+    <th id='header_level_i'>Level</th>
     <th id='header_level_ii'>Level II</th>
     <th id='header_level_iii'>Level III</th>
   </tr>
