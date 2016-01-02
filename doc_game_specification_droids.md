@@ -113,21 +113,21 @@ import hashlib
 
 def calculate_focus(previous_block_hash, droid_id):
     focus_input = previous_block_hash + 'FOCUS' + str(droid_id)
-    focus_hash = hashlib.sha256(focus_input).hexdigest()
+    focus_hash = hashlib.sha256(focus_input).hexdigest()   // This produces a hash with lower-case letters
     first_byte = int(focus_hash[0:2], 16)
     focus_value = first_byte / 255.0
     focus_value = round(focus_value, 4)
+    
+    return focus_value
 
 def calculate_energy(previous_block_hash, droid_id):
     energy_input = previous_block_hash + 'ENERGY' + str(droid_id)
-    energy_hash = hashlib.sha256(energy_input).hexdigest()
+    energy_hash = hashlib.sha256(energy_input).hexdigest()   // This produces a hash with lower-case letters
     first_byte = int(energy_hash[0:2], 16)
     energy_value = first_byte / 255.0
     energy_value = round(energy_value, 4)
     
     return energy_value
-    
-    return focus_value
 ```
 
 ## Leveling
