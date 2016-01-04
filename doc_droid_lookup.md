@@ -81,7 +81,7 @@ if (localStorage.Username == null)
 		  		}
 	
 	
-		 	
+		  		lookupStats(data[index].id);
 
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
@@ -98,6 +98,53 @@ if (localStorage.Username == null)
 	}
 
 });
+
+
+function lookupStats(droid_id)
+{
+
+			jQuery.ajax({
+			    url: "https://api.coindroids.com/droid_stats?id=eq."+droid_id,
+			    type: "GET",
+			    processData: false,
+			       contentType: 'application/json',
+				})
+			.done(function(data, textStatus, jqXHR) {
+				
+    
+					$("#currency_in").html(formatNumber(data[0].currency_in/100) + '&nbsp;bits' );
+					$("#currency_out").html(formatNumber(data[0].currency_out/100) + '&nbsp;bits' );
+					$("#highest_payout").html(formatNumber(data[0].highest_payout/100) + '&nbsp;bits' );
+					$("#attacks").html(data[0].attacks);
+					$("#deaths").html(data[0].deaths);
+					$("#targeted").html(data[0].targeted);					
+					$("#defensive_evasions").html(data[0].defensive_evasions);
+					$("#offensive_evasions").html(data[0].offensive_evasions);
+					
+					$("#total_damage_performed").html(formatNumber(data[0].total_damage_performed.toFixed(2)));
+					$("#total_damage_defended").html(formatNumber(data[0].total_damage_defended.toFixed(2)));
+					
+					$("#average_damage_performed").html(formatNumber(data[0].average_damage_performed.toFixed(2)));
+
+					$("#most_targeted").html(data[0].most_targeted);
+					$("#worst_enemy").html(data[0].worst_enemy);
+										
+			    console.log("HTTP Request Succeeded: " + jqXHR.status);
+			    console.log(data);
+			})
+			.fail(function(jqXHR, textStatus, errorThrown) {
+			    console.log("HTTP Request Failed");
+			})
+			.always(function() {
+			       $("#submit-lookup").show();
+				   $("#submit-lookup-hidden").hide();
+			});
+	
+}
+
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
 
 
 
@@ -170,6 +217,42 @@ if (localStorage.Username == null)
  </div>
 </div>
 
+<br \>
+
+
+<div class="row">
+          <div class="col-md-4"><span class='big_number' id='currency_in'></span><div class="kbCaption">Currency In</div></div>
+          <div class="col-md-4"><span class='big_number' id='currency_out'></span><div class="kbCaption">Currency Out</a></div></div>
+          <div class="col-md-4"><span class='big_number' id='highest_payout'></span><div class="kbCaption">Highest Payout</div></a></div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+          <div class="col-md-4"><span class='big_number' id='attacks'></span><div class="kbCaption">Attacks</div></a></div>
+          <div class="col-md-4"><span class='big_number' id='targeted'></span><div class="kbCaption">Targeted</div></a></div>
+          <div class="col-md-4"><span class='big_number' id='deaths'></span><div class="kbCaption">Deaths</div></a></div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+          <div class="col-md-4"><span class='big_number' id='average_damage_performed'></span><div class="kbCaption">Average Damage Performed</div></a></div>
+          <div class="col-md-4"><span class='big_number' id='total_damage_performed'></span><div class="kbCaption">Total Damage Performed</div></a></div>
+          <div class="col-md-4"><span class='big_number' id='total_damage_defended'></span><div class="kbCaption">Total Damage Defended</div></a></div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+          <div class="col-md-4"><span class='big_number' id='offensive_evasions'></span><div class="kbCaption">Offensive Evasions</div></a></div>
+          <div class="col-md-4"><span class='big_number' id='defensive_evasions'></span><div class="kbCaption">Defensive Evasions</div></a></div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+          <div class="col-md-4"><span class='big_number' id='most_targeted'></span><div class="kbCaption">Most Targeted</div></a></div>
+          <div class="col-md-4"><span class='big_number' id='worst_enemy'></span><div class="kbCaption">Worst Enemy</div></a></div>
+</div>
+
+
+<br \>
+
+
+
 <br />
 <hr />
 
@@ -215,8 +298,8 @@ $("#droid_name").change(function( event ) {
 		  		} else {
 		  		$("#droid_inventory").append("<th> Inventory is empty. <td><td><td><td><td><td><td> ");
 		  		}
-	
-		 	get_reg_qr(data[index].id);
+
+		 	lookupStats(data[index].id);
 		    
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
