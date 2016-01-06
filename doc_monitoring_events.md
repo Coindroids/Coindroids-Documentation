@@ -40,23 +40,61 @@ $(document).ready(function(){
 					current_block = data[index].block_hash;
 				}
  
-				$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-2'>"+ data[index].droid_name + " ("+ data[index].player_username+")</div><div class='col-md-1'>"+ data[index].action_type + "</div><div class='col-md-2'>"+ data[index].value/100 + "bits</div><div class='col-md-2'><a href='https://www.blocktrail.com/tBTC/tx/" + data[index].txid +"'>" + data[index].txid.substring(1,10) +" ("+data[index].tx_vout+ ")</i></a></div><div class='col-md-1 text-left'></div></div><div id='tx_oc_" + data[index].txid +"' class='container'></div><div id='tx_po_" + data[index].txid +"' class='container'></div>");
+				// [Amount] [TXID, index]
+				// [Droid 1] has attacked [Droid 2], performing [Net Damage]. [Droid 2] was destroyed in the attack.
+				// [Droid 1] has attacked [Droid 2], but the attack was evaded.
+				// [Droid X] Leveled up to [new level]
+				
+			
+				
+				oc =  processOutcomes(data[index].outcomes);
+				
+				if (data[index].action_type == 'Attack') {
+						
+						if (oc[data[index].target_id]['Droid destroyed'] == true) {
+							var destroyed_text = data[index].target_name + ' was destroyed in the attack.';
+						} else {
+							var destroyed_text = '';
+						}
+				
+						$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has attacked "+ data[index].target_name + " performing "+oc[data[index].target_id]['Net damage taken']+" of damage. "+destroyed_text+"</div></div>");
+				} 
+				
+				
+				if (data[index].action_type == 'Item Purchase') {
+				
+						$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has bought item: " +data[index].target_id+ "</div></div>");
+				} 				
+				
+				if (data[index].action_type == 'Registration') {
+						
+				
+						$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has joined the fight!</div></div>");
+				} 
+				
+					$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-1'>"+ data[index].value/100 + "&nbsp;bits</div><div class='col-md-8'><a href='https://www.blocktrail.com/tBTC/tx/" + data[index].txid +"'>" + data[index].txid +" ("+data[index].tx_vout+ ")</i></a></div></div>");
+				
+				$("#"+data[index].block_hash).append("<div id='tx_po_" + data[index].txid + data[index].tx_vout+"' class='container'></div><div id='tx_po_" + data[index].txid +"' class='container'></div>");
+				
+								$("#"+data[index].block_hash).append("<div id='tx_oc_" + data[index].txid + data[index].tx_vout+"' class='container'></div><div id='tx_po_" + data[index].txid +"' class='container'></div>");
 
 			if (data[index].outcomes != null) {
 				for (outcome_index = data[index].outcomes.length - 1; outcome_index >= 0; --outcome_index) {
-					$("#tx_oc_"+data[index].txid).append("<div class='row'><div class='col-md-1'></div><div class='col-md-2 '>"+ data[index].outcomes[outcome_index].outcome_type+ " </div><div class='col-md-1 '>Droid ID:"+ data[index].outcomes[outcome_index].droid_id+ "  </div><div class='col-md-1 '>"+ data[index].outcomes[outcome_index].value_to+ "</div></div>");
+					$("#tx_oc_"+data[index].txid + data[index].tx_vout).append("<div class='row'><div class='col-md-1'></div><div class='col-md-3 '>"+ data[index].outcomes[outcome_index].outcome_type+ " </div><div class='col-md-1 '>Droid&nbsp;ID:"+ data[index].outcomes[outcome_index].droid_id+ "  </div><div class='col-md-1 '>"+ data[index].outcomes[outcome_index].value_to+ "</div></div>");
 
 				}
 			}
 
 				if (data[index].payouts != null){
 					for (payout_index = data[index].payouts.length - 1; payout_index >= 0; --payout_index) {
-						$("#tx_po_"+data[index].txid).append("<b>Payout</b> (ID "+ data[index].payouts[payout_index].payout_id+ ")<div class='row'><div class='col-md-4 '>"+ data[index].payouts[payout_index].address+ " </div><div class='col-md-2 '>Player ID:"+ data[index].payouts[payout_index].player_id+ "  </div><div class='col-md-1 text-left'>Amount:"+ (data[index].payouts[payout_index].amount/100)+ "bits</div></div>");
+						$("#tx_po_"+data[index].txid + data[index].tx_vout).append("<b>Payout</b> (ID "+ data[index].payouts[payout_index].payout_id+ ")<div class='row'><div class='col-md-4 '>"+ data[index].payouts[payout_index].address+ " </div><div class='col-md-2 '>Player ID:"+ data[index].payouts[payout_index].player_id+ "  </div><div class='col-md-1 text-left'>Amount:"+ (data[index].payouts[payout_index].amount/100)+ "bits</div></div>");
 						}
 				}
 			
 
+$("#"+data[index].block_hash).append("<div>&nbsp;<br \></div>");
 			}		 	
+
 
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
@@ -69,7 +107,28 @@ $(document).ready(function(){
 			   $("#submit-lookup-hidden").hide();
 		});
 		
-});		
+});
+
+function processOutcomes (outcomes) {
+	var oc = {};
+	var tmp = {};
+	if (outcomes != null) {
+		for (outcome_index = outcomes.length - 1; outcome_index >= 0; --outcome_index) {
+			if (oc[outcomes[outcome_index].droid_id] != null) {
+				tmp = oc[outcomes[outcome_index].droid_id];
+			}
+			if (outcomes[outcome_index].value_to != null) {
+				tmp[outcomes[outcome_index].outcome_type] = outcomes[outcome_index].value_to;
+				oc[outcomes[outcome_index].droid_id] = tmp;  
+			} else {
+				tmp[outcomes[outcome_index].outcome_type] = true;
+				oc[outcomes[outcome_index].droid_id] = tmp;
+			}
+		}
+	}
+	return oc;
+}
+		
 
 </script>
 
