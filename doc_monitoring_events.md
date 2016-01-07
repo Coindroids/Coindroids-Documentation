@@ -71,6 +71,12 @@ $(document).ready(function(){
 				
 						$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has joined the fight!</div></div>");
 				} 
+
+				if (data[index].action_type == 'Change') {
+						
+				
+						$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>Coindroids Settlement Transaction</div></div>");
+				} 
 				
 					$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-1'>"+ data[index].value/100 + "&nbsp;bits</div><div class='col-md-8'><a href='https://www.blocktrail.com/tBTC/tx/" + data[index].txid +"'>" + data[index].txid +" ("+data[index].tx_vout+ ")</i></a></div></div>");
 				
