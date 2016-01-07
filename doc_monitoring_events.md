@@ -50,14 +50,17 @@ $(document).ready(function(){
 				oc =  processOutcomes(data[index].outcomes);
 				
 				if (data[index].action_type == 'Attack') {
-						
-						if (oc[data[index].target_id]['Droid destroyed'] == true) {
-							var destroyed_text = data[index].target_name + ' was destroyed in the attack.';
+						if (data[index].droid_id != null) {
+							if (oc[data[index].target_id]['Droid destroyed'] == true) {
+								var destroyed_text = data[index].target_name + ' was destroyed in the attack.';
+							} else {
+								var destroyed_text = '';
+							}
+					
+							$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has attacked "+ data[index].target_name + " performing "+oc[data[index].target_id]['Net damage taken']+" of damage. "+destroyed_text+"</div></div>");
 						} else {
-							var destroyed_text = '';
+							$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>some droid has tried to attack "+ data[index].target_name + ", but they attacked anonymously. Refund performed</div></div>");
 						}
-				
-						$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has attacked "+ data[index].target_name + " performing "+oc[data[index].target_id]['Net damage taken']+" of damage. "+destroyed_text+"</div></div>");
 				} 
 				
 				
@@ -120,15 +123,23 @@ function processOutcomes (outcomes) {
 	var tmp = {};
 	if (outcomes != null) {
 		for (outcome_index = outcomes.length - 1; outcome_index >= 0; --outcome_index) {
-			if (oc[outcomes[outcome_index].droid_id] != null) {
-				tmp = oc[outcomes[outcome_index].droid_id];
+
+			if (outcomes[outcome_index].droid_id != null) {
+				droid_id = outcomes[outcome_index].droid_id;
+			} else {
+				droid_id ='Unregistered';
 			}
+			
+			if (oc[outcomes[outcome_index].droid_id] != null) {
+				tmp = oc[droid_id];
+			}
+			
 			if (outcomes[outcome_index].value_to != null) {
 				tmp[outcomes[outcome_index].outcome_type] = outcomes[outcome_index].value_to;
-				oc[outcomes[outcome_index].droid_id] = tmp;  
+				oc[droid_id] = tmp;  
 			} else {
 				tmp[outcomes[outcome_index].outcome_type] = true;
-				oc[outcomes[outcome_index].droid_id] = tmp;
+				oc[droid_id] = tmp;
 			}
 		}
 	}
