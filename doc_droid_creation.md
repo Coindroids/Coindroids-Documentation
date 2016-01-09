@@ -135,13 +135,13 @@ When creating a new droid, you have the option to chosoe from three different ba
     <div class="col-md-2">
 	</div>
     <div class="col-md-2 text-center">
-    	<img src='https://thumbnail.invisionapp.com/resize?location=https%3A%2F%2Finvisionapp%2Dcdn%2Ecom%2Fstorage%2Einvisionapp%2Ecom%2Fboards%2Ffiles%2F37703702%2Epng%3Fx%2Damz%2Dmeta%2Dck%3D3a96b0ca1cac7b356e364a74c78c74fc%26x%2Damz%2Dmeta%2Div%3D1%26AWSAccessKeyId%3DAKIAJFUMDU3L6GTLUDYA%26Expires%3D1451624400%26Signature%3Dw%252Be9e47WIGcedSmaZhifLDwxXNs%253D&width=150' />
+    	<img src='https://static.coindroids.com/Item/Model/full/BaseScout.jpg' width='150px'/>
 	</div>
     <div class="col-md-2 text-center">
-    <img src='https://thumbnail.invisionapp.com/resize?location=https%3A%2F%2Finvisionapp%2Dcdn%2Ecom%2Fstorage%2Einvisionapp%2Ecom%2Fboards%2Ffiles%2F37599865%2Epng%3Fx%2Damz%2Dmeta%2Dck%3D3a96b0ca1cac7b356e364a74c78c74fc%26x%2Damz%2Dmeta%2Div%3D1%26AWSAccessKeyId%3DAKIAJFUMDU3L6GTLUDYA%26Expires%3D1451624400%26Signature%3DZIQwaKhaUVRNXTcInvgj6YCcj4k%253D&width=150' style='opacity:.1;'/>
+    <img src='https://static.coindroids.com/Item/Model/full/BaseScout.jpg' width='150px' style='opacity:.1;'/>
     </div>
     <div class="col-md-2 text-center">
-    	<img src='https://thumbnail.invisionapp.com/resize?location=https%3A%2F%2Finvisionapp%2Dcdn%2Ecom%2Fstorage%2Einvisionapp%2Ecom%2Fboards%2Ffiles%2F37599865%2Epng%3Fx%2Damz%2Dmeta%2Dck%3D3a96b0ca1cac7b356e364a74c78c74fc%26x%2Damz%2Dmeta%2Div%3D1%26AWSAccessKeyId%3DAKIAJFUMDU3L6GTLUDYA%26Expires%3D1451624400%26Signature%3DZIQwaKhaUVRNXTcInvgj6YCcj4k%253D&width=150' />
+    	<img src='https://static.coindroids.com/Item/Model/full/BaseAssault.jpg' width='150px' />
     </div>
   </div>
   
