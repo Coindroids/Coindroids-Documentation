@@ -146,6 +146,7 @@ if (localStorage.Username == null)
 			
 			  index = 0;
 				$("#droid_class").html(data[index].droid_class);
+				$("#droid_image").html("<img src='https://static.coindroids.com/Item/Model/full/" + data[index].droid_model_image + ".jpg' width='150px'/>");
 				$("#droid_experience").html(data[index].experience);
 				$("#droid_level").html(data[index].level);
 				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " bits");
@@ -251,11 +252,13 @@ function get_reg_qr(droid_id){
 <div class="container"  id='droid_details_1'>
 
  <div class="row">
+			
  	<div >
 		 <select id='droid_name' style='text-transform:capitalize; font: large;' class='form-control-lg'></select>
 		
+
+	
 		 <div>Class: <span id='droid_class'></span></div>
-		
 		 
 		 <div>Level: <span id='droid_level'></span></div>
 		 <div>Experience: <span id='droid_experience'></span></div>
@@ -264,11 +267,13 @@ function get_reg_qr(droid_id){
 		
 		 <div>Purse: <span id='droid_purse'  title="100 bits = 10000 satoshis = 0.0001 XTN"></span></div>
 	 </div>
+
 	 <div >
 		<h3>Attack Address - What your enemies use to attack you</h3>
 		<span id='droid_attack_address'></span>
 		<br>This address is very public. Attacks are a good thing!	 	
 	 </div>	
+
 	 <div >
 	 	<h3>Wallet Sync Address - What you use to add another wallet address</h3>
 		<span id='droid_wallet_sync'></span>
@@ -281,8 +286,11 @@ function get_reg_qr(droid_id){
 		<p>To resolve this situation, you have two options:
 		<ol><li>Send 100 bits (10000 satoshis) to your droid's Wallet Sync Address (above).</li>
 		<li>Send all of your funds to one of your old addresses that Coindroids already recognizes (primary_ammunition_clip or additional_ammunition_clips)</li></ol>Coindroids will again be able to recognize your actions.</p>
+	
 	 </div>
   <div>
+  <div id='droid_image' class="col-md-4 text-center"></div>
+
   
 </div>
 <div class="container" id='droid_details_2'>
@@ -378,6 +386,8 @@ $("#droid_name").change(function( event ) {
 			
 			  index = 0;
 				$("#droid_class").html(data[index].droid_class);
+				
+				$("#droid_image").html("<img src='https://static.coindroids.com/Item/Model/full/" + data[index].droid_model_image + ".jpg' width='150px'/>");
 				$("#droid_experience").html(data[index].experience);
 				$("#droid_level").html(data[index].level);
 				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " bits");

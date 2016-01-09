@@ -56,6 +56,8 @@ if (localStorage.Username == null)
 			
 			  index = 0;
 				$("#droid_class").html(data[index].droid_class);
+				
+				$("#droid_image").html("<img src='https://static.coindroids.com/Item/Model/full/" + data[index].droid_model_image + ".jpg' width='150px'/>");
 				$("#droid_experience").html(data[index].experience);
 				$("#droid_level").html(data[index].level);
 				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " bits");
@@ -133,6 +135,7 @@ function formatNumber (num) {
  	<div >
 		 <select id='droid_name' style='text-transform:capitalize; font: large;' class='form-control-lg'></select>
 		
+
 		 <div>Class: <span id='droid_class'></span></div>
 		
 		 
@@ -149,7 +152,7 @@ function formatNumber (num) {
 		<br>	
 	 </div>	
 	  <div>
-  
+  	<div class="col-md-3 text-center" id='droid_image'></div>
 </div>
 <div class="container" id='droid_details_2'>
  <div class="row">
@@ -194,6 +197,7 @@ function formatNumber (num) {
 
 <br \>
 
+	
 
 <div class="row">
           <div class="col-md-4"><span class='big_number' id='currency_in'></span><div class="kbCaption">Currency In</div></div>
@@ -248,6 +252,8 @@ $("#droid_name").change(function( event ) {
 			
 			  index = 0;
 				$("#droid_class").html(data[index].droid_class);
+				
+				$("#droid_image").html("<img src='https://static.coindroids.com/Item/Model/full/" + data[index].droid_model_image + ".jpg' width='150px'/>");
 				$("#droid_experience").html(data[index].experience);
 				$("#droid_level").html(data[index].level);
 				$("#droid_purse").html((data[index].purse_current/100) + "/" + (data[0].purse_max/100)+ " bits");
