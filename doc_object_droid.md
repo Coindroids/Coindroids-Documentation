@@ -127,7 +127,7 @@ Date: Sun, 22 Nov 2015 01:56:37 GMT
 Server: postgrest/0.3.0.0
 Content-Type: application/json
 Content-Range: 0-0/1
-Content-Location: /droid?name=eq.cmdr
+Content-Location: /droid?name=eq.Trunk
 ```
 
 #### Response Body

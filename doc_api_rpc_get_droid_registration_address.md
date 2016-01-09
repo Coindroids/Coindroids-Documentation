@@ -1,5 +1,5 @@
 ---
-title: /rpc/create_droid
+title: /rpc/get_droid_registration_address
 tags: [objects]
 keywords: json, droid, object, patch, get
 last_updated: November 21, 2015
@@ -7,21 +7,19 @@ summary: "Create a new droid"
 
 ---
 
-This RPC call requires an authentication request.
+This RPC call requires an authorized request.
 
 ## Request
 
 ```HTTP
-POST https://api.coindroids.com/create_droid
+POST https://api.coindroids.com/get_droid_registration_address
 { 
-	"name":"Droidzilla",
-	"currency_id":1,
-	"model_id":4
+	"id":"4",
 }
 ```
 
 ## Response Details
 
-_Returns a Droid object_
+_Returns an address_
 
 
