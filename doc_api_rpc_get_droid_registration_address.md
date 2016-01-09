@@ -14,7 +14,7 @@ This RPC call requires an authorized request.
 ```HTTP
 POST https://api.coindroids.com/get_droid_registration_address
 { 
-	"id":"4",
+	"droid_id":"4",
 }
 ```
 
