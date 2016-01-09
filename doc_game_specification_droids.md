@@ -138,6 +138,6 @@ At each level, the Droid’s Purse Maximum and Health Maximum attributes both in
      WHILE ((next_level^5)-(next_level^4)+(next_level^2)+300*next_level) < new_experience LOOP
       next_level      = next_level + 1;
       new_health_max  = new_health_max + (next_level * 10);
-      new_purse_max   = greatest( ( (new_health_max * token_size_ ) / 2)::BIGINT, (100 * token_size_) );
+      new_purse_max   = greatest( ( (new_health_max * minimum_attack_size_ ) / 2)::BIGINT, (100 * token_size_) );
     END LOOP;
 ```
