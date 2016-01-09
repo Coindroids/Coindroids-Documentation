@@ -80,8 +80,24 @@ if (localStorage.Username == null)
 		  		$("#droid_inventory").append("<th> Inventory is empty. <td><td><td><td><td><td><td> ");
 		  		}
 	
+		  			$("#currency_in").html(formatNumber(data[index].currency_in/100) + '&nbsp;bits' );
+					$("#currency_out").html(formatNumber(data[index].currency_out/100) + '&nbsp;bits' );
+					$("#highest_payout").html(formatNumber(data[index].highest_payout/100) + '&nbsp;bits' );
+					$("#attacks").html(data[index].attacks);
+					$("#deaths").html(data[index].deaths);
+					$("#targeted").html(data[index].targeted);					
+					$("#defensive_evasions").html(data[index].defensive_evasions);
+					$("#offensive_evasions").html(data[index].offensive_evasions);
+					
+					$("#total_damage_performed").html(formatNumber(data[index].total_damage_performed.toFixed(2)));
+					$("#total_damage_defended").html(formatNumber(data[index].total_damage_defended.toFixed(2)));
+					
+					$("#average_damage_performed").html(formatNumber(data[index].average_damage_performed.toFixed(2)));
+
+					$("#most_targeted").html(data[index].most_targeted);
+					$("#worst_enemy").html(data[index].worst_enemy);
 	
-		  		lookupStats(data[index].id);
+	
 
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);
@@ -100,47 +116,6 @@ if (localStorage.Username == null)
 });
 
 
-function lookupStats(droid_id)
-{
-
-			jQuery.ajax({
-			    url: "https://api.coindroids.com/droid_stats?id=eq."+droid_id,
-			    type: "GET",
-			    processData: false,
-			       contentType: 'application/json',
-				})
-			.done(function(data, textStatus, jqXHR) {
-				
-    
-					$("#currency_in").html(formatNumber(data[0].currency_in/100) + '&nbsp;bits' );
-					$("#currency_out").html(formatNumber(data[0].currency_out/100) + '&nbsp;bits' );
-					$("#highest_payout").html(formatNumber(data[0].highest_payout/100) + '&nbsp;bits' );
-					$("#attacks").html(data[0].attacks);
-					$("#deaths").html(data[0].deaths);
-					$("#targeted").html(data[0].targeted);					
-					$("#defensive_evasions").html(data[0].defensive_evasions);
-					$("#offensive_evasions").html(data[0].offensive_evasions);
-					
-					$("#total_damage_performed").html(formatNumber(data[0].total_damage_performed.toFixed(2)));
-					$("#total_damage_defended").html(formatNumber(data[0].total_damage_defended.toFixed(2)));
-					
-					$("#average_damage_performed").html(formatNumber(data[0].average_damage_performed.toFixed(2)));
-
-					$("#most_targeted").html(data[0].most_targeted);
-					$("#worst_enemy").html(data[0].worst_enemy);
-										
-			    console.log("HTTP Request Succeeded: " + jqXHR.status);
-			    console.log(data);
-			})
-			.fail(function(jqXHR, textStatus, errorThrown) {
-			    console.log("HTTP Request Failed");
-			})
-			.always(function() {
-			       $("#submit-lookup").show();
-				   $("#submit-lookup-hidden").hide();
-			});
-	
-}
 
 function formatNumber (num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
@@ -299,7 +274,22 @@ $("#droid_name").change(function( event ) {
 		  		$("#droid_inventory").append("<th> Inventory is empty. <td><td><td><td><td><td><td> ");
 		  		}
 
-		 	lookupStats(data[index].id);
+		 			 $("#currency_in").html(formatNumber(data[index].currency_in/100) + '&nbsp;bits' );
+					$("#currency_out").html(formatNumber(data[index].currency_out/100) + '&nbsp;bits' );
+					$("#highest_payout").html(formatNumber(data[index].highest_payout/100) + '&nbsp;bits' );
+					$("#attacks").html(data[index].attacks);
+					$("#deaths").html(data[index].deaths);
+					$("#targeted").html(data[index].targeted);					
+					$("#defensive_evasions").html(data[index].defensive_evasions);
+					$("#offensive_evasions").html(data[index].offensive_evasions);
+					
+					$("#total_damage_performed").html(formatNumber(data[index].total_damage_performed.toFixed(2)));
+					$("#total_damage_defended").html(formatNumber(data[index].total_damage_defended.toFixed(2)));
+					
+					$("#average_damage_performed").html(formatNumber(data[index].average_damage_performed.toFixed(2)));
+
+					$("#most_targeted").html(data[index].most_targeted);
+					$("#worst_enemy").html(data[index].worst_enemy);
 		    
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);

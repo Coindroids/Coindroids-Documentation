@@ -135,7 +135,15 @@ topnav_dropdowns:
           product: all
           version: all
  
-        - title: Currencies
+        - title: /badge
+          url: /doc_object_badge.html
+          audience: writers, designers
+          platform: all
+          version: all
+          product: all
+          print: false
+
+        - title: /currency
           url: /doc_object_currency.html
           audience: writers, designers
           platform: all
@@ -143,7 +151,7 @@ topnav_dropdowns:
           product: all
           print: false
 
-        - title: Droids
+        - title: /droid
           url: /doc_object_droid.html
           audience: writers, designers
           platform: all
@@ -151,15 +159,15 @@ topnav_dropdowns:
           product: all
           print: false
 
-        - title: Items
-          url: /doc_object_item.html
+        - title: /droid_model
+          url: /doc_object_droid_model.html
           audience: writers, designers
           platform: all
           version: all
           product: all
           print: false
-
-        - title: Events
+          
+        - title: /event
           url: /doc_object_event.html
           audience: writers, designers
           platform: all
@@ -167,15 +175,15 @@ topnav_dropdowns:
           product: all
           print: false
 
-        - title: Droid Models
-          url: /doc_object_droid_model.html
+        - title: /item
+          url: /doc_object_item.html
           audience: writers, designers
           platform: all
           version: all
           product: all
           print: false
-
-        - title: Players
+          
+        - title: /player
           url: /doc_object_player.html
           audience: writers, designers
           platform: all
@@ -183,15 +191,7 @@ topnav_dropdowns:
           product: all
           print: false
 
-        - title: Player Profile
-          url: /doc_object_player_profile.html
-          audience: writers, designers
-          platform: all
-          version: all
-          product: all
-          print: false
-
-        - title: Player Invite Codes
+        - title: /player_invite
           url: /doc_object_player_invite_code.html
           audience: writers, designers
           platform: all
@@ -199,8 +199,32 @@ topnav_dropdowns:
           product: all
           print: false
 
-        - title: Badges
-          url: /doc_object_badge.html
+        - title: /player_profile
+          url: /doc_object_player_profile.html
+          audience: writers, designers
+          platform: all
+          version: all
+          product: all
+          print: false
+
+        - title: /rpc/create_droid
+          url: /doc_api_rpc_create_droid.html
+          audience: writers, designers
+          platform: all
+          version: all
+          product: all
+          print: false  
+
+        - title: /rpc/get_droid_registration_address
+          url: /doc_api_rpc_get_droid_registration_address.html
+          audience: writers, designers
+          platform: all
+          version: all
+          product: all
+          print: false  
+
+        - title: /rpc/identify
+          url: /doc_api_rpc_identify.html
           audience: writers, designers
           platform: all
           version: all
@@ -214,22 +238,6 @@ topnav_dropdowns:
           version: all
           product: all
           print: false
-
-        - title: /rpc/identify
-          url: /doc_api_rpc_identify.html
-          audience: writers, designers
-          platform: all
-          version: all
-          product: all
-          print: false
-          
-        - title: /rpc/create_droid
-          url: /doc_api_rpc_create_droid.html
-          audience: writers, designers
-          platform: all
-          version: all
-          product: all
-          print: false   
                                   
         - title: Comic Assets
           url: /doc_assets_comics.html
