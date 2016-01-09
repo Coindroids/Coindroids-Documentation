@@ -288,8 +288,8 @@ $("#droid_name").change(function( event ) {
 					
 					$("#average_damage_performed").html(formatNumber(data[index].average_damage_performed.toFixed(2)));
 
-					$("#most_targeted").html(data[index].most_targeted);
-					$("#worst_enemy").html(data[index].worst_enemy);
+					$("#most_targeted").html(data[index].most_targeted_name + ' (' + data[index].most_targeted_id + ')');
+					$("#worst_enemy").html(data[index].worst_enemy_name + ' (' + data[index].worst_enemy_id + ')');
 		    
 		    console.log("HTTP Request Succeeded: " + jqXHR.status);
 		    console.log(data);

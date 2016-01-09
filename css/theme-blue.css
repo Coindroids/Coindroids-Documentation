@@ -81,7 +81,7 @@ th { font-weight: bold; height: 10px; border: 1px solid;  }
 
 table { border-collapse: collapse; }
 
-td { height: 30px; text-align: center; padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; background-color: #FFFFFF; color: black; border: thin black solid; }
+td { height: 30px; text-align: left; padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; background-color: #FFFFFF; color: black; border: thin black solid; }
 
 .matrix { list-style: none; }
 
