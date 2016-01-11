@@ -51,7 +51,7 @@ $(document).ready(function(){
 				
 				if (data[index].action_type == 'Attack') {
 						if (data[index].droid_id != null) {
-						   if (oc[data[index].target_id]['Droid destroyed'] != null) {
+						   if (oc[data[index].target_id] != null) {
 							if (oc[data[index].target_id]['Droid destroyed'] == true) {
 								var destroyed_text = data[index].target_name + ' was destroyed in the attack.';
 							} else {
