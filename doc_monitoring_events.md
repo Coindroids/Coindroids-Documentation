@@ -56,12 +56,16 @@ $(document).ready(function(){
 								var destroyed_text = data[index].target_name + ' was destroyed in the attack.';
 							} else {
 								var destroyed_text = '';
+
 							}
+							
+							$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has attacked "+ data[index].target_name + " performing "+oc[data[index].target_id]['Net damage taken']+" of damage. "+destroyed_text+"</div></div>");
+														
 							} else {
 								var destroyed_text = '';
 							}
 					
-							$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>"+ data[index].droid_name + " ("+ data[index].player_username+") has attacked "+ data[index].target_name + " performing "+oc[data[index].target_id]['Net damage taken']+" of damage. "+destroyed_text+"</div></div>");
+
 						} else {
 							$("#"+data[index].block_hash).append("<div class='row'><div class='col-md-9 text-left'>some droid has tried to attack "+ data[index].target_name + ", but they attacked anonymously. Refund performed</div></div>");
 						}
