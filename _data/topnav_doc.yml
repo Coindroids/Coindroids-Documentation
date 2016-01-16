@@ -55,6 +55,13 @@ topnav_dropdowns:
           product: all
           version: all          
 
+        - title: Item Lookup
+          url: /doc_item_lookup.html
+          audience: writers, designers
+          platform: all
+          product: all
+          version: all 
+
         - title: Monitoring Events
           url: /doc_monitoring_events.html
           audience: writers, designers
