@@ -75,6 +75,7 @@ Both of these values can each be calculated using the same algorithm. The value 
 
 <script>
 MathJax.Hub.Config({
+  displayAlign: "left",
   tex2jax: {
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
   }
