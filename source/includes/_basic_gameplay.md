@@ -75,9 +75,15 @@ The droids who have died, and served their time, are rebuilt and enter for the n
 
 Rawr!
 
+The damage your attack does relates to the amount spent, and the attributes/equipment of the involved droids (your weaponry vs their defense).
+
 <aside class="warning">
 Your droid only has so much ammunition to throw around per block. Make sure to check your clip-size and take this into consideration before crafting all your attacks. 
 </aside>
+
+Of the funds used in the attack, 24% of the transactions value is placed into the defenders purse.  
+
+Another 75% of the transaction is considered ammunition spillage, which is then divided up amongst all droids in the system at the end of a round. Finally, a small amount (1%) is taken as a service charge. 
 
 <aside class="warning">
 All attacks a droid is making will be voided if the droid also atttempts to take a shield or cover action. 
@@ -86,6 +92,10 @@ All attacks a droid is making will be voided if the droid also atttempts to take
 ## Shield
 
 Oh shit D:
+
+To shield, you send the shield cost to the global shield address.
+
+Of that cost, 24% enters the purse of the shielding droid. 75% is considered ammunition spillage and is divided up amongst all droids at the end of the round. Finally, a small amount (1%) is taken as a service charge. 
 
 <aside class="warning">
 If you don't have a shield equiped, your attempt to shield probably won't go very well. 
@@ -100,6 +110,10 @@ All attacks a droid is making will be voided if the droid also atttempts to take
 
 FUCK FUCK FUCK
 
+To take cover, you send the cover cost to the global cover address.
+
+Of that cost, 24% enters the purse of the cowering droid. 75% is considered ammunition spillage and is divided up amongst all droids at the end of the round. Finally, a small amount (1%) is taken as a service charge. 
+
 <aside class="warning">
 All attacks a droid is making will be voided if the droid also atttempts to take a cover action. 
 </aside>
@@ -107,9 +121,18 @@ All attacks a droid is making will be voided if the droid also atttempts to take
 
 ## Using a Consumable
 
+To use a consumable, move it from your Player Garage into your droids inventory. It will automatically be used during the next round of processing.
+
 ## Item Drops
 
+As you attack other droids, either material or other items may drop and enter your Player Garage inventory. The more damage you do to a droid, the more likely their drops are to occur. Drops also depend on the defending droids' EMI dynamic attribute. 
+
 ## Death & Taxes
+
+When a droid dies, they are unable to perform actions for three blocks, at which time they resurrect. 
+
+Once you kill a droid, you *win the contents of their purse*. If multiple attackers kill a droid in the same round, their purse is split based on the levels of the attackers and their total damage. 
+
 
 ## Leveling
 
