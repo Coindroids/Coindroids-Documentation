@@ -25,11 +25,7 @@ When you are starting out, you can choose from any of the following sets:
 
 ### Tank Training 
 
-```
- o
-/|\
-/_\
-```
+> ![Tank Training](images/droid_TANK.png)
 
 | Item Type | Class | Defense | Defense at Unlock | Defense Set Percentage| 
 |-----------+-------+----------+----------+----------|
@@ -45,12 +41,7 @@ When you are starting out, you can choose from any of the following sets:
 
 ### Assault Training
 
-
-```
- o
-/|\
-/ \
-```
+> ![Tank Training](images/droid_ASSAULT.png)
 
 | Item Type | Class | Defense | Defense at Unlock | Defense Set Percentage| 
 |-----------+-------+----------+----------+----------|
@@ -68,11 +59,8 @@ When you are starting out, you can choose from any of the following sets:
 
 ### Scout Training
 
-```
- o
-/|\
-/ \
-```
+> ![Tank Training](images/droid_SCOUT.png)
+
 
 | Item Type | Class | Defense | Defense at Unlock | Defense Set Percentage| 
 |-----------+-------+----------+----------+----------|
