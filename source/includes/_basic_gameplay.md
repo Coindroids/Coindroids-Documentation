@@ -93,13 +93,15 @@ All attacks a droid is making will be voided if the droid also atttempts to take
 
 Oh shit D:
 
+<aside class="warning">
+If you don't have a shield equiped, your attempt to shield probably won't go very well. 
+</aside>
+
 To shield, you send the shield cost to the global shield address.
 
 Of that cost, 24% enters the purse of the shielding droid. 75% is considered ammunition spillage and is divided up amongst all droids at the end of the round. Finally, a small amount (1%) is taken as a service charge. 
 
-<aside class="warning">
-If you don't have a shield equiped, your attempt to shield probably won't go very well. 
-</aside>
+
 
 <aside class="warning">
 All attacks a droid is making will be voided if the droid also atttempts to take a shield action. 
