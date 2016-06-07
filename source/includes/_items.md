@@ -42,7 +42,7 @@ As a droid levels up, new items become available that can be purchased by the pl
 Each type of item tends to have a different set of attributes that are relevant to its function. 
 
 | Attribute | Weapon | Shield | Chassis Part | Consumable | Set | Material|
-|----------|----------|----------|----------|----------|----------|----------| 
+|----------|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:---------:| 
 | Name				| *X* | *X* | *X* | *X* | *X* | *X* |
 | Item Type			| *X* | *X* | *X* | *X* | *X* | *X* |
 | Model				| *X* | *X* | *X* |     |     |     |	
