@@ -37,48 +37,46 @@ As a droid levels up, new items become available that can be purchased by the pl
 |Equip Scope| ES| _See Equip Scope table below_ |
 
 
-Name	
-Item Type
-Model	
-Class	
-Description(double ' is intentional)	
+### Item Attribute Matrix
 
-Level Required	
+Each type of item tends to have a different set of attributes that are relevant to its function. 
 
-Image	
-coordinate_z	
-
-Cost	
-
-Damage	
-Clip Size
-Accuracy	
-Accuracy (Likely)	
-
-Defense	
-Defense_at_unlock
-Percentage of Set Defense	
-
-Material Strength	
-
-Health Increase	
-Lasts (blocks)	
-
-
-Drop Frequency	
-Drop Scope	
-EMS
-
-
-Composition	
-
-Equip Scope	
-Equid Required	
-Equip Optional	
+| Attribute | Weapon | Shield | Chassis Part | Consumable | Set | Material|
+|----------|----------|----------|----------|----------|----------|----------| 
+| Name				| *X* | *X* | *X* | *X* | *X* | *X* |
+| Item Type			| *X* | *X* | *X* | *X* | *X* | *X* |
+| Model				| *X* | *X* | *X* |     |     |     |	
+| Class				| *X* | *X* | *X* |     |     |     |
+| Description		| *X* | *X* | *X* | *X* | *X* | *X* |	
+| Level Required	| *X* | *X* | *X* | *X* | *X* | *X* |
+| Image				| *X* | *X* | *X* | *X* | *X* | *X* |
+| Coordinate Z		|     |     | *X* |     |     |     |
+| Cost				| *X* | *X* | *X* | *X* | *X* | *X* |
+| Damage			| *X* |     |     |     |     |     |
+| Clip Size			| *X* |     |     |     |     |     |
+| Accuracy			| *X* |     |     |     |     |     |
+| Accuracy (Likely)	| *X* |     |     |     |     |     |
+| Defense			|     | *X* | *X* |     |     |     |
+| Defense at Unlock	|     |     | *X* |     |     |     |
+| % of Set Defense	|     |     | *X* |     |     |     |
+| Material Strength |     | *X* |     |     |     |     |
+| Health Increase	|     |     |     | *X* |     |     |
+| Lasts (blocks)	|     |     |     | *X* |     |     |
+| Drop Frequency	| *X* | *X* | *X* |     |     |     |
+| Drop Scope		| *X* | *X* | *X* |     |     |     |
+| EMS				| *X* | *X* | *X* |     |     |     |
+| Composition		| *X* | *X* | *X* |     | *X* |     |
+| Equip Scope		| *X* | *X* | *X* |     |     |     |
+| Equid Required	| *X* | *X* | *X* |     |     |     |
+| Equip Optional	| *X* | *X* | *X* |     |     |     |
 	
 
 
-## Equip Scopes
+## Equipping Items
+
+Not all items can be fit to one another and merged into a droid build. There are a number of attributes that determine exactly how items can be used together including the Equip Scope, Equip Required and Requip Option fields. 
+
+### Equip Scopes
 
 |Name | Descirption|
 |----|------|
@@ -87,15 +85,62 @@ Equip Optional
 |Global|Just go ahead and equip this onto whatever body part you want, as long as the body part supports the addition|
 |Character| The item must match the character of the Torso being used |
 
-## Drop Scopes
+### Equip Required & Equip Optional 
 
-Some items drop and some don't. You usually won't have to worry about an arm falling off of your own droid, but it's good to keep an eye out for weak NPCs or droids built of your favourite material.
+When building your droid, first you start with a Torso and work from there. Torsos will have a number of requirements, as well as some optional slots. 
+
+|      model       |           Equip Required            |  Equip Optional  |
+|------------------+---------------------------------+------------|
+| Assault Training | Arm,Arm,Leg,Leg,Head,Weapon | Shield |
+| Tank Training    | Arm,Arm,Leg,Head,Weapon     | Shield |
+| Scout Training   | Arm,Arm,Leg,Leg,Head,Weapon | Shield |
+ 
+Here we can see that the Tank model only requires one leg, while the Scout and Assault Models require two. All Torsos available at the start can equip a shield, but it's not required. 
+
+<aside class='notice'>
+These slots build upon eachother as well. If the Head you choose to equip to your Torso as an optional Hat, adding a Hat to the build would be acceptable. 
+</aside>
+
+## Material Drops
+
+Material drops happen fairly freuquently and do not require the droid to be killed in the attack. These materials can be used to forge new items so it's good to keep an eye out for weak NPCs or droids built of your favourite material. 
+
+### Composition 
+
+Weaponry, Shields, and Chassis parts each have a specific set of materials that make-up their composition. 
+
+The Assault Training Torso is made up of:
+
+| Material | Content | 
+|----------|---------|
+|Silicon   | 6%  |
+|Iron 	   | 4%  |
+|Aluminum  | 24% | 
+|Copper    | 4%  |
+|Germanium | 2%  |
+
+<aside class='notice'>
+One can never be completely sure of the make-up of a droid so those numbers won't add to 100%
+</aside>
+
+When attacking a droid, if EMI + EMS / composition * time of day + 7 = droid happy fun material great. 
+TODO^ add real information
+
+
+## Item Drops
+
+Some items drop and some don't. You usually won't have to worry about an arm falling off of your own droid, but keep an eye out for NPCs sporting some shiney loose looking swag. 
+
+### Drop Scopes
 
 |Name| Description|
 |----|----|
 |Drone|This item has the possibility to drop if the droid is an NPC only. |
 |Never| This type of items will never drop| 
 |Always| This item may drop from anybody if the right conditions are met.|
+
+### Drop Frequency
+
 
 
 ## Purchasing
