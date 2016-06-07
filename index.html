@@ -202,17 +202,223 @@
 /_\
 </code></pre>
 
+<table><thead>
+<tr>
+<th>Item Type</th>
+<th>Class</th>
+<th>Defense</th>
+<th>Defense at Unlock</th>
+<th>Defense Set Percentage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Head</td>
+<td>Tank</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Torso</td>
+<td>Tank</td>
+<td>0</td>
+<td>0</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>Tank</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>Tank</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Leg</td>
+<td>Tank</td>
+<td>0</td>
+<td>0</td>
+<td>0.3</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Item Type</th>
+<th>Class</th>
+<th>Damage</th>
+<th>Accuracy (Likely)</th>
+<th>Clip Size</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Weapon</td>
+<td>Tank</td>
+<td>1</td>
+<td>0.5 (0.75)</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
 <h3 id="assault-training">Assault Training</h3>
 <pre class="highlight plaintext"><code> o
 /|\
 / \
 </code></pre>
 
+<table><thead>
+<tr>
+<th>Item Type</th>
+<th>Class</th>
+<th>Defense</th>
+<th>Defense at Unlock</th>
+<th>Defense Set Percentage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Head</td>
+<td>Assault</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Torso</td>
+<td>Assault</td>
+<td>0</td>
+<td>0</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>Assault</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>Assault</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Leg</td>
+<td>Assault</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Leg</td>
+<td>Assault</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Item Type</th>
+<th>Class</th>
+<th>Damage</th>
+<th>Accuracy (Likely)</th>
+<th>Clip Size</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Weapon</td>
+<td>Assault</td>
+<td>1</td>
+<td>0.5 (0.75)</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
 <h3 id="scout-training">Scout Training</h3>
 <pre class="highlight plaintext"><code> o
 /|\
 / \
 </code></pre>
+
+<table><thead>
+<tr>
+<th>Item Type</th>
+<th>Class</th>
+<th>Defense</th>
+<th>Defense at Unlock</th>
+<th>Defense Set Percentage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Head</td>
+<td>Scout</td>
+<td>0</td>
+<td>0</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Torso</td>
+<td>Scout</td>
+<td>0</td>
+<td>0</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>Scout</td>
+<td>0</td>
+<td>0</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>Scout</td>
+<td>0</td>
+<td>0</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>Leg</td>
+<td>Scout</td>
+<td>0</td>
+<td>0</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>Leg</td>
+<td>Scout</td>
+<td>0</td>
+<td>0</td>
+<td>0.15</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Item Type</th>
+<th>Class</th>
+<th>Damage</th>
+<th>Accuracy (Likely)</th>
+<th>Clip Size</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Weapon</td>
+<td>Scout</td>
+<td>1</td>
+<td>0.5 (0.75)</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <h2 id="weaponry">Weaponry</h2>
 
@@ -913,51 +1119,61 @@ Not all type coercions are possible, and you will get an error describing any pr
 <tr>
 <th>Object</th>
 <th>Endpoint</th>
+<th>Methods</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Badge</td>
 <td>/badge</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Currency</td>
 <td>/currency</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Droid</td>
 <td>/droid</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Event</td>
 <td>/event</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Garage</td>
 <td>/garage</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Item</td>
 <td>/item</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Payout</td>
 <td>/payout</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Player</td>
 <td>/player</td>
+<td>GET</td>
 </tr>
 <tr>
 <td>Profile</td>
 <td>/profile</td>
+<td>GET, PATCH</td>
 </tr>
 </tbody></table>
 
-<h2 id="badge">/badge</h2>
+          <h2 id="badge">/badge</h2>
 
 <p>Our badge system is a little lacking at the moment but this is coming soon. The endpoint still works, it just doesn&rsquo;t return anything at the moment as we have no badges listed. </p>
 
-<h2 id="currency">/currency</h2>
+          <h2 id="currency">/currency</h2>
 <pre class="highlight javascript"><code><span class="c1">// View specific currency (GET https://api.coindroids.com/currency)</span>
 
 <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -1144,7 +1360,7 @@ Not all type coercions are possible, and you will get an error describing any pr
 </tr>
 </tbody></table>
 
-<h2 id="droid">/droid</h2>
+          <h2 id="droid">/droid</h2>
 <pre class="highlight javascript"><code><span class="c1">// View specific droid (GET https://api.coindroids.com/droid)</span>
 
 <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -1417,7 +1633,7 @@ Not all type coercions are possible, and you will get an error describing any pr
 </tr>
 </tbody></table>
 
-<h2 id="event">/event</h2>
+          <h2 id="event">/event</h2>
 
 <blockquote>
 <p>Grab the latest ten events</p>
@@ -1960,7 +2176,7 @@ Not all type coercions are possible, and you will get an error describing any pr
 </tr>
 </tbody></table>
 
-<h2 id="garage">/garage</h2>
+          <h2 id="garage">/garage</h2>
 <pre class="highlight javascript"><code><span class="c1">// Viewing current password hash or email (GET https://api.coindroids.com/garage)</span>
 
 <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -2139,7 +2355,7 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </tbody></table>
 
-<h2 id="item">/item</h2>
+          <h2 id="item">/item</h2>
 <pre class="highlight javascript"><code><span class="c1">// My Events (GET https://api.coindroids.com/item)</span>
 
 <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -2269,7 +2485,7 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </tbody></table>
 
-<h2 id="payout">/payout</h2>
+          <h2 id="payout">/payout</h2>
 
 <blockquote>
 <p>Grab the 4 latest payouts</p>
@@ -2431,7 +2647,7 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </tbody></table>
 
-<h2 id="player">/player</h2>
+          <h2 id="player">/player</h2>
 
 <blockquote>
 <p>Find the 5 newest players</p>
@@ -2562,7 +2778,7 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </tbody></table>
 
-<h2 id="profile">/profile</h2>
+          <h2 id="profile">/profile</h2>
 
 <blockquote>
 <p>View Profile (GET)</p>
@@ -2742,31 +2958,37 @@ You will noticed that our list of functions is actually quite short. Most of the
 <tr>
 <th>Function</th>
 <th>Endpoint</th>
+<th>Method</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>create_droid(Model, Currency ID, Droid Name )</td>
 <td>/rpc/create_droid</td>
+<td>POST</td>
 </tr>
 <tr>
 <td>get_droid_registration_address(Droid ID)</td>
 <td>/rpc/get_droid_registration_address</td>
+<td>POST</td>
 </tr>
 <tr>
 <td>identify()</td>
 <td>/rpc/identify</td>
+<td>POST</td>
 </tr>
 <tr>
 <td>register(Username, Password, Email, Invite Code, Acceptance of Terms)</td>
 <td>/rpc/register</td>
+<td>POST</td>
 </tr>
 <tr>
 <td>set_droid_build(Droid ID, Build Details)</td>
 <td>/rpc/set_droid_build</td>
+<td>POST</td>
 </tr>
 </tbody></table>
 
-<h2 id="rpc-create_droid">/rpc/create_droid</h2>
+          <h2 id="rpc-create_droid">/rpc/create_droid</h2>
 <pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/create_droid"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer eyJhbGciO...DSzsybGFgk"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
@@ -2870,7 +3092,7 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </tbody></table>
 
-<h2 id="rpc-get_droid_registration_address">/rpc/get_droid_registration_address</h2>
+          <h2 id="rpc-get_droid_registration_address">/rpc/get_droid_registration_address</h2>
 <pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/get_droid_registration_address"</span> <span class="se">\</span>
     -H <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI...2lXGhuBjtQ8Q"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
@@ -2887,7 +3109,7 @@ This RPC call requires that the request include the Authorization token
 If you notice that the Coindroids universe is no longer recognizing your transactions, you likely need to call this function and use the address returned to re-sync your wallet. 
 </aside>
 
-<h2 id="rpc-identify">/rpc/identify</h2>
+          <h2 id="rpc-identify">/rpc/identify</h2>
 
 <blockquote>
 <p>Username &amp; Password Authentication</p>
@@ -3050,7 +3272,7 @@ If you notice that the Coindroids universe is no longer recognizing your transac
 </tr>
 </tbody></table>
 
-<h2 id="rpc-register">/rpc/register</h2>
+          <h2 id="rpc-register">/rpc/register</h2>
 <pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/register"</span> <span class="se">\</span>
     -H <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
     -d <span class="nv">$'</span><span class="o">{</span> 
@@ -3181,7 +3403,7 @@ If you notice that the Coindroids universe is no longer recognizing your transac
 </tr>
 </tbody></table>
 
-<h2 id="rpc-set_droid_build">/rpc/set_droid_build</h2>
+          <h2 id="rpc-set_droid_build">/rpc/set_droid_build</h2>
 
 <aside class='warning'>
 This RPC call requires that the request include the Authorization token
