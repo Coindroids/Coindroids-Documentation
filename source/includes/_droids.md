@@ -31,6 +31,18 @@ When you are starting out, you can choose from any of the following sets:
 /_\
 ```
 
+| Item Type | Class | Defense | Defense at Unlock | Defense Set Percentage| 
+|-----------+-------+----------+----------+----------|
+| Head      | Tank  | 0        | 0        | 0.1|
+| Torso     | Tank  | 0        | 0        | 0.4|
+| Arm       | Tank  | 0        | 0        | 0.1|
+| Arm       | Tank  | 0        | 0        | 0.1|
+| Leg       | Tank  | 0        | 0        | 0.3|
+
+|Item Type | Class | Damage |  Accuracy (Likely)  | Clip Size | 
+-----------+-------+----------+------------+----------
+| Weapon    | Tank  | 1        | 0.5 (0.75) | 1|
+
 ### Assault Training
 
 
@@ -40,6 +52,20 @@ When you are starting out, you can choose from any of the following sets:
 / \
 ```
 
+| Item Type | Class | Defense | Defense at Unlock | Defense Set Percentage| 
+|-----------+-------+----------+----------+----------|
+| Head      | Assault | 0        | 0        | 0.1|
+| Torso     | Assault | 0        | 0        | 0.5|
+| Arm       | Assault | 0        | 0        | 0.1|
+| Arm       | Assault | 0        | 0        | 0.1|
+| Leg       | Assault | 0        | 0        | 0.1|
+| Leg       | Assault | 0        | 0        | 0.1|
+
+|Item Type | Class | Damage |  Accuracy (Likely)  | Clip Size | 
+-----------+-------+----------+------------+----------
+| Weapon    | Assault | 1        | 0.5 (0.75) | 1|
+
+
 ### Scout Training
 
 ```
@@ -47,6 +73,19 @@ When you are starting out, you can choose from any of the following sets:
 /|\
 / \
 ```
+
+| Item Type | Class | Defense | Defense at Unlock | Defense Set Percentage| 
+|-----------+-------+----------+----------+----------|
+| Head      | Scout | 0        | 0        | 0.1|
+| Torso     | Scout | 0        | 0        | 0.3|
+| Arm       | Scout | 0        | 0        | 0.15|
+| Arm       | Scout | 0        | 0        | 0.15|
+| Leg       | Scout | 0        | 0        | 0.15|
+| Leg       | Scout | 0        | 0        | 0.15|
+
+|Item Type | Class | Damage |  Accuracy (Likely)  | Clip Size | 
+-----------+-------+----------+------------+----------
+| Weapon    | Scout | 1        | 0.5 (0.75) | 1|
 
 ## Weaponry 
 

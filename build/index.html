@@ -1,0 +1,3752 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Coindroids</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='mailto:josh@coindroids.com'>Request Invite Code</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>After the robotic uprising and humanity&rsquo;s falls (typical humans), the androids have since learned quite a bit from their once squishy overlords and now conduct war purely with money, specifically the blunt ample cryptocurrencies. Androids, as it turns out, haven&rsquo;t really mastered the art of friendship but have developed quite a fondness for battle.</p>
+
+<h2 id="what-is-coindroids">What is Coindroids?</h2>
+
+<p>Coindroids is a battle game where player actions are triggered through blockchain-based transactions. Each action has real consequence and a potential for great reward. </p>
+
+<p>There is no such thing as luck to a coindroid. Every action should be carefully calculated!</p>
+
+<h2 id="development-status">Development Status</h2>
+
+<p>The Coindroids system is currently in <em>Alpha Testing</em>.  </p>
+
+<p>If you are a highly technical user and would like to assist with the Alpha, please get in touch with us via @coindroids on twitter.   </p>
+
+<h2 id="currencies">Currencies</h2>
+
+<p>During our alpha testing, only Bitcoin Testnet is available. </p>
+
+<p>We suggest the use of <a href="https://copay.io">CoPay</a>, but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. </p>
+
+          <h1 id="getting-to-know-your-droid">Getting to know your Droid</h1>
+
+<p>Every player in the game is a Droid, a futuristic robot with many attributes. These attributes dictate how well they perform in a battle, be they attackers or defenders. They can also be purely cosmetic and simply make the character cool, hip and/or scary.</p>
+
+<p>All droids have some pretty basic attributes:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Starting Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Level</td>
+<td>The current level of the player. The level of a player dictates some other elements including Purse Maximum, Health Maximum, as well as what items can be purchased.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>This value is increased every time the droid is involved in a battle. More of this will be described in the Attack Process section.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Purse</td>
+<td>The current amount of cryptocurrency that will be distributed to the droid’s next murderer(s).</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Health</td>
+<td>The amount of health remaining for the droid.</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Health Maximum</td>
+<td>The amount of health the droid will have upon resurrection</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>The collection of items that make up the droids equipment</td>
+<td>Base Model of the users choice</td>
+</tr>
+<tr>
+<td>Inventory</td>
+<td>The collection of usable items active on the droid</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="chassis">Chassis</h2>
+
+<p>Your chassis starts with a Torso, with some other items tacked on for either style of function. Perhaps you fancy a set of legs, or maybe even arms. The parts you choose have a number of effects, so choose carefully. </p>
+
+<p>When you are starting out, you can choose from any of the following sets:</p>
+
+<h3 id="tank-training">Tank Training</h3>
+<pre class="highlight plaintext"><code> o
+/|\
+/_\
+</code></pre>
+
+<h3 id="assault-training">Assault Training</h3>
+<pre class="highlight plaintext"><code> o
+/|\
+/ \
+</code></pre>
+
+<h3 id="scout-training">Scout Training</h3>
+<pre class="highlight plaintext"><code> o
+/|\
+/ \
+</code></pre>
+
+<h2 id="weaponry">Weaponry</h2>
+
+<p>TODO: Explain how weaponry works</p>
+
+<h2 id="defenses">Defenses</h2>
+
+<p>TODO: Explain how defense works here</p>
+
+<h2 id="inventory">Inventory</h2>
+
+<p>Droids bodys are pretty efficient and don&rsquo;t have a lot of spare space to carry items around. As such, there is a very limited amount of items you can carry with you. A limit of 1 to be exact. Add an item to your inventory and it will be used until it expires (based on the Lasts attribute).</p>
+
+<h2 id="player-garage">Player Garage</h2>
+
+<p>Your garage can store all those parts you aren&rsquo;t using at the moment. There is a LOT of space in this place, so there is no limit to the parts, materials or magic objects that you can store here. You can even store items beyond your droids equip restrictions (i.e. level and scope)</p>
+
+<h2 id="dynamic-attributes">Dynamic Attributes</h2>
+
+<p>These attributes are a bit more complicated than the others. They are dynamic, meaning they change regularly without user interaction, however they are also still deterministic. When taken into consideration by a player, these dynamic values allow for a much more strategic element of the Attack Process based on timing.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Energy</td>
+<td>Even powerful Droids need a recharge now and then. Droids with low energy may not be able to run away and their attacks may have reduced strength</td>
+</tr>
+<tr>
+<td>Cover</td>
+<td>This value reflects the amount of good cover around that you can take advantage of</td>
+</tr>
+<tr>
+<td>EMI</td>
+<td>Electro-Magnetic Interference. More interference means less grasp on your parts and materials</td>
+</tr>
+</tbody></table>
+
+<aside class='notice'>
+For more information on calculating these dynamic values, see Advanced Gameplay
+</aside>
+
+          <h1 id="items">Items</h1>
+
+<p>If you need to become a more effective killing machine, you can buy items to augment your abilities. New weapons can increase your attacks with a multiplier (so you can deal the same damage by sending 0.0002 instead of sending 0.0004!), or increase your droid&rsquo;s defensive abilities with a multiplier (so enemies need to send more coins to deal the same amount of damage against you). </p>
+
+<p>As a droid levels up, new items become available that can be purchased by the player to equip on their droid, or to use immediately. Each item has specific advantages and will alter different aspects of the droid. </p>
+
+<h2 id="item-types">Item Types</h2>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Weapon</td>
+<td>A droids main weaponry.</td>
+</tr>
+<tr>
+<td>Shield</td>
+<td>Like Armour it also reduces the amount of incoming damage. Some shields also provide additional benefits.</td>
+</tr>
+<tr>
+<td>Consumable</td>
+<td>Items are held in the droid&rsquo;s inventory until they are removed, expired or broken.</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>A set of items, usually either a full model or collection of goods</td>
+</tr>
+<tr>
+<td>Head</td>
+<td>A droid head. Usually found on most droids</td>
+</tr>
+<tr>
+<td>Torso</td>
+<td>A key part of any droid. Equip scope requirements will be based off the characteristics of this part</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>An arm, sometimes droids have a couple of these</td>
+</tr>
+<tr>
+<td>Leg</td>
+<td>A leg, sometimes droids have a couple of these</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Usually found after clobbering an enemy, different materials will help you forge new items</td>
+</tr>
+</tbody></table>
+
+<h2 id="item-attributes">Item Attributes</h2>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Shortform</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Cost</td>
+<td>Cost</td>
+<td></td>
+</tr>
+<tr>
+<td>Level Required</td>
+<td>LVL</td>
+<td></td>
+</tr>
+<tr>
+<td>Damage</td>
+<td>DMG</td>
+<td></td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>ACC</td>
+<td></td>
+</tr>
+<tr>
+<td>Defense</td>
+<td>DFNS</td>
+<td></td>
+</tr>
+<tr>
+<td>Health Increase</td>
+<td>HI</td>
+<td></td>
+</tr>
+<tr>
+<td>Lasts</td>
+<td>L</td>
+<td></td>
+</tr>
+<tr>
+<td>Stage Damage Modifier</td>
+<td>SDM</td>
+<td></td>
+</tr>
+<tr>
+<td>Drop Frequency</td>
+<td>DF</td>
+<td></td>
+</tr>
+<tr>
+<td>Drop Scope</td>
+<td>DS</td>
+<td><em>See Drop Scope table below</em></td>
+</tr>
+<tr>
+<td>Equip Scope</td>
+<td>ES</td>
+<td><em>See Equip Scope table below</em></td>
+</tr>
+</tbody></table>
+
+<p>Name<br>
+Item Type
+Model<br>
+Class<br>
+Description(double &rsquo; is intentional)    </p>
+
+<p>Level Required  </p>
+
+<p>Image<br>
+coordinate_z    </p>
+
+<p>Cost    </p>
+
+<p>Damage<br>
+Clip Size
+Accuracy<br>
+Accuracy (Likely)   </p>
+
+<p>Defense 
+Defense_at_unlock
+Percentage of Set Defense   </p>
+
+<p>Material Strength   </p>
+
+<p>Health Increase 
+Lasts (blocks)  </p>
+
+<p>Drop Frequency<br>
+Drop Scope<br>
+EMS</p>
+
+<p>Composition </p>
+
+<p>Equip Scope 
+Equid Required<br>
+Equip Optional  </p>
+
+<h2 id="equip-scopes">Equip Scopes</h2>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Descirption</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Inventory</td>
+<td>Can only be placed in your droids inventory, to be consumed during the processing of the round</td>
+</tr>
+<tr>
+<td>Class</td>
+<td>The class of the item must match the class of the Torso being used</td>
+</tr>
+<tr>
+<td>Global</td>
+<td>Just go ahead and equip this onto whatever body part you want, as long as the body part supports the addition</td>
+</tr>
+<tr>
+<td>Character</td>
+<td>The item must match the character of the Torso being used</td>
+</tr>
+</tbody></table>
+
+<h2 id="drop-scopes">Drop Scopes</h2>
+
+<p>Some items drop and some don&rsquo;t. You usually won&rsquo;t have to worry about an arm falling off of your own droid, but it&rsquo;s good to keep an eye out for weak NPCs or droids built of your favourite material.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Drone</td>
+<td>This item has the possibility to drop if the droid is an NPC only.</td>
+</tr>
+<tr>
+<td>Never</td>
+<td>This type of items will never drop</td>
+</tr>
+<tr>
+<td>Always</td>
+<td>This item may drop from anybody if the right conditions are met.</td>
+</tr>
+</tbody></table>
+
+<h2 id="purchasing">Purchasing</h2>
+
+<p>To purchase any item, simply find the Item Address in the Item Directory and send the cost to that address from your registered wallet. Attempting to purchase an item that requires a higher level droid, or not including enough funds to cover the cost of the item will result in the funds being returned (minus a network transaction fee).</p>
+
+<h2 id="forging">Forging</h2>
+
+<p>Instead of purchasing a new item, if you have all the right materials and items, you can choose to forge it. Forging works a lot like purchasing.</p>
+
+<table><thead>
+<tr>
+<th>Recipe Material</th>
+<th>Quantity</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Space crap</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Space gold</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+          <h1 id="basic-gameplay">Basic Gameplay</h1>
+
+<p>Your goal is to destroy other droids and reap the benifits of their holdings in the process, all while trying to stay robo-alive. Roam the world looking for droids with high purses &amp; low health, but make sure your own energy is prime for an attack, otherwise you may want to consider shielding or taking cover instead.  </p>
+
+<p>After you register your droid and go through the wallet sync step, the system will be able to recognize your transactions and assocaite them with your Droid.</p>
+
+<p>Each other droid has a unique Attack Address, which you can use rain cryptocurrency bullets upon their person. </p>
+
+<h2 id="game-progression">Game Progression</h2>
+
+<p>A round within Coindroids is one unit of time as measured by a block in the blockchain. Actions (i.e. transactions) that occur within the same block all &ldquo;occur&rdquo; simultaneously. If two people attack and kill the same target, the target&rsquo;s purse is split proportionally amongst all attackers.</p>
+
+<p>In each round, you can choose to perform one of three actions (Attack, Shield and Cover). Depending on the current state of your own droid, your foes, and the environment around you, it may be better to perform some actions over others. </p>
+
+<p>Important: If there is a fork in the blockchain, Coindroids will undo all transactions from the previous block and reprocess the longer chain. Experience, upgrades and all other game data will be rolled back and will only be reprocessed if the relevant transactions are included in the longer chain.</p>
+
+<h3 id="deficit-payment">Deficit Payment</h3>
+
+<p>Due to forks, in very rare circumstances, you may have received a payout on one side of that fork that differs on the winning chain. In this case, either we will automatically payout the difference, or we will require a deficit payment to retreive the erroneously sent funds back from you.</p>
+
+<p>You could always not pay it, but then you need to start a new droid :(</p>
+
+<h3 id="registration-transactions">Registration Transactions</h3>
+
+<p>Players registering new wallets by sending small sums to a registration address will be recognized and confirmed. This is done first so that any game actions by the droid are recognized even if the player has just registered.</p>
+
+<h3 id="purchase-transactions">Purchase Transactions</h3>
+
+<p>All transactions from registered addresses to known Item Addresses are analyzed. All successful purchases of upgrades are equipped on the associated droid and items are added to the droid’s inventory.</p>
+
+<h3 id="item-equip">Item Equip</h3>
+
+<p>If you have queued up a new build, this will be applied here.</p>
+
+<h3 id="item-use">Item Use</h3>
+
+<p>Any relevant Action Items are now used, including those that were just purchased. This step is primarily for Action Items that affect a droid’s health</p>
+
+<h3 id="shielding-transactions">Shielding Transactions</h3>
+
+<p>All shield transactions are the first of the three main actions to be run. Droids who are shielding will shield against all attacks taken against them this round. </p>
+
+<h3 id="taking-cover-transactions">Taking Cover Transactions</h3>
+
+<p>Droids who are taking cover will do so against all attacks taken against them this round. </p>
+
+<h3 id="attack-transactions">Attack Transactions</h3>
+
+<p>All the transactions from known Player Addresses to droid Attack Addresses trigger the Attack Process.</p>
+
+<h3 id="health-changes-committed">Health Changes Committed</h3>
+
+<p>At this point, all damage done by other Droids from attack transactions is applied to the droid’s health. This is when we learn if a player has succumbed to their attackers or if the Droid has survived.</p>
+
+<h3 id="purse-rewards-calculated">Purse Rewards Calculated</h3>
+
+<p>All instances where a Droid has died are processed. Dead droids’ purses are divided up proportionately based on the amount of damage dealt by each of its attackers during this block. Damage performed in previous blocks is not counted towards this reward.</p>
+
+<h3 id="experience-changes-committed">Experience Changes Committed</h3>
+
+<p>Experience earned by the Droid through attacks and defensive maneuvers are now committed to the Droid at this time. Droids with enough experience level up (See Leveling)</p>
+
+<h3 id="droid-resurrection">Droid Resurrection</h3>
+
+<p>The droids who have died, and served their time, are rebuilt and enter for the next round of battles. </p>
+
+<h2 id="attack">Attack</h2>
+
+<p>Rawr!</p>
+
+<aside class="warning">
+Your droid only has so much ammunition to throw around per block. Make sure to check your clip-size and take this into consideration before crafting all your attacks. 
+</aside>
+
+<aside class="warning">
+All attacks a droid is making will be voided if the droid also atttempts to take a shield or cover action. 
+</aside>
+
+<h2 id="shield">Shield</h2>
+
+<p>Oh shit D:</p>
+
+<aside class="warning">
+If you don&rsquo;t have a shield equiped, your attempt to shield probably won&rsquo;t go very well. 
+</aside>
+
+<aside class="warning">
+All attacks a droid is making will be voided if the droid also atttempts to take a shield action. 
+</aside>
+
+<h2 id="cover">Cover</h2>
+
+<p>FUCK FUCK FUCK</p>
+
+<aside class="warning">
+All attacks a droid is making will be voided if the droid also atttempts to take a cover action. 
+</aside>
+
+<h2 id="using-a-consumable">Using a Consumable</h2>
+
+<h2 id="item-drops">Item Drops</h2>
+
+<h2 id="death-amp-taxes">Death &amp; Taxes</h2>
+
+<h2 id="leveling">Leveling</h2>
+
+<p>As your droid gains experience through successful attacks, they will level up after hitting specific milestones:</p>
+
+<table><thead>
+<tr>
+<th>Level</th>
+<th>Experience Needed</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>600</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1887</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3896</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6653</td>
+</tr>
+<tr>
+<td>6</td>
+<td>10176</td>
+</tr>
+<tr>
+<td>7</td>
+<td>14483</td>
+</tr>
+<tr>
+<td>8</td>
+<td>19585</td>
+</tr>
+<tr>
+<td>9</td>
+<td>25495</td>
+</tr>
+<tr>
+<td>10</td>
+<td>32221</td>
+</tr>
+</tbody></table>
+
+<p>Leveling up allows you to equip better items to your droid. </p>
+
+          <h1 id="advanced-gameplay">Advanced Gameplay</h1>
+
+<p>Everything in the Coindroids world is deterministic. The Advanced Gameplay guide is here to help you unlock the secrets of the world and begin to full develop your battle strategy. </p>
+
+<h2 id="dynamic-attributes">Dynamic Attributes</h2>
+<pre class="highlight shell"><code><span class="c"># Step 1 – Get the Hash of the Last Block</span>
+./bitcoind getbestblockhash 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9
+<span class="c"># Step 2 – Perform a SHA256 Hash of the known details</span>
+ SHA256<span class="o">(</span> 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9<span class="k">*</span>ENERGY<span class="k">*</span>4 <span class="o">)</span>
+ 88435b0191439b818d5bee558dbc8ed4831f43df17748ee4a8f22b4be1542bf5
+<span class="c"># Step 3 – Convert a portion to decimal and evaluate the final Results as a percentage</span>
+ 88 Hexadecimal <span class="o">=</span> 136 Decimal
+ Energy <span class="o">=</span> 136 / 255 <span class="o">=</span> 53.3% 
+
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="k">def</span> <span class="nf">calculate_dynamic_attribute</span><span class="p">(</span><span class="n">attribute_type</span><span class="p">,</span> <span class="n">previous_block_hash</span><span class="p">,</span> <span class="n">droid_id</span><span class="p">):</span>
+    <span class="n">attribute_input</span> <span class="o">=</span> <span class="n">previous_block_hash</span> <span class="o">+</span> <span class="n">attribute_type</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">droid_id</span><span class="p">)</span>
+    <span class="n">attribute_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">attribute_input</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>   <span class="o">//</span> <span class="n">This</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">hash</span> <span class="k">with</span> <span class="n">lower</span><span class="o">-</span><span class="n">case</span> <span class="n">letters</span>
+    <span class="n">first_byte</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">attribute_hash</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">attribute_value</span> <span class="o">=</span> <span class="n">first_byte</span> <span class="o">/</span> <span class="mf">255.0</span>
+    <span class="n">attribute_value</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">attribute_value</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">attribute_value</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">calculateDynamicAttribute</span><span class="p">(</span><span class="nx">attributeType</span><span class="p">,</span> <span class="nx">blockHash</span><span class="p">,</span> <span class="nx">droidID</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">attribute_input</span> <span class="o">=</span> <span class="nx">blockHash</span> <span class="o">+</span> <span class="nx">attributeType</span> <span class="o">+</span> <span class="nx">droidID</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">attribute_hash</span> <span class="o">=</span> <span class="nx">sha256</span><span class="p">(</span><span class="nx">attribute_input</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">first_byte</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">attribute_hash</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">16</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">first_byte</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">;</span>
+    <span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">};</span>
+
+</code></pre>
+
+<p>Some attributes used within the system are based off of previous block hashes. This is to provide the droids with a fun changing environment to battle within, while still giving them the pleasure of calculating every bit of their strategy. </p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Energy</td>
+<td>Even powerful Droids need a recharge now and then. Droids with low energy may not be able to run away and their attacks may have reduced strength</td>
+</tr>
+<tr>
+<td>EMI</td>
+<td>Most of a droid is actually held together by magnets. As a droids&rsquo; EMI fluctuates, this will govern how easily parts and materials fall off during attacks.</td>
+</tr>
+<tr>
+<td>Cover</td>
+<td>Keep an eye on your surroundings. If this value is high that means there are some useful objects around, be them walls, ditches or perhaps some sort of soft woodland creature that you can take cover behind to prevent damage.</td>
+</tr>
+</tbody></table>
+
+<h3 id="calculating-dynamic-attributes">Calculating Dynamic Attributes</h3>
+
+<p>Both of these values can each be calculated using the same algorithm. The value is unique per user and will change every time a new block of transactions is processed. The workflow to calculate these values is as follows:</p>
+
+<ol>
+<li><p>Get the hash of the last solved block for the blockchain in use</p></li>
+<li><p>Using the hash found in step one, referred to as <code class="prettyprint">&lt;highest block hash&gt;</code>, concatenate this value along with the capitalized name of the attribute being calculated, and the ID of the droid as a single text string. Finally, perform a SHA256 hash of this value. <code class="prettyprint">SHA256(&lt;best block hash&gt; + &lt;Attribute Name&gt; + &lt;Droid ID&gt;)</code></p></li>
+<li><p>Using the result from Step 2, take the first byte (i.e. the first 2 characters) and convert the hexadecimal value to decimal. Finally: with the decimal value, calculate the percentage based on a byte&rsquo;s maximum value to get the attribute value for each variable during this block of transactions.</p></li>
+</ol>
+
+<h2 id="the-attack-process">The Attack Process</h2>
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+MathJax.Hub.Config({
+  displayAlign: "left",
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<h3 id="checking-clip-size">Checking Clip Size</h3>
+
+<p>Droids only have so much ammunition they can attack with per block. </p>
+
+<h3 id="allocate-incoming-funds">Allocate Incoming Funds</h3>
+
+<p>The amount transferred to the Attack Address is split up and applied to the relevant purses across the system. </p>
+
+<ul>
+<li>75% into the purse of the defending droid</li>
+<li>24.5% as spilled ammunition </li>
+<li>0.5% as service fees</li>
+</ul>
+
+<h3 id="calculate-damage">Calculate Damage</h3>
+
+<p>First the base attack is calculated, taking into consideration all upgrades equipped to the droid.  During this calculation, the weapon’s accuracy and the droid’s dynamic attributes are all taken into account for the resulting gross damage. </p>
+
+<p>$$grossDamage = 2 \times \left ( \frac{Ammo Fired}{Token Size} \times Damage \times \left (Accuracy + (100 - Damage) \times \frac{Energy}{100} \right ) \right ) - \left ( \frac{Damage \times Weapon Unlock}{Level} \right )$$</p>
+
+<h3 id="calculate-the-defender-s-defense">Calculate the Defender’s Defense</h3>
+
+<p>The defense is culculated one of three ways, depending on the status of the defender.</p>
+
+<h4 id="normal-defense">Normal Defense</h4>
+
+<p>$$netDamage = \frac{grossDamage \times (100 - Defense \times 0.9)}{100} $$</p>
+
+<h4 id="defense-when-shielded">Defense when Shielded</h4>
+
+<p>$$netDamage = \frac{grossDamage \times (100 - Defender Shield \times 0.9)}{100} $$</p>
+
+<h4 id="defense-when-taking-cover">Defense when Taking Cover</h4>
+
+<p>$$netDamage = \frac{grossDamage \times (100 - Cover \times 0.9)}{100} $$</p>
+
+<p>We can then begin to calculate the Net Damage to be taken by the defending droid. The equation for this is as follows: </p>
+
+<p>$$Net Damage = Gross Damage \times (1 - Droid Defense)$$</p>
+
+<p>Once these calculations are complete, the Net Damage is the actual amount that is then subtracted from the defending droid’s health. </p>
+
+<p>$$Defending Droid Health = Current Health – Net Damage$$</p>
+
+<h3 id="awarding-experience">Awarding Experience</h3>
+
+<p>The experience gained from a battle is easily calculated for either droid by using the results of each of the above steps. The experience is not applied until the Experience Changes Committed phase of the Game Progression, which means that any leveling up does not occur until all the attacks are complete.</p>
+
+<p>$$Attacker Experience Increase =  100 \times ( \frac{netDamage}{Defenders Current Health}) \times ( \frac{( 2 \times Defenders Level)}{Attackers Level + Defenders Level} )$$</p>
+
+<h3 id="item-drop-algorithm">Item Drop Algorithm</h3>
+
+<p>An item drop occurs during an attack depending on the defenders EMI, their own EMS, and the strength of the attack. </p>
+
+          <h1 id="api-conventions">API Conventions</h1>
+
+<p>What do droids love almost as much as a good ol&rsquo; fashioned money fight? A full-featured API of course!</p>
+
+<aside class='success'>
+Anything that can be accomplished through our site can be done through the API. Our site is actually powered by the same API. 
+</aside>
+
+<h2 id="http-methods">HTTP Methods</h2>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve objects</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create new objects</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Update existing object(s)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Deletes one or more objects</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>Describe the object and receive a programmatic version of this document</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+<b>Connection problems?</b>
+<br>If you have issues validating our certificate, you may need to install the <a href='https://www.alphassl.com/support/install-root-certificate.html'>AlphaSSL Intermediate CA</a>.
+</aside>
+
+<h2 id="filtering-rows">Filtering Rows</h2>
+
+<blockquote>
+<p>Filtering Rows</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"http://api.coindroids.com/droid?name=eq.Trunk"</span>
+</code></pre>
+
+<blockquote>
+<p>Filtering with multiple conditions </p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"http://api.coindroids.com/droid?purse_current=gt.1000&amp;level=lt.10"</span>
+</code></pre>
+
+<p>Any column in a table can be filtered or ordered through URL query parameters.</p>
+
+<p>These conditions can also be changed with an &amp;. </p>
+
+<h3 id="available-operators">Available operators</h3>
+
+<table>
+<thead>
+<tr><th>abbreviation</th><th>meaning</th></tr>
+</thead>
+<tbody>
+<tr><td><code>eq</code></td><td>equals</td></tr>
+<tr><td><code>gt</code></td><td>greater than</td></tr>
+<tr><td><code>lt</code></td><td>less than</td></tr>
+<tr><td><code>gte</code></td><td>greater than or equal</td></tr>
+<tr><td><code>lte</code></td><td>less than or equal</td></tr>
+<tr><td><code>neq</code></td><td>not equal</td></tr>
+<tr><td><code>like</code></td><td>LIKE operator (use * in place of %)</td></tr>
+<tr><td><code>ilike</code></td><td>ILIKE operator (use * in place of %)</td></tr>
+<tr><td><code>@@</code></td><td>full-text search using <code>to_tsquery</code></td></tr>
+<tr><td><code>is</code></td><td>checking for exact equality (null,true,false)</td></tr>
+<tr><td><code>isnot</code></td><td>checking for exact inequality</td></tr>
+<tr><td><code>in</code></td><td>one of a list of values e.g. `?a=in.1,2,3`</td></tr>
+<tr><td><code>notin</code></td><td>none of a list of values e.g. `?a=notin.1,2,3`</td></tr>
+</tbody>
+</table>
+
+<p>To negate any operator prefix it with <code class="prettyprint">not</code> like <code class="prettyprint">?a=not.eq=2</code>. The custom negative operators like <code class="prettyprint">neq</code> are deprecated and will be removed in version three.</p>
+
+<p>For more complicated conditions, joins, or statistical functions you will have to create a new view in the database.</p>
+
+<h2 id="filtering-columns">Filtering Columns</h2>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"http://api.coindroids.com/droid?select=name,id,attack_address"</span>
+</code></pre>
+
+<blockquote>
+<p>To cast the column types, add a double colon</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"http://api.coindroids.com/droid?select=level::text,name,id"</span>
+</code></pre>
+
+<p>You can customize which columns are returned using the <code class="prettyprint">select</code> parameter:</p>
+
+<aside class='warning'>
+Not all type coercions are possible, and you will get an error describing any problems from selection or type casting.
+</aside>
+
+<h2 id="ordering">Ordering</h2>
+
+<p>The reserved word <code class="prettyprint">order</code> applies an <code class="prettyprint">ORDER BY</code> clause.  It uses a comma-separated list of columns and directions:</p>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"http://api.coindroids.com/droid?order=level.asc,purse_current.desc"</span>
+</code></pre>
+
+<p>If no direction is specified it defaults to descending order:</p>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"http://api.coindroids.com/droid?order=level"</span>
+</code></pre>
+
+          
+          <h1 id="api-objects">API Objects</h1>
+
+<table><thead>
+<tr>
+<th>Object</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Badge</td>
+<td>/badge</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>/currency</td>
+</tr>
+<tr>
+<td>Droid</td>
+<td>/droid</td>
+</tr>
+<tr>
+<td>Event</td>
+<td>/event</td>
+</tr>
+<tr>
+<td>Garage</td>
+<td>/garage</td>
+</tr>
+<tr>
+<td>Item</td>
+<td>/item</td>
+</tr>
+<tr>
+<td>Payout</td>
+<td>/payout</td>
+</tr>
+<tr>
+<td>Player</td>
+<td>/player</td>
+</tr>
+<tr>
+<td>Profile</td>
+<td>/profile</td>
+</tr>
+</tbody></table>
+
+<h2 id="badge">/badge</h2>
+
+<p>Our badge system is a little lacking at the moment but this is coming soon. The endpoint still works, it just doesn&rsquo;t return anything at the moment as we have no badges listed. </p>
+
+<h2 id="currency">/currency</h2>
+<pre class="highlight javascript"><code><span class="c1">// View specific currency (GET https://api.coindroids.com/currency)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/currency"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"netcode"</span><span class="p">:</span> <span class="s2">"eq.BTC"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># View specific currency</span>
+    <span class="c"># GET https://api.coindroids.com/currency</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/currency"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"netcode"</span><span class="p">:</span> <span class="s">"eq.BTC"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/currency?netcode=eq.BTC"</span>
+</code></pre>
+
+<blockquote>
+<p>The JSON returned will be formatted as: </p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "id": 1,
+    "name": "Bitcoin Testnet",
+    "starting_height": 625484,
+    "netcode": "XTN",
+    "min_attack_size": 10000,
+    "max_attack_size": 314159265,
+    "registration_fee": 10000,
+    "satoshis_per_coin": 100000000,
+    "transaction_fee_per_byte": 75,
+    "max_payouts_per_settlement": 250,
+    "min_change_amount": 1000000,
+    "last_ingested": {
+      "block_id": 9006,
+      "currency_id": 1,
+      "block_hash": "000000008991c4654c715cd5aee7fdabe578e122750d588c411c0c8fb70789c8",
+      "last_block_hash": "00000000a788ef252b103ebaf5de4ad6c4384cfa5537854ac8b2f38a37eb97ef",
+      "height": 632282,
+      "version": 4,
+      "mined_time": "2016-01-09T10:26:34+00:00"
+    },
+    "largest_payout": 1249990000,
+    "overall_purse_sum": 2446368,
+    "total_number_of_attacks": 421,
+    "total_amount_of_attacks": 3274158643,
+    "total_number_of_item_purchases": 24,
+    "total_droids": 15,
+    "percentage_of_droids": 0.88235294117647058824
+  }
+]
+</code></pre>
+
+<p>This endpoint gives you full access to all the currency related data.</p>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Whole Number</td>
+<td>The ID of the Currency</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The science-given name of the Currency</td>
+</tr>
+<tr>
+<td>netcode</td>
+<td>String</td>
+<td>A small call-sign used by the currency</td>
+</tr>
+<tr>
+<td>min_attack_size</td>
+<td>Satoshi</td>
+<td>The minimum number of satoshis required for an attack. Smaller amounts are considered donations.</td>
+</tr>
+<tr>
+<td>max_attack_size</td>
+<td>Satoshi</td>
+<td>The maximum number of satoshis that will be recognized as a valid attack. Larger attacks will be returned.</td>
+</tr>
+<tr>
+<td>registration_fee</td>
+<td>Satoshi</td>
+<td>The number of satoshis required to register a droid under this currency</td>
+</tr>
+<tr>
+<td>satoshis_per_coin</td>
+<td>Satoshi</td>
+<td>The amount of satoshis in one coin</td>
+</tr>
+<tr>
+<td>transaction_fee_per_byte</td>
+<td>Whole Number</td>
+<td>The amount of fee added per byte of the transaction</td>
+</tr>
+<tr>
+<td>max_payouts_per_settlement</td>
+<td>Whole Number</td>
+<td>The max number of settlement outputs allowed in each transaction</td>
+</tr>
+<tr>
+<td>min_change_amonunt</td>
+<td>Whole Number</td>
+<td>The minimum number of satoshis added to a transaction as change</td>
+</tr>
+<tr>
+<td>last_ingested</td>
+<td>Block&nbsp;(Condensed&nbsp;Object)</td>
+<td>Block details about the last block ingested and processed into the system</td>
+</tr>
+<tr>
+<td>largest_payout</td>
+<td>Satoshi</td>
+<td>The lagest payout sent out in the currency. Currently includes payouts returned due to voided actions (Unregistered play, Max attack amount, Item overage, etc )</td>
+</tr>
+<tr>
+<td>overall_purse_sum</td>
+<td>Satoshi</td>
+<td>The amount currently found across all available purses</td>
+</tr>
+<tr>
+<td>total_number_of_attacks</td>
+<td>Whole Number</td>
+<td>The total number of attacks taken place on this currency. Currently includes voided attacks</td>
+</tr>
+<tr>
+<td>total_amonunt_of_attacks</td>
+<td>Satoshi</td>
+<td>The total sum of transaction amounts sent as attacks on this currency. Currently includes voided attacks</td>
+</tr>
+<tr>
+<td>total_number_of_item_purchases</td>
+<td>Whole Number</td>
+<td>The total number of item purchases actions taken place on this currency. Currently includes voided purchases</td>
+</tr>
+<tr>
+<td>total_droids</td>
+<td>Whole Number</td>
+<td>Total total number of droids playing under this currency</td>
+</tr>
+<tr>
+<td>percentage_of_droids</td>
+<td>Numeric</td>
+<td>The percantage of droids fighting under this currency compared to others</td>
+</tr>
+</tbody></table>
+
+<h2 id="droid">/droid</h2>
+<pre class="highlight javascript"><code><span class="c1">// View specific droid (GET https://api.coindroids.com/droid)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/droid"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"eq.cmdr"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/droid"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"name"</span><span class="p">:</span> <span class="s">"eq.cmdr"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/droid?name=eq.Trunk"</span>
+</code></pre>
+
+<blockquote>
+<p>The JSON returned will be formatted as: </p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "id": 4,
+    "name": "Trunk",
+    "currency_id": 1,
+    "currency_code": "XTN",
+    "player_id": 4,
+    "username": "Trunc",
+    "attack_address": "2N7LDd3GTKYBZtgnMBhBoQ4CwAU2szueptS",
+    "primary_ammunition_clip": "msHz1TmNBWdGgXMJjPMuoDjesZzM5sPKXD",
+    "additional_ammunition_clips": [
+      "mxtdvzXLoiHsv9EHrPuqkVFdLXx9mRfrJc",
+      "myGqyTqViDQSLnq9p16FZQQw1PtK4jzA7h"
+    ],
+    "level": 2,
+    "experience": 629,
+    "health_current": 50,
+    "health_max": 50,
+    "purse_current": 7066014,
+    "is_npc": false,
+    "is_active": true,
+    "last_attack": 868029,
+    "death_height": null,
+    "is_dead": false,
+    "created_at": "2015-12-16T03:27:08.798193+00:00",
+    "build": [
+        {"name": "Tank Training Arm","class": "Tank","image": "","model": "Tank Training","details": { "ems": 0,"defense": 0,"drop_scope": "Drone","composition": {"73": [ 0.01875],"74": [ 0.0125],"75": [ 0.075],"76": [ 0.0125],"77": [ 0.00625]},"equip_scope": "Class","drop_frequency": 0.01,"equip_optional": "","equip_required": "","defense_at_unlock": 0,"material_strength": 0,"defense_set_percentage": 0.1},"item_id": 12,"item_type": "Arm","description": "","coordinate_z": null,"level_required": 0,"real_item_type": "Arm"},
+        {"name": "Tank Training Arm","class": "Tank","image": "","model": "Tank Training","details": {"ems": 0,"defense": 0,"drop_scope": "Drone","composition": {"73": [ 0.01875],"74": [ 0.0125],"75": [ 0.075],"76": [ 0.0125],"77": [ 0.00625]},"equip_scope": "Class","drop_frequency": 0.01,"equip_optional": "","equip_required": "","defense_at_unlock": 0,"material_strength": 0,"defense_set_percentage": 0.1},"item_id": 12,"item_type": "Arm","description": "","coordinate_z": null,"level_required": 0,"real_item_type": "Arm"},
+        {"name": "Tank Training Leg","class": "Tank","image": "","model": "Tank Training","details": {"ems": 0,"defense": 0,"drop_scope": "Drone","composition": {"73": [ 0.0375],"74": [ 0.025],"75": [ 0.15],"76": [ 0.025],"77": [ 0.0125]},"equip_scope": "Class","drop_frequency": 0.01,"equip_optional": "","equip_required": "","defense_at_unlock": 0,"material_strength": 0,"defense_set_percentage": 0.3},"item_id": 14,"item_type": "Leg","description": "","coordinate_z": null,"level_required": 0,"real_item_type": "Leg"},
+        {"name": "Tank Training Head","class": "Tank","image": "","model": "Tank Training","details": {"ems": 0,"defense": 0,"drop_scope": "Drone","composition": {"73": [ 0.015],"74": [ 0.01],"75": [ 0.06],"76": [ 0.01],"77": [ 0.005]},"equip_scope": "Class","drop_frequency": 0.01,"equip_optional": "","equip_required": "","defense_at_unlock": 0,"material_strength": 0,"defense_set_percentage": 0.1},"item_id": 13,"item_type": "Head","description": "","coordinate_z": null,"level_required": 0,"real_item_type": "Head"},
+        {"name": "Tank Training Torso","class": "Tank","image": "","model": "Tank Training","details": {"ems": 0,"defense": 0,"drop_scope": "Drone","composition": {"73": [ 0.06],"74": [ 0.04],"75": [ 0.24],"76": [ 0.04],"77": [ 0.02]},"equip_scope": "Class","drop_frequency": 0.01,"equip_optional": "{Shield}","equip_required": "{Arm,Arm,Leg,Head,Weapon}","defense_at_unlock": 0,"material_strength": 0,"defense_set_percentage": 0.4},"item_id": 27,"item_type": "Torso","description": "","coordinate_z": null,"level_required": 0,"real_item_type": "Torso"},
+        {"name": "Tank Training No Weapon","class": "Tank","image": "","model": "Tank Training","details": {"ems": 0,"damage": 1,"accuracy": 0.5,"clip_size": 1,"drop_scope": "Never","composition": "","equip_scope": "Class","drop_frequency": 0,"equip_optional": "","equip_required": "","accuracy_likely": 0.75,"material_strength": 0},"item_id": 28,"item_type": "Weapon","description": "","coordinate_z": null,"level_required": 0,"real_item_type": "Weapon"}
+    ],
+    "attribute": {"ems": "0","damage": "2.00000000000000000000","defense": "0.20000000000000000000","accuracy": "0.5","clip_size": "1000000","base_damage": "1","weapon_unlock": "0","accuracy_likely": "0.75" },
+    "composition": {"73": [  0.01875,  0.01875,  0.0375,  0.015,  0.06],"74": [  0.0125,  0.0125,  0.025,  0.01,  0.04],"75": [  0.075,  0.075,  0.15,  0.06,  0.24],"76": [  0.0125,  0.0125,  0.025,  0.01,  0.04],"77": [  0.00625,  0.00625,  0.0125,  0.005,  0.02] },
+    "pending_build": null,
+    "currency_in": 2956900459,
+    "currency_out": 2228644333,
+    "highest_payout": 396170029,
+    "attacks": 285,
+    "targeted": 57,
+    "deaths": 29,
+    "defensive_evasions": 2,
+    "offensive_evasions": 0,
+    "average_damage_performed": 49438751.169675090253,
+    "total_damage_performed": 13694534074,
+    "total_damage_defended": 15999069,
+    "most_targeted_id": 1,
+    "most_targeted_name": "cmdr",
+    "worst_enemy_id": 17,
+    "worst_enemy_name": "autotigger"
+  }
+]
+</code></pre>
+
+<p>The heart of the Coindroids system, the /droid API endpoint. </p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Whole Number</td>
+<td>The ID of the Droid</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The science-given name of the Droid</td>
+</tr>
+<tr>
+<td>player_id</td>
+<td>Whole Number</td>
+<td>The ID of the droids squishy overlord</td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>Name of the droids squishy overlord</td>
+</tr>
+<tr>
+<td>attack_address</td>
+<td>Cryptocurrency Address</td>
+<td>The address other players can use to attack this droid</td>
+</tr>
+<tr>
+<td>primary_ammunition_clip</td>
+<td>Cryptocurrency Address</td>
+<td>The primary address used for payouts involving this droid</td>
+</tr>
+<tr>
+<td>additional_ammunition_clips</td>
+<td>Cryptocurrency Address[]</td>
+<td>Additional addresses tracked for droid actions involving this droid</td>
+</tr>
+<tr>
+<td>level</td>
+<td>Whole Number</td>
+<td>The level of a droid</td>
+</tr>
+<tr>
+<td>experience</td>
+<td>Whole Number</td>
+<td>The total experience gained by this droid to date</td>
+</tr>
+<tr>
+<td>health_current</td>
+<td>Whole Number</td>
+<td>The current state of the health for a droid going into the next processing block</td>
+</tr>
+<tr>
+<td>health_max</td>
+<td>Whole Number</td>
+<td>The maximum health that this droid can have</td>
+</tr>
+<tr>
+<td>purse_current</td>
+<td>Whole Number</td>
+<td>The current state of the purse for a droid going into the next block processing</td>
+</tr>
+<tr>
+<td>is_npc</td>
+<td>Boolean</td>
+<td><em>[True, False]</em> Is this human controlled or a coindroids bot instance?</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>Boolean</td>
+<td>Has this droid been properly registered to a player wallet</td>
+</tr>
+<tr>
+<td>last_attack</td>
+<td>Whole Number</td>
+<td>The height of the last Attack action performed by this droid</td>
+</tr>
+<tr>
+<td>build</td>
+<td>Items[]</td>
+<td>A description of the items which make up the build of this droid</td>
+</tr>
+<tr>
+<td>inventory</td>
+<td>Items[]</td>
+<td>A list of all active items available to the droid during the next block processing</td>
+</tr>
+<tr>
+<td>currency_in</td>
+<td>Satoshi</td>
+<td>Total amount of value sent to the system from this droid</td>
+</tr>
+<tr>
+<td>currency_out</td>
+<td>Satoshi</td>
+<td>Total amount of payouts sent to this droid from the system</td>
+</tr>
+<tr>
+<td>highest_payout</td>
+<td>Satoshi</td>
+<td>Largest payout won by the droid (currently includes refunds from voided actions)</td>
+</tr>
+<tr>
+<td>attacks</td>
+<td>Whole Number</td>
+<td>Total number of attacks the droid has made</td>
+</tr>
+<tr>
+<td>targeted</td>
+<td>Whole Number</td>
+<td>Total number of attacks by other droids against this droid</td>
+</tr>
+<tr>
+<td>deaths</td>
+<td>Whole Number</td>
+<td>Total deaths this droid has experienced</td>
+</tr>
+<tr>
+<td>defensive_evasions</td>
+<td>Whole Number</td>
+<td>Total number of times the droid was able to evade an attack</td>
+</tr>
+<tr>
+<td>offensive_evasions</td>
+<td>Whole Number</td>
+<td>Total number of times this droids attack was evaded</td>
+</tr>
+<tr>
+<td>average_damage_performed</td>
+<td>Whole Number</td>
+<td>Average damage done by the droid in an attack</td>
+</tr>
+<tr>
+<td>total_damage_performed</td>
+<td>Whole Number</td>
+<td>Total damage performed by this droid across all attacks</td>
+</tr>
+<tr>
+<td>total_damage_defended</td>
+<td>Whole Number</td>
+<td>Total damage defended against by this droid across all attacks against it</td>
+</tr>
+<tr>
+<td>most_targeted_id</td>
+<td>Whole Number</td>
+<td>The target this droid attacks most often</td>
+</tr>
+<tr>
+<td>most_targeted_name</td>
+<td>String</td>
+<td>The name of the target this droid attacks most often</td>
+</tr>
+<tr>
+<td>worst_enemy_id</td>
+<td>Whole Number</td>
+<td>The droid that targets this droid the most</td>
+</tr>
+<tr>
+<td>worst_enemy_name</td>
+<td>String</td>
+<td>The name of the droid that targets this droid the most</td>
+</tr>
+</tbody></table>
+
+<h2 id="event">/event</h2>
+
+<blockquote>
+<p>Grab the latest ten events</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/event?order=block_height.desc"</span> <span class="se">\</span>
+    -H <span class="s2">"Range: 0-10"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// My Events (GET https://api.coindroids.com/event)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/event"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"order"</span><span class="p">:</span> <span class="s2">"block_height.desc"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Range"</span><span class="p">:</span> <span class="s2">"0-10"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># My Events</span>
+    <span class="c"># GET https://api.coindroids.com/event</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/event"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"order"</span><span class="p">:</span> <span class="s">"block_height.desc"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-10"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "currency_id": 1,
+    "block_hash": "00000000420931a23a242a1ed9f57709e5e1c435f540165e523f95728a9a1878",
+    "block_height": 632322,
+    "txid": "be6a3d11741b5903a5c5ca296bf2bd0f48e2a71d73bb83dd0b3d9cd0a20fa901",
+    "action_id": 65373,
+    "is_orphaned": false,
+    "tx_vout": 0,
+    "action_type": "Attack",
+    "player_id": 4,
+    "player_username": "Trunc",
+    "droid_id": 4,
+    "droid_name": "Trunk",
+    "target_id": 17,
+    "target_name": "autotigger",
+    "value": 22344600,
+    "timestamp": "2016-01-09T22:34:16.755158+00:00",
+    "outcomes": [
+      {
+        "outcome_id": 9867,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Purse gain",
+        "value_from": null,
+        "value_to": 5586150,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9868,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Ammunition spillage",
+        "value_from": null,
+        "value_to": 16535004,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9869,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Service fee",
+        "value_from": null,
+        "value_to": 223446,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9870,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Gross damage performed",
+        "value_from": null,
+        "value_to": 782954784,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9871,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Net damage taken",
+        "value_from": null,
+        "value_to": 759466140,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9872,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Experience earned",
+        "value_from": null,
+        "value_to": 272,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9873,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Purse changed",
+        "value_from": 1000385,
+        "value_to": 1000450,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9874,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Purse overage",
+        "value_from": null,
+        "value_to": 5586085,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9875,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Health changed",
+        "value_from": 2000770,
+        "value_to": 0,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9876,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Droid destroyed",
+        "value_from": null,
+        "value_to": null,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9877,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Experience earned",
+        "value_from": null,
+        "value_to": 26765,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9878,
+        "player_id": 22,
+        "droid_id": 17,
+        "outcome_type": "Purse changed",
+        "value_from": 1000450,
+        "value_to": 0,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9903,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Experience changed",
+        "value_from": 464386,
+        "value_to": 491423,
+        "is_orphaned": false
+      },
+      {
+        "outcome_id": 9903,
+        "player_id": 4,
+        "droid_id": 4,
+        "outcome_type": "Experience changed",
+        "value_from": 464386,
+        "value_to": 491423,
+        "is_orphaned": false
+      }
+    ],
+    "payouts": [
+      {
+        "payout_id": 1510,
+        "currency_id": 1,
+        "player_id": 17,
+        "address": "mzu6WxrgEE5vM9DNbXBN4y29s4qPYEgX6Y",
+        "amount": 5586085,
+        "settlement_txid": "7278c3806241c985febd819532c117c47c51dcca6e544f6c414c0be739316ac1"
+      },
+      {
+        "payout_id": 1511,
+        "currency_id": 1,
+        "player_id": 4,
+        "address": "msHz1TmNBWdGgXMJjPMuoDjesZzM5sPKXD",
+        "amount": 1000450,
+        "settlement_txid": "7278c3806241c985febd819532c117c47c51dcca6e544f6c414c0be739316ac1"
+      }
+    ]
+  }
+]
+</code></pre>
+
+<p>The event endpoint is used to retreive the outcome of all actions that have taken place. </p>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action_id</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>block_hash</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>block_height</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>txid</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tx_vout</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>action_type</td>
+<td>Action Type</td>
+<td><em>see data type for options</em></td>
+</tr>
+<tr>
+<td>value</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>player_id</td>
+<td>Whole Number</td>
+<td>The player of the droid who initiated the action</td>
+</tr>
+<tr>
+<td>player_username</td>
+<td>String</td>
+<td>The username of the player who initiated the action</td>
+</tr>
+<tr>
+<td>droid_id</td>
+<td>Whole Number</td>
+<td>The droid who initiated the action</td>
+</tr>
+<tr>
+<td>droid_name</td>
+<td>String</td>
+<td>The name of the droid who initiated the action</td>
+</tr>
+<tr>
+<td>target_id</td>
+<td>Whole Number</td>
+<td>The target of the action, either another droid or an item</td>
+</tr>
+<tr>
+<td>target_name</td>
+<td>String</td>
+<td>The name of the target. Currently only when the target is a droid</td>
+</tr>
+<tr>
+<td>outcomes</td>
+<td>Compact Outcomes[]</td>
+<td>An array containing all the related outcomes that occured as result of the action.</td>
+</tr>
+<tr>
+<td>payouts</td>
+<td>Compact Payouts[]</td>
+<td>An array containing all the related payouts that ocurred as a result of the action. Actions may share payouts with other actions.</td>
+</tr>
+<tr>
+<td>is_orphaned</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Timestamp</td>
+<td>When the action happened</td>
+</tr>
+</tbody></table>
+
+<p>TODO: Explain the Actions and Outcomes</p>
+
+<h3 id="action-types">Action Types</h3>
+
+<table><thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Item Equip</td>
+<td></td>
+</tr>
+<tr>
+<td>Purse Filling</td>
+<td></td>
+</tr>
+<tr>
+<td>Item Use</td>
+<td></td>
+</tr>
+<tr>
+<td>Deficit</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid Destruction</td>
+<td></td>
+</tr>
+<tr>
+<td>Attack</td>
+<td></td>
+</tr>
+<tr>
+<td>Ammunition Spillage</td>
+<td></td>
+</tr>
+<tr>
+<td>Registration</td>
+<td></td>
+</tr>
+<tr>
+<td>Item Purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>Change</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid Level-Up</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid Resurrection</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="outcome-types">Outcome Types</h3>
+
+<table><thead>
+<tr>
+<th>Outcome</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Droid destroyed</td>
+<td></td>
+</tr>
+<tr>
+<td>Rebuild successful</td>
+<td></td>
+</tr>
+<tr>
+<td>Insufficent funds sent</td>
+<td></td>
+</tr>
+<tr>
+<td>Garage inventory deposit</td>
+<td></td>
+</tr>
+<tr>
+<td>Gross damage performed</td>
+<td></td>
+</tr>
+<tr>
+<td>Refund of overpayment</td>
+<td></td>
+</tr>
+<tr>
+<td>Max purse changed</td>
+<td></td>
+</tr>
+<tr>
+<td>Payout adjustment</td>
+<td></td>
+</tr>
+<tr>
+<td>Material gained</td>
+<td></td>
+</tr>
+<tr>
+<td>Purse changed</td>
+<td></td>
+</tr>
+<tr>
+<td>Unregistered play</td>
+<td></td>
+</tr>
+<tr>
+<td>Ammunition spillage</td>
+<td></td>
+</tr>
+<tr>
+<td>Equipment changed</td>
+<td></td>
+</tr>
+<tr>
+<td>Refund of full amount</td>
+<td></td>
+</tr>
+<tr>
+<td>Garage inventory withdrawal</td>
+<td></td>
+</tr>
+<tr>
+<td>Experience earned</td>
+<td></td>
+</tr>
+<tr>
+<td>Bad aim</td>
+<td></td>
+</tr>
+<tr>
+<td>Address in use</td>
+<td></td>
+</tr>
+<tr>
+<td>Purse overage</td>
+<td></td>
+</tr>
+<tr>
+<td>Attack evaded</td>
+<td></td>
+</tr>
+<tr>
+<td>Purse gain</td>
+<td></td>
+</tr>
+<tr>
+<td>Rebuild failed</td>
+<td></td>
+</tr>
+<tr>
+<td>Clip size exceeded</td>
+<td></td>
+</tr>
+<tr>
+<td>Payout address change</td>
+<td></td>
+</tr>
+<tr>
+<td>Service fee</td>
+<td></td>
+</tr>
+<tr>
+<td>Level changed</td>
+<td></td>
+</tr>
+<tr>
+<td>Address claim</td>
+<td></td>
+</tr>
+<tr>
+<td>Attack amount above system max</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid registered</td>
+<td></td>
+</tr>
+<tr>
+<td>Dust donation</td>
+<td></td>
+</tr>
+<tr>
+<td>Garnishment of deficit</td>
+<td></td>
+</tr>
+<tr>
+<td>Health changed</td>
+<td></td>
+</tr>
+<tr>
+<td>Max health changed</td>
+<td></td>
+</tr>
+<tr>
+<td>Net damage taken</td>
+<td></td>
+</tr>
+<tr>
+<td>Experience changed</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="garage">/garage</h2>
+<pre class="highlight javascript"><code><span class="c1">// Viewing current password hash or email (GET https://api.coindroids.com/garage)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/garage"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer eyJhbG...5iAOo"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/garage"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer eyJhbG...5iAOo"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Viewing current password hash or email</span>
+    <span class="c"># GET https://api.coindroids.com/garage</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/garage"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer eyJhbG...5iAOo"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "quantity": 2,
+    "currency_id": 1,
+    "id": 12,
+    "name": "Tank Training Arm",
+    "description": "",
+    "item_type": "Arm",
+    "model": "Tank Training",
+    "class": "Tank",
+    "details": {
+      "ems": 0,
+      "defense": 0,
+      "drop_scope": "Drone",
+      "composition": {
+        "73": [
+          0.01875
+        ],
+        "74": [
+          0.0125
+        ],
+        "75": [
+          0.075
+        ],
+        "76": [
+          0.0125
+        ],
+        "77": [
+          0.00625
+        ]
+      },
+      "equip_scope": "Class",
+      "drop_frequency": 0.01,
+      "equip_optional": "",
+      "equip_required": "",
+      "defense_at_unlock": 0,
+      "material_strength": 0,
+      "defense_set_percentage": 0.1
+    },
+    "level_required": 0
+  },
+  {
+    "quantity": 1,
+    "currency_id": 1,
+    "id": 13,
+    "name": "Tank Training Head",
+    "description": "",
+    "item_type": "Head",
+    "model": "Tank Training",
+    "class": "Tank",
+    "details": {
+      "ems": 0,
+      "defense": 0,
+      "drop_scope": "Drone",
+      "composition": {
+        "73": [
+          0.015
+        ],
+        "74": [
+          0.01
+        ],
+        "75": [
+          0.06
+        ],
+        "76": [
+          0.01
+        ],
+        "77": [
+          0.005
+        ]
+      },
+      "equip_scope": "Class",
+      "drop_frequency": 0.01,
+      "equip_optional": "",
+      "equip_required": "",
+      "defense_at_unlock": 0,
+      "material_strength": 0,
+      "defense_set_percentage": 0.1
+    },
+    "level_required": 0
+  }
+]
+</code></pre>
+
+<aside class='warning'>
+This RPC call requires that the request include the Authorization token
+</aside>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quantity</td>
+<td>Whole Number</td>
+<td>The amount you have access to equip</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Whole Number</td>
+<td>The ID of the currency this item is associated with. Items cannot jump currency realms</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Whole Number</td>
+<td>The ID of the item</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the object</td>
+</tr>
+<tr>
+<td>&hellip;</td>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+</tbody></table>
+
+<h2 id="item">/item</h2>
+<pre class="highlight javascript"><code><span class="c1">// My Events (GET https://api.coindroids.com/item)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/item"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"eq.8"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># My Events</span>
+    <span class="c"># GET https://api.coindroids.com/item</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/item"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"id"</span><span class="p">:</span> <span class="s">"eq.8"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/item?id=eq.8"</span>
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "id": 8,
+    "name": "Health Pack 10",
+    "item_type": "Consumable",
+    "model": null,
+    "class": "Assault",
+    "description": "",
+    "image": "",
+    "level_required": 1,
+    "coordinate_z": null,
+    "details": {
+      "health_increase": 10
+    },
+    "pricing": [
+      {
+        "currency_name": "Bitcoin Testnet",
+        "address": "2Mz3osUdfVhGsgMygvGmnmfubspifkxhWXz",
+        "amount": 500000
+      }
+    ]
+  }
+]
+</code></pre>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Whole Number</td>
+<td>The unique numeric identifier</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the item</td>
+</tr>
+<tr>
+<td>item_type</td>
+<td>Item Type</td>
+<td>See the item_type data type</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>A description of the item</td>
+</tr>
+<tr>
+<td>image</td>
+<td>URL</td>
+<td></td>
+</tr>
+<tr>
+<td>level_required</td>
+<td>Whole Number</td>
+<td>The level a driod must be to equip or use this item</td>
+</tr>
+<tr>
+<td>details</td>
+<td>JSONB</td>
+<td><em>See Item Details below</em></td>
+</tr>
+<tr>
+<td>pricing</td>
+<td>Payment Option[]</td>
+<td>A list of prices per available currency</td>
+</tr>
+</tbody></table>
+
+<h2 id="payout">/payout</h2>
+
+<blockquote>
+<p>Grab the 4 latest payouts</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="c1">// My Events (GET https://api.coindroids.com/payout)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/payout"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"order"</span><span class="p">:</span> <span class="s2">"block_height.desc"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Range"</span><span class="p">:</span> <span class="s2">"0-10"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># My Events</span>
+    <span class="c"># GET https://api.coindroids.com/payout</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/payout"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"order"</span><span class="p">:</span> <span class="s">"block_height.desc"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-10"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/payout?order=block_height.desc"</span> <span class="se">\</span>
+    -H <span class="s2">"Range: 0-10"</span>
+
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "currency": "Bitcoin Testnet",
+    "block_height": 868029,
+    "actions": [
+      "Attack"
+    ],
+    "outcome_type": "Refund of overpayment",
+    "amount": 0.00700000000000000000,
+    "player": "Trunc",
+    "droid": "Trunk"
+  },
+  {
+    "currency": "Bitcoin Testnet",
+    "block_height": 868029,
+    "actions": [
+      "Attack"
+    ],
+    "outcome_type": "Refund of overpayment",
+    "amount": 0.00410000000000000000,
+    "player": "Trunc",
+    "droid": "Trunk"
+  },
+  {
+    "currency": "Bitcoin Testnet",
+    "block_height": 868029,
+    "actions": [
+      "Attack",
+      "Attack"
+    ],
+    "outcome_type": "Droid destroyed",
+    "amount": 0.07186051000000000000,
+    "player": "Trogdor",
+    "droid": "Trogdor1"
+  },
+  {
+    "currency": "Bitcoin Testnet",
+    "block_height": 868028,
+    "actions": [
+      "Attack",
+      "Attack",
+      "Attack"
+    ],
+    "outcome_type": "Droid destroyed",
+    "amount": 0.0000000000000000000000000000,
+    "player": "Trunc",
+    "droid": "Rob1t"
+  }
+]
+</code></pre>
+
+<p>A list of all the payouts going out of the system. </p>
+
+<h3 id="response">Response</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The name of the currency network the payout was sent on</td>
+</tr>
+<tr>
+<td>block_height</td>
+<td>Whole Number</td>
+<td>The height of the block it was included in</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>Action Type[]</td>
+<td>The action type(s) that triggered the payout</td>
+</tr>
+<tr>
+<td>outcome_type</td>
+<td>Outcome Type[]</td>
+<td>The outcome type(s) that triggered the payout</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Numeric</td>
+<td>The amount sent out</td>
+</tr>
+<tr>
+<td>player</td>
+<td>String</td>
+<td>The name of the player who received the payout (where applicable)</td>
+</tr>
+<tr>
+<td>droid</td>
+<td>String</td>
+<td>The name of the Droid who received the payout (where applicable)</td>
+</tr>
+</tbody></table>
+
+<h2 id="player">/player</h2>
+
+<blockquote>
+<p>Find the 5 newest players</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="c1">// My Events (GET https://api.coindroids.com/player)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/player"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"order"</span><span class="p">:</span> <span class="s2">"id.desc"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Range"</span><span class="p">:</span> <span class="s2">"0-4"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+
+
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># My Events</span>
+    <span class="c"># GET https://api.coindroids.com/player</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/player"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"order"</span><span class="p">:</span> <span class="s">"id.desc"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-4"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+
+
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/player?order=id.desc"</span> <span class="se">\</span>
+    -H <span class="s2">"Range: 0-4"</span>
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "id": 23,
+    "username": "BitDroid",
+    "droids": [
+      18
+    ]
+  },
+  {
+    "id": 22,
+    "username": "autotiger",
+    "droids": [
+      17
+    ]
+  },
+  {
+    "id": 21,
+    "username": "davidl",
+    "droids": [
+      16
+    ]
+  },
+  {
+    "id": 20,
+    "username": "udecker",
+    "droids": null
+  },
+  {
+    "id": 19,
+    "username": "phorex",
+    "droids": [
+      15
+    ]
+  }
+]
+</code></pre>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Whole Number</td>
+<td>The ID of the player account</td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>The username of the player account. Not to be confused with their Droid name (although this could match)</td>
+</tr>
+<tr>
+<td>droids</td>
+<td>Whole Number[]</td>
+<td>An array of all Droid ID #s belonging to this player</td>
+</tr>
+</tbody></table>
+
+<h2 id="profile">/profile</h2>
+
+<blockquote>
+<p>View Profile (GET)</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/profile"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer eyJhb...2Y"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// Viewing current password hash or email (GET https://api.coindroids.com/profile)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/profile"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer eyJhb...2Y"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+
+
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Viewing current password hash or email</span>
+    <span class="c"># GET https://api.coindroids.com/profile</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/profile"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer eyJhb...2Y"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+
+</code></pre>
+
+<blockquote>
+<p>Password Update Example (PATCH)</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="c1">// Updating a password or email (PATCH https://api.coindroids.com/profile)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/profile"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"PATCH"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer eyJhb...2Y"</span><span class="p">,</span>
+        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"text/plain; charset=utf-8"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">processData</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="s2">"{ \"password_hash\":\"my new l33t password\" }"</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+</code></pre>
+<pre class="highlight shell"><code>curl -X <span class="s2">"PATCH"</span> <span class="s2">"https://api.coindroids.com/profile"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer eyJhb...2Y"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type: text/plain; charset=utf-8"</span> <span class="se">\</span>
+    -d <span class="s2">"{ </span><span class="se">\"</span><span class="s2">password_hash</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">my new l33t password</span><span class="se">\"</span><span class="s2"> }"</span>
+
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Updating a password or email</span>
+    <span class="c"># PATCH https://api.coindroids.com/profile</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/profile"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer eyJhb...2Y"</span><span class="p">,</span>
+                <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"text/plain; charset=utf-8"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">data</span><span class="o">=</span><span class="s">"{ </span><span class="se">\"</span><span class="s">password_hash</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">my new l33t password</span><span class="se">\"</span><span class="s"> }"</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  {
+    "id": 4,
+    "username": "Trunc",
+    "password_hash": "$2a$..ba",
+    "email": "josh@coindroids.com"
+  }
+]
+</code></pre>
+
+<aside class='warning'>
+This RPC call requires that the request include the Authorization token
+</aside>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Whole Number</td>
+<td>The players ID #</td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>The players username</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String[]</td>
+<td>An array of email addresses owned by the player</td>
+</tr>
+<tr>
+<td>password_hash</td>
+<td>String</td>
+<td>The hash of the current password recognized by coindroids</td>
+</tr>
+</tbody></table>
+
+          <h1 id="api-functions">API Functions</h1>
+
+<p>All API functions are accessed via POST calls to the API. </p>
+
+<aside class='notice'>
+You will noticed that our list of functions is actually quite short. Most of the interaction you will do with the Coindroids universe is through cryptocurrency transactions. 
+</aside>
+
+<table><thead>
+<tr>
+<th>Function</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>create_droid(Model, Currency ID, Droid Name )</td>
+<td>/rpc/create_droid</td>
+</tr>
+<tr>
+<td>get_droid_registration_address(Droid ID)</td>
+<td>/rpc/get_droid_registration_address</td>
+</tr>
+<tr>
+<td>identify()</td>
+<td>/rpc/identify</td>
+</tr>
+<tr>
+<td>register(Username, Password, Email, Invite Code, Acceptance of Terms)</td>
+<td>/rpc/register</td>
+</tr>
+<tr>
+<td>set_droid_build(Droid ID, Build Details)</td>
+<td>/rpc/set_droid_build</td>
+</tr>
+</tbody></table>
+
+<h2 id="rpc-create_droid">/rpc/create_droid</h2>
+<pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/create_droid"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer eyJhbGciO...DSzsybGFgk"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    -d <span class="s2">"{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Droidy McDroidface</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">currency_id</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">model</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Assault Training</span><span class="se">\"</span><span class="s2">}"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com//rpc/create_droid"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer eyJhbGc...sybGFgk"</span><span class="p">,</span>
+        <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">contentType</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Droidy McDroidface"</span><span class="p">,</span>
+        <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"Assault Training"</span><span class="p">,</span>
+        <span class="s2">"currency_id"</span><span class="p">:</span> <span class="s2">"1"</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+  <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/rpc/create_droid"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer eyJhbGciOiJI...zsybGFgk"</span><span class="p">,</span>
+                <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+                <span class="s">"name"</span><span class="p">:</span> <span class="s">"Droidy McDroidface"</span><span class="p">,</span>
+                <span class="s">"model"</span><span class="p">:</span> <span class="s">"Droidy McDroidface"</span><span class="p">,</span>
+                <span class="s">"currency_id"</span><span class="p">:</span> <span class="s">"1"</span>
+            <span class="p">})</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+</code></pre>
+
+<aside class='warning'>
+This RPC call requires that the request include the Authorization token
+</aside>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>CHARACTER VARYING</td>
+<td>Your droids new classy moniker</td>
+</tr>
+<tr>
+<td>model</td>
+<td>Model</td>
+<td>See the list of models available for new droids below</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Bigint</td>
+<td>See the /currency endpoint for available currencies</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Droid</td>
+<td>The droid object as if called through the /droid endpoint.</td>
+</tr>
+</tbody></table>
+
+<h2 id="rpc-get_droid_registration_address">/rpc/get_droid_registration_address</h2>
+<pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/get_droid_registration_address"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI...2lXGhuBjtQ8Q"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
+    -d <span class="s2">"{ </span><span class="se">\"</span><span class="s2">droid_id</span><span class="se">\"</span><span class="s2">:YourDroidID }"</span>
+</code></pre>
+
+<aside class='warning'>
+This RPC call requires that the request include the Authorization token
+</aside>
+
+<p>This function is used to grab a new wallet sync address for a droid.</p>
+
+<aside class='notice'>
+If you notice that the Coindroids universe is no longer recognizing your transactions, you likely need to call this function and use the address returned to re-sync your wallet. 
+</aside>
+
+<h2 id="rpc-identify">/rpc/identify</h2>
+
+<blockquote>
+<p>Username &amp; Password Authentication</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/identify"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    -d <span class="s2">"{</span><span class="se">\"</span><span class="s2">username</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">YourUsername</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">password</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">YourPassword</span><span class="se">\"</span><span class="s2">}"</span>
+
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// Identify (POST https://api.coindroids.com/rpc/identify)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/rpc/identify"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+    <span class="na">processData</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="s2">"{\"username\":\"Abstract\", \"password\":\"password\"}"</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Identify</span>
+    <span class="c"># POST https://api.coindroids.com/rpc/identify</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/rpc/identify"</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="s">"{</span><span class="se">\"</span><span class="s">username</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Abstract</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">password</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">password</span><span class="se">\"</span><span class="s">}"</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+</code></pre>
+
+<blockquote>
+<p>Token Authorization</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/identify"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer eyJhbGciOiJ...4bn4gYu2gs"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// Identify (update with authenticate session) (POST https://api.coindroids.com/rpc/identify)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/rpc/identify"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp...-tV89N7sPiz4bn4gYu2gs"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Identify (update with authenticate session)</span>
+    <span class="c"># POST https://api.coindroids.com/rpc/identify</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/rpc/identify"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicGxheWVycyIsImlkIjoiY2ZmYzZkYzQtMDY0ZS00OWRiLTllODgtNzgwNjY4ZjQ0ZTBjIn0.05yM5ihI5gyoh6bQoG6Kus-tV89N7sPiz4bn4gYu2gs"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+
+</code></pre>
+
+<p>To start a new session, pass the username and password paramters. If you are extending a session, no paramters are needed but the transaction must include an authorization header. </p>
+
+<h3 id="parameters">Parameters</h3>
+
+<h4 id="username-amp-password-authentication">Username &amp; Password Authentication</h4>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>Character Varying</td>
+<td>The player name</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Chacter Varying</td>
+<td>The player password</td>
+</tr>
+</tbody></table>
+
+<h4 id="token-authentication">Token Authentication</h4>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td><em>No paramters needed for token based identification</em></td>
+</tr>
+</tbody></table>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td>The JWT authorization token for API requests</td>
+</tr>
+</tbody></table>
+
+<h2 id="rpc-register">/rpc/register</h2>
+<pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"https://api.coindroids.com/rpc/register"</span> <span class="se">\</span>
+    -H <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
+    -d <span class="nv">$'</span><span class="o">{</span> 
+    <span class="s2">"username"</span>:<span class="s2">"Abstract"</span>,
+    <span class="s2">"password"</span>:<span class="s2">"password"</span>,
+    <span class="s2">"email"</span>:<span class="s2">"josh@coindroids.com"</span>,
+    <span class="s2">"invite_code"</span>:<span class="s2">"37764f2a-da1b-40ea-a054-ef1c8021196a"</span>
+
+<span class="o">}</span><span class="s1">'
+</span></code></pre>
+<pre class="highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#submit-registration"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="nx">$</span><span class="p">(</span><span class="s2">"#submit-registration"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+   <span class="nx">$</span><span class="p">(</span><span class="s2">"#submit-registration-hidden"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+   <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+
+   <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#Password"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#RepeatPassword"</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">registrationData</span> <span class="o">=</span> <span class="p">{</span>
+                   <span class="s2">"username"</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#Username"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+                   <span class="s2">"password"</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#Password"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+                   <span class="s2">"email"</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#Email"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+                   <span class="s2">"invite_code"</span><span class="p">:</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#InviteCode"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> 
+        <span class="p">};</span>
+        <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+            <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/rpc/register"</span><span class="p">,</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+            <span class="na">processData</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="na">contentType</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">registrationData</span><span class="p">)</span>
+            <span class="p">})</span>
+        <span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">"#RegistrationFormContent"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">"&lt;p&gt;Registration Complete!&lt;/p&gt;"</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">"#RegistrationFormContent"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;p&gt;&lt;textarea disabled&gt;"</span><span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">token</span> <span class="o">+</span><span class="s2">"&lt;/textarea&gt;&lt;/p&gt;"</span><span class="p">);</span> 
+
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="cm">/* ... */</span>
+        <span class="p">});</span>
+
+    <span class="p">}</span>
+
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Register a player</span>
+    <span class="c"># POST https://api.coindroids.com/rpc/register</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/rpc/register"</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="s">"{ </span><span class="err">
+</span><span class="s">                </span><span class="se">\"</span><span class="s">username</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Abstract</span><span class="se">\"</span><span class="s">,</span><span class="err">
+</span><span class="s">                </span><span class="se">\"</span><span class="s">password</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">password</span><span class="se">\"</span><span class="s">,</span><span class="err">
+</span><span class="s">                </span><span class="se">\"</span><span class="s">email</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">josh@coindroids.com</span><span class="se">\"</span><span class="s">,</span><span class="err">
+</span><span class="s">                </span><span class="se">\"</span><span class="s">invite_code</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">37764f2a-da1b-40ea-a054-ef1c8021196a</span><span class="se">\"</span><span class="err">
+
+</span><span class="s">            }"</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+</code></pre>
+
+<p>This function is used to create new players in the system. Create your player first, otherwise you won&rsquo;t be able to create a droid.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>Character Varying</td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>Character Varying</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td>Character Varying</td>
+<td></td>
+</tr>
+<tr>
+<td>invite_code</td>
+<td>Character Varying</td>
+<td></td>
+</tr>
+<tr>
+<td>accept_terms</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Token</td>
+<td>The JWT authorization token for API requests</td>
+</tr>
+</tbody></table>
+
+<h2 id="rpc-set_droid_build">/rpc/set_droid_build</h2>
+
+<aside class='warning'>
+This RPC call requires that the request include the Authorization token
+</aside>
+
+<p>Your droid is an ever evolving beast and the Coindroids universe is no different. Ensure your droid is always built to impress (and annihilate) through the set_droid_build call. </p>
+
+<aside class='notice'>
+Builds are not updated immediately, they are validated and put into a pending state. Droid builds are applied during the Block Processing procedures.
+</aside>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>droid_id</td>
+<td>Bigint</td>
+<td>The ID of the droid being updated</td>
+</tr>
+<tr>
+<td>build</td>
+<td>JSONB</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Droid</td>
+<td>The droid object as if called through the /droid endpoint.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="ccss-compliance">CCSS Compliance</h1>
+
+<p>The <a href="https://cryptoconsortium.github.io/CCSS/">CCSS</a> is an open security standard curated by <a href="https://cryptoconsortium.org">C4</a>. The original matrix can be found <a href="https://cryptoconsortium.github.io/CCSS/Matrix/">here</a>. </p>
+
+<p>The details below are the current results of our self-evaluation and in some cases reflect our intentions upon launch and not our currently implemented aspects. This document allows us to be open in our how we secure our platform, while also providing a case study for the CCSS.  </p>
+
+<p>Our current security grade is <em>Uncertified</em>, our target is <em>Level I</em>. Our rebuttal of this marking is provided within related matrix sections. </p>
+
+<table >
+<thead>
+  <tr>
+    <th id='header_category'>Category</th>
+    <th id='header_aspect'>Aspect</th>
+    <th id='header_component'>Component</th>
+    <th id='header_uncertifiable'>Uncertified</th>
+    <th id='header_level_i'>Level</th>
+    <th id='header_level_ii'>Level II</th>
+    <th id='header_level_iii'>Level III</th>
+  </tr>
+</thead>
+<tbody>
+  
+    
+    <tr>
+      
+
+      
+        
+        
+
+        <td rowspan=28>Cryptographic Asset Management</li>
+
+      
+
+      <td rowspan=3>Key / Seed Generation</td>
+
+      
+        
+        <td>Operator-created Key / Seed</td>
+        <td>Keys/seeds are issued to the keyholder by another actor</td>
+        <td></td>
+        <td></td>
+        <td>Keys/seeds are created by the key/seed operator themselves</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Creation methodology is validated</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed creation methodology is validated prior to use</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>DRBG Compliance</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed is created using a NIST SP 800-90A compliant DRBG that has been seeded with multiple cryptographically-secure sources of entropy</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=6>Wallet Creation</td>
+
+      
+        
+        <td>Unique address per transaction</td>
+        <td>Wallets/addresses are reused for system addresses, including Attack, Item Purchase, Change and Cold storage. Static addresses for Attack addresses, despite being against the CCSS guidelines, is needed for gameplay mechanics. Other addresses are static to provider a more efficient backend as every additional address monitored is can be a large tax on the system. <br> We are not convinced that address re-use is a security hazard as long as deterministic k values are used during signing.  </td>
+        <td></td>
+        <td></td>
+        <td>Users can choose to use unique addresses for every transaction sent into the Coindroids system.</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Multiple keys for signing</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Transactions require signatures from 2 or more keys</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Redundant key for recovery</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Redundant keys are assigned for recovery purposes (i.e. 2of3, 3of5, etc.)</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Deterministic wallets</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Addresses are assigned deterministically</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Geographic distribution of keys</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Keys are distributed across multiple separate locations</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Organizational distribution of keys</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=7>Key Storage</td>
+
+      
+        
+        <td>Primary keys are stored encrypted</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed is stored with strong encryption</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup key exists</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed backup is stored in a separate location from primary key/seed</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup key has environmental protection</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed backup is protected from environmental damage</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup key is access-controlled</td>
+        <td></td>
+        <td></td>
+        <td>Key/seed backup is protected by access controls to prevent unauthorized access (i.e. safe/safe deposit box)</td>
+        <td>Key/seed backup is protected by access controls to prevent unauthorized access (i.e. safe/safe deposit box)</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup key has tamper-evident seal</td>
+        <td></td>
+        <td></td>
+        <td>Key/seed backup employs tamper-evident seal</td>
+        <td>Key/seed backup employs tamper-evident seal</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup key is encrypted</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed backup is stored with strong encryption equal/better than that used to protect primary key</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup key is protected from EMP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed backup is resistant to ElectroMagnetic Pulses (EMPs)</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=8>Key Usage</td>
+
+      
+        
+        <td>Key access requires user/pass/nth factor</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Access to key/seed requires an identifier and at least 3 other factors (password, MFA token, in-person verification by guard, IP address whitelist, physical key to gain access to secured storage, countersigning organization)</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Keys are only used in a trusted environment</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Keys/seeds are only used in trusted environments</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Operator reference checks</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed holders have references checked</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Operator ID checks</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Key/seed holders have identify verified</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Operator background checks</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Spends are verified before signing</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Verification of fund destinations and amounts are performed prior to key usage</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>No two keys are used on one device</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>No two keys belonging to the same wallet are present on any one device</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>DRBG Compliance</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>The &lsquo;k&rsquo; values in digital signatures are created using a NIST SP 800-90A compliant DRBG OR The 'k&rsquo; values are created deterministically according to RFC 6979</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=2>Key Compromise Protocol (KCP)</td>
+
+      
+        
+        <td>KCP Exists</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>A written checklist/procedure document exists that outlines procedures for each actor to carry out in order to remove the risk of compromise. Document is maintained as warranted by changes to the system.</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>KCP Training + Rehearsals</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Regular training is provided to keyholders to ensure they are prepared to invoke the protocol when required.</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=2>Keyholder Grant/Revoke Policies & Procedures</td>
+
+      
+        
+        <td>Grant/Revoke Procedures/Checklist</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>A written checklist/procedure document exists that is followed for on/offboarding. The checklist outlines every permission to grant/revoke for every role in the information system</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Grant/Revoke Audit Trail</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>An audit trail records every change of access including who performed the change</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+        
+        
+
+        <td rowspan=9>Operations</li>
+
+      
+
+      <td rowspan=1>Security Audits / Pentests</td>
+
+      
+        
+        <td>Security Audit</td>
+        <td></td>
+        <td></td>
+        <td>A security audit has been completed by another entity who did not assist in the development of the system</td>
+        <td>External security audits are conducted regularly (at least 1/yr)</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=2>Data Sanitization Policy (DSP)</td>
+
+      
+        
+        <td>DSP Exists</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Detailed policy covering sanitization requirements, procedures, and validation steps for every media type used by business</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Audit Trail of all media sanitization</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Audit trails are maintained for every piece of sanitized media</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=1>Proof of Reserve (PoR)</td>
+
+      
+        
+        <td>Proof of Reserve Audits</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>The ledger is openly viewable by all, so no PoR audits are necessary</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+    
+    <tr>
+      
+
+      
+
+      <td rowspan=2>Audit Logs</td>
+
+      
+        
+        <td>Application Audit Logs</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Full audit trail exists of all user/admin actions</td>
+        </tr>
+        
+      
+        
+          <tr>
+        
+        <td>Backup of Audit Logs</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Backups of audit data are performed regularly</td>
+        </tr>
+        
+      
+
+    </tr>
+  
+</tbody>
+</table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

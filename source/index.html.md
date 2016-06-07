@@ -17,8 +17,22 @@ includes:
   - advanced_gameplay
   - api
   - api_authorization
-  - api_objects
-  - api_functions
+  - api_object
+  - api_object_badge
+  - api_object_currency
+  - api_object_droid
+  - api_object_event
+  - api_object_garage
+  - api_object_item
+  - api_object_payout
+  - api_object_player 
+  - api_object_profile
+  - api_function
+  - api_function_create_droid
+  - api_function_get_droid_registration_address
+  - api_function_identify
+  - api_function_register
+  - api_function_set_droid_build
   - ccss
 
 search: true
