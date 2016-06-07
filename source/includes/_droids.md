@@ -1,5 +1,5 @@
 
-# Getting to know your Droid
+# Droids
 
 Every player in the game is a Droid, a futuristic robot with many attributes. These attributes dictate how well they perform in a battle, be they attackers or defenders. They can also be purely cosmetic and simply make the character cool, hip and/or scary.
 
