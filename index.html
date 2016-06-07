@@ -582,44 +582,262 @@ For more information on calculating these dynamic values, see Advanced Gameplay
 </tr>
 </tbody></table>
 
-<p>Name<br>
-Item Type
-Model<br>
-Class<br>
-Description(double &rsquo; is intentional)    </p>
+<h3 id="item-attribute-matrix">Item Attribute Matrix</h3>
 
-<p>Level Required  </p>
+<p>Each type of item tends to have a different set of attributes that are relevant to its function. </p>
 
-<p>Image<br>
-coordinate_z    </p>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Weapon</th>
+<th>Shield</th>
+<th>Chassis Part</th>
+<th>Consumable</th>
+<th>Set</th>
+<th>Material</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Name</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+</tr>
+<tr>
+<td>Item Type</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+</tr>
+<tr>
+<td>Model</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Class</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Description</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+</tr>
+<tr>
+<td>Level Required</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+</tr>
+<tr>
+<td>Image</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+</tr>
+<tr>
+<td>Coordinate Z</td>
+<td></td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cost</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+</tr>
+<tr>
+<td>Damage</td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Clip Size</td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Accuracy (Likely)</td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Defense</td>
+<td></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Defense at Unlock</td>
+<td></td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>% of Set Defense</td>
+<td></td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Material Strength</td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Health Increase</td>
+<td></td>
+<td></td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Lasts (blocks)</td>
+<td></td>
+<td></td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Drop Frequency</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Drop Scope</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EMS</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Composition</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td><em>X</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Equip Scope</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Equid Required</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Equip Optional</td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td><em>X</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
-<p>Cost    </p>
+<h2 id="equipping-items">Equipping Items</h2>
 
-<p>Damage<br>
-Clip Size
-Accuracy<br>
-Accuracy (Likely)   </p>
+<p>Not all items can be fit to one another and merged into a droid build. There are a number of attributes that determine exactly how items can be used together including the Equip Scope, Equip Required and Requip Option fields. </p>
 
-<p>Defense 
-Defense_at_unlock
-Percentage of Set Defense   </p>
-
-<p>Material Strength   </p>
-
-<p>Health Increase 
-Lasts (blocks)  </p>
-
-<p>Drop Frequency<br>
-Drop Scope<br>
-EMS</p>
-
-<p>Composition </p>
-
-<p>Equip Scope 
-Equid Required<br>
-Equip Optional  </p>
-
-<h2 id="equip-scopes">Equip Scopes</h2>
+<h3 id="equip-scopes">Equip Scopes</h3>
 
 <table><thead>
 <tr>
@@ -645,9 +863,90 @@ Equip Optional  </p>
 </tr>
 </tbody></table>
 
-<h2 id="drop-scopes">Drop Scopes</h2>
+<h3 id="equip-required-amp-equip-optional">Equip Required &amp; Equip Optional</h3>
 
-<p>Some items drop and some don&rsquo;t. You usually won&rsquo;t have to worry about an arm falling off of your own droid, but it&rsquo;s good to keep an eye out for weak NPCs or droids built of your favourite material.</p>
+<p>When building your droid, first you start with a Torso and work from there. Torsos will have a number of requirements, as well as some optional slots. </p>
+
+<table><thead>
+<tr>
+<th>model</th>
+<th>Equip Required</th>
+<th>Equip Optional</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Assault Training</td>
+<td>Arm,Arm,Leg,Leg,Head,Weapon</td>
+<td>Shield</td>
+</tr>
+<tr>
+<td>Tank Training</td>
+<td>Arm,Arm,Leg,Head,Weapon</td>
+<td>Shield</td>
+</tr>
+<tr>
+<td>Scout Training</td>
+<td>Arm,Arm,Leg,Leg,Head,Weapon</td>
+<td>Shield</td>
+</tr>
+</tbody></table>
+
+<p>Here we can see that the Tank model only requires one leg, while the Scout and Assault Models require two. All Torsos available at the start can equip a shield, but it&rsquo;s not required. </p>
+
+<aside class='notice'>
+These slots build upon eachother as well. If the Head you choose to equip to your Torso as an optional Hat, adding a Hat to the build would be acceptable. 
+</aside>
+
+<h2 id="material-drops">Material Drops</h2>
+
+<p>Material drops happen fairly freuquently and do not require the droid to be killed in the attack. These materials can be used to forge new items so it&rsquo;s good to keep an eye out for weak NPCs or droids built of your favourite material. </p>
+
+<h3 id="composition">Composition</h3>
+
+<p>Weaponry, Shields, and Chassis parts each have a specific set of materials that make-up their composition. </p>
+
+<p>The Assault Training Torso is made up of:</p>
+
+<table><thead>
+<tr>
+<th>Material</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Silicon</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>Iron</td>
+<td>4%</td>
+</tr>
+<tr>
+<td>Aluminum</td>
+<td>24%</td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>4%</td>
+</tr>
+<tr>
+<td>Germanium</td>
+<td>2%</td>
+</tr>
+</tbody></table>
+
+<aside class='notice'>
+One can never be completely sure of the make-up of a droid so those numbers won&rsquo;t add to 100%
+</aside>
+
+<p>When attacking a droid, if EMI + EMS / composition * time of day + 7 = droid happy fun material great. 
+TODO^ add real information</p>
+
+<h2 id="item-drops">Item Drops</h2>
+
+<p>Some items drop and some don&rsquo;t. You usually won&rsquo;t have to worry about an arm falling off of your own droid, but keep an eye out for NPCs sporting some shiney loose looking swag. </p>
+
+<h3 id="drop-scopes">Drop Scopes</h3>
 
 <table><thead>
 <tr>
@@ -668,6 +967,8 @@ Equip Optional  </p>
 <td>This item may drop from anybody if the right conditions are met.</td>
 </tr>
 </tbody></table>
+
+<h3 id="drop-frequency">Drop Frequency</h3>
 
 <h2 id="purchasing">Purchasing</h2>
 
