@@ -77,13 +77,28 @@ When you are starting out, you can choose from any of the following sets:
 
 ## Weaponry 
 
-TODO: Explain how weaponry works
+Your weapons strength relates to the actual base damage of the weapon, the level in which the weapon unlocks at, and the current level of the droid. 
 
+$$ Damage Multiplier = 2 \times WeaponDamage - \left ( \frac{Weapon Damage \times Unlock Level}{ Droid Level} \right )$$
+
+<aside class='warning'>
+The algorithm above means that weapons degrade over time and lose their effectiveness. 
+</aside>
 
 ## Defenses
 
+Three forms of defense.
 
-TODO: Explain how defense works here
+1. Chassis
+2. Shield
+3. Take Cover
+
+Unless you decide to shield or take cover, your chassis' defense will automatically be used to defend against attacks.
+
+If you shield, the better of the two will be used, either your chassis defense or your shield. 
+
+If you choose to take cover, your defense will be purely based off of the Cover dynamic attribute. 
+
 
 ## Inventory
 
