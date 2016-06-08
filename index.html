@@ -422,11 +422,29 @@
 
 <h2 id="weaponry">Weaponry</h2>
 
-<p>TODO: Explain how weaponry works</p>
+<p>Your weapons strength relates to the actual base damage of the weapon, the level in which the weapon unlocks at, and the current level of the droid. </p>
+
+<p>$$ Damage Multiplier = 2 \times WeaponDamage - \left ( \frac{Weapon Damage \times Unlock Level}{ Droid Level} \right )$$</p>
+
+<aside class='warning'>
+The algorithm above means that weapons degrade over time and lose their effectiveness. 
+</aside>
 
 <h2 id="defenses">Defenses</h2>
 
-<p>TODO: Explain how defense works here</p>
+<p>Three forms of defense.</p>
+
+<ol>
+<li>Chassis</li>
+<li>Shield</li>
+<li>Take Cover</li>
+</ol>
+
+<p>Unless you decide to shield or take cover, your chassis&rsquo; defense will automatically be used to defend against attacks.</p>
+
+<p>If you shield, the better of the two will be used, either your chassis defense or your shield. </p>
+
+<p>If you choose to take cover, your defense will be purely based off of the Cover dynamic attribute. </p>
 
 <h2 id="inventory">Inventory</h2>
 
