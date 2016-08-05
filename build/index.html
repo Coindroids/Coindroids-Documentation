@@ -422,11 +422,29 @@
 
 <h2 id="weaponry">Weaponry</h2>
 
-<p>TODO: Explain how weaponry works</p>
+<p>Your weapons strength relates to the actual base damage of the weapon, the level in which the weapon unlocks at, and the current level of the droid. </p>
+
+<p>$$ Damage Multiplier = 2 \times WeaponDamage - \left ( \frac{Weapon Damage \times Unlock Level}{ Droid Level} \right )$$</p>
+
+<aside class='warning'>
+The algorithm above means that weapons degrade over time and lose their effectiveness. 
+</aside>
 
 <h2 id="defenses">Defenses</h2>
 
-<p>TODO: Explain how defense works here</p>
+<p>Three forms of defense.</p>
+
+<ol>
+<li>Chassis</li>
+<li>Shield</li>
+<li>Take Cover</li>
+</ol>
+
+<p>Unless you decide to shield or take cover, your chassis&rsquo; defense will automatically be used to defend against attacks.</p>
+
+<p>If you shield, the better of the two will be used, either your chassis defense or your shield. </p>
+
+<p>If you choose to take cover, your defense will be purely based off of the Cover dynamic attribute. </p>
 
 <h2 id="inventory">Inventory</h2>
 
@@ -447,8 +465,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>Energy</td>
-<td>Even powerful Droids need a recharge now and then. Droids with low energy may not be able to run away and their attacks may have reduced strength</td>
+<td>Focus</td>
+<td>A droids focus influences their accuracy. A strong focus will allow them to lock on and blast away their enemy</td>
 </tr>
 <tr>
 <td>Cover</td>
@@ -996,7 +1014,7 @@ TODO^ add real information</p>
 
           <h1 id="basic-gameplay">Basic Gameplay</h1>
 
-<p>Your goal is to destroy other droids and reap the benifits of their holdings in the process, all while trying to stay robo-alive. Roam the world looking for droids with high purses &amp; low health, but make sure your own energy is prime for an attack, otherwise you may want to consider shielding or taking cover instead.  </p>
+<p>Your goal is to destroy other droids and reap the benifits of their holdings in the process, all while trying to stay robo-alive. Roam the world looking for droids with high purses &amp; low health, but make sure your own focus is prime for an attack, otherwise you may want to consider shielding or taking cover instead.  </p>
 
 <p>After you register your droid and go through the wallet sync step, the system will be able to recognize your transactions and assocaite them with your Droid.</p>
 
@@ -1182,11 +1200,11 @@ All attacks a droid is making will be voided if the droid also atttempts to take
 <pre class="highlight shell"><code><span class="c"># Step 1 – Get the Hash of the Last Block</span>
 ./bitcoind getbestblockhash 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9
 <span class="c"># Step 2 – Perform a SHA256 Hash of the known details</span>
- SHA256<span class="o">(</span> 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9<span class="k">*</span>ENERGY<span class="k">*</span>4 <span class="o">)</span>
+ SHA256<span class="o">(</span> 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9<span class="k">*</span>FOCUS<span class="k">*</span>4 <span class="o">)</span>
  88435b0191439b818d5bee558dbc8ed4831f43df17748ee4a8f22b4be1542bf5
 <span class="c"># Step 3 – Convert a portion to decimal and evaluate the final Results as a percentage</span>
  88 Hexadecimal <span class="o">=</span> 136 Decimal
- Energy <span class="o">=</span> 136 / 255 <span class="o">=</span> 53.3% 
+ Focus <span class="o">=</span> 136 / 255 <span class="o">=</span> 53.3% 
 
 </code></pre>
 <pre class="highlight python"><code><span class="kn">import</span> <span class="nn">hashlib</span>
@@ -1222,8 +1240,8 @@ All attacks a droid is making will be voided if the droid also atttempts to take
 </tr>
 </thead><tbody>
 <tr>
-<td>Energy</td>
-<td>Even powerful Droids need a recharge now and then. Droids with low energy may not be able to run away and their attacks may have reduced strength</td>
+<td>Focus</td>
+<td>A droids focus influences their accuracy. A strong focus will allow them to lock on and blast away their enemy</td>
 </tr>
 <tr>
 <td>EMI</td>
@@ -1285,7 +1303,7 @@ MathJax.Hub.Queue(function() {
 
 <p>First the base attack is calculated, taking into consideration all upgrades equipped to the droid.  During this calculation, the weapon’s accuracy and the droid’s dynamic attributes are all taken into account for the resulting gross damage. </p>
 
-<p>$$grossDamage = 2 \times \left ( \frac{Ammo Fired}{Token Size} \times Damage \times \left (Accuracy + (100 - Damage) \times \frac{Energy}{100} \right ) \right ) - \left ( \frac{Damage \times Weapon Unlock}{Level} \right )$$</p>
+<p>$$grossDamage = 2 \times \left ( \frac{Ammo Fired}{Token Size} \times Damage \times \left (Accuracy + (100 - Damage) \times \frac{Focus}{100} \right ) \right ) - \left ( \frac{Damage \times Weapon Unlock}{Level} \right )$$</p>
 
 <h3 id="calculate-the-defender-s-defense">Calculate the Defender’s Defense</h3>
 

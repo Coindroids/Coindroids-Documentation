@@ -114,7 +114,7 @@ These attributes are a bit more complicated than the others. They are dynamic, m
 
 |Name|Description|
 |----|----|
-|Energy| Even powerful Droids need a recharge now and then. Droids with low energy may not be able to run away and their attacks may have reduced strength|
+|Focus| A droids focus influences their accuracy. A strong focus will allow them to lock on and blast away their enemy|
 |Cover| This value reflects the amount of good cover around that you can take advantage of |
 |EMI| Electro-Magnetic Interference. More interference means less grasp on your parts and materials|
 

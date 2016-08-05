@@ -1,6 +1,6 @@
 # Basic Gameplay
 
-Your goal is to destroy other droids and reap the benifits of their holdings in the process, all while trying to stay robo-alive. Roam the world looking for droids with high purses & low health, but make sure your own energy is prime for an attack, otherwise you may want to consider shielding or taking cover instead.  
+Your goal is to destroy other droids and reap the benifits of their holdings in the process, all while trying to stay robo-alive. Roam the world looking for droids with high purses & low health, but make sure your own focus is prime for an attack, otherwise you may want to consider shielding or taking cover instead.  
 
 After you register your droid and go through the wallet sync step, the system will be able to recognize your transactions and assocaite them with your Droid.
 

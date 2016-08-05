@@ -10,11 +10,11 @@ Everything in the Coindroids world is deterministic. The Advanced Gameplay guide
 # Step 1 – Get the Hash of the Last Block
 ./bitcoind getbestblockhash 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9
 # Step 2 – Perform a SHA256 Hash of the known details
- SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9*ENERGY*4 )
+ SHA256( 0000000000000000117044f0da99c88f1266c57eee5a7f08e2eaf9a9a83091f9*FOCUS*4 )
  88435b0191439b818d5bee558dbc8ed4831f43df17748ee4a8f22b4be1542bf5
 # Step 3 – Convert a portion to decimal and evaluate the final Results as a percentage
  88 Hexadecimal = 136 Decimal
- Energy = 136 / 255 = 53.3% 
+ Focus = 136 / 255 = 53.3% 
  
 ```
 
@@ -51,7 +51,7 @@ Some attributes used within the system are based off of previous block hashes. T
 
 |Name|Description|
 |----|----|
-|Energy| Even powerful Droids need a recharge now and then. Droids with low energy may not be able to run away and their attacks may have reduced strength|
+|Focus| A droids focus influences their accuracy. A strong focus will allow them to lock on and blast away their enemy|
 |EMI| Most of a droid is actually held together by magnets. As a droids' EMI fluctuates, this will govern how easily parts and materials fall off during attacks. |
 |Cover| Keep an eye on your surroundings. If this value is high that means there are some useful objects around, be them walls, ditches or perhaps some sort of soft woodland creature that you can take cover behind to prevent damage.|
 
@@ -109,7 +109,7 @@ The amount transferred to the Attack Address is split up and applied to the rele
 
 First the base attack is calculated, taking into consideration all upgrades equipped to the droid.  During this calculation, the weapon’s accuracy and the droid’s dynamic attributes are all taken into account for the resulting gross damage. 
 
-$$grossDamage = 2 \times \left ( \frac{Ammo Fired}{Token Size} \times Damage \times \left (Accuracy + (100 - Damage) \times \frac{Energy}{100} \right ) \right ) - \left ( \frac{Damage \times Weapon Unlock}{Level} \right )$$
+$$grossDamage = 2 \times \left ( \frac{Ammo Fired}{Token Size} \times Damage \times \left (Accuracy + (100 - Damage) \times \frac{Focus}{100} \right ) \right ) - \left ( \frac{Damage \times Weapon Unlock}{Level} \right )$$
 
 	
 

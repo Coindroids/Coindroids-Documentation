@@ -105,6 +105,7 @@ This function is used to create new players in the system. Create your player fi
 
 |Name | Description|
 |----|----|
+|Profile| The user profile as if queried by the /player object |
 |Token| The JWT authorization token for API requests|
 
 

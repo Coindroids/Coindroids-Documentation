@@ -143,6 +143,7 @@ To start a new session, pass the username and password paramters. If you are ext
 
 |Name | Description|
 |----|----|
+|Profile| The user profile as if queried by the /player object |
 |Token| The JWT authorization token for API requests|
 
 

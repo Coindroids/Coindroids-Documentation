@@ -24,6 +24,7 @@ includes:
   - api_object_event
   - api_object_garage
   - api_object_item
+  - api_object_mempool
   - api_object_payout
   - api_object_player 
   - api_object_profile
@@ -33,7 +34,7 @@ includes:
   - api_function_identify
   - api_function_register
   - api_function_set_droid_build
-  - ccss
+  - api_function_verify_droid_build
 
 search: true
 ---
@@ -56,9 +57,12 @@ If you are a highly technical user and would like to assist with the Alpha, plea
 
 ## Currencies
 
-During our alpha testing, only Bitcoin Testnet is available. 
+|Name|Prefix|Wallet Suggestions|
+|----|------|-----|
+|Bitcoin Testnet|XTN|[CoPay](https://copay.io)|
+|Defcoin|DFC|[Defcoin-QT](https://defcoin.io)|
 
-We suggest the use of [CoPay](https://copay.io), but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. 
+We suggest the use of , but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. 
 
 
 
