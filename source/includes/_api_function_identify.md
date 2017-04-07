@@ -141,9 +141,21 @@ To start a new session, pass the username and password paramters. If you are ext
 
 ### Response Details
 
-|Name | Description|
-|----|----|
-|Profile| The user profile as if queried by the /player object |
-|Token| The JWT authorization token for API requests|
+|Name | Type|  Description|
+|----|---|---|
+|profile| Player Profile| The player object with the following attributes (profile.*)|
+|profile.id| Whole Number| The players ID |
+|profile.username| String| The Players Username|
+|profile.email|Email|Email address belonging to the player|
+|errors| Error[] |An array of errors with the following attributes (errors[].*)|
+|errors[].field| String| Error Label|
+|errors[].message| String | Error descrption| 
+|token| JWT | The JWT authorization token for API requests|
 
+
+### Potential Errors
+
+| Field | Message |
+|----|----|
+|password|Password supplied is invalid|
 

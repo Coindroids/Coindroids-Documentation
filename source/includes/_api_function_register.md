@@ -10,7 +10,8 @@ curl -X "POST" "https://api.coindroids.com/rpc/register" \
 	"username":"Abstract",
 	"password":"password",
 	"email":"josh@coindroids.com",
-	"invite_code":"37764f2a-da1b-40ea-a054-ef1c8021196a"
+	"invite_code":"37764f2a-da1b-40ea-a054-ef1c8021196a",
+	"accept_terms":"t"
 
 }'
 ```
@@ -27,7 +28,8 @@ $("#submit-registration").click(function( event ) {
 		           "username" : $("#Username").val(),
 		           "password" : $("#Password").val(),
 		           "email" : $("#Email").val(),
-		           "invite_code":$("#InviteCode").val() 
+		           "invite_code":$("#InviteCode").val(),
+		           "accept_terms":$("#AcceptedTerms").val() 
 		};
 		jQuery.ajax({
 		    url: "https://api.coindroids.com/rpc/register",
@@ -73,7 +75,8 @@ def send_request():
 				\"username\":\"Abstract\",
 				\"password\":\"password\",
 				\"email\":\"josh@coindroids.com\",
-				\"invite_code\":\"37764f2a-da1b-40ea-a054-ef1c8021196a\"
+				\"invite_code\":\"37764f2a-da1b-40ea-a054-ef1c8021196a\",
+				\"accept_terms\":\"t\"
 
 			}"
         )
@@ -94,19 +97,34 @@ This function is used to create new players in the system. Create your player fi
 
 |Name | Type | Description|
 |----|----|---|
-|username |Character Varying||
-|password |Character Varying||
-|email |Character Varying||
-|invite_code|Character Varying||
+|username |String||
+|password |String||
+|email |String||
+|invite_code|UUID||
 |accept_terms|Boolean||
 
 
 ### Response Details
 
-|Name | Description|
+|Name | Type|  Description|
+|----|---|---|
+|profile| Player Profile| The player object with the following attributes (profile.*)|
+|profile.id| Whole Number| The players ID |
+|profile.username| String| The Players Username|
+|profile.email|Email|Email address belonging to the player|
+|errors| Error[] |An array of errors with the following attributes (errors[].*)|
+|errors[].field| String| Error Label|
+|errors[].message| String | Error descrption| 
+|token| JWT | The JWT authorization token for API requests|
+
+
+### Potential Errors
+
+| Field | Message |
 |----|----|
-|Profile| The user profile as if queried by the /player object |
-|Token| The JWT authorization token for API requests|
-
-
-
+|accept_terms|You must accept the terms and conditions to register|
+|invite_code|Invite code was invalid|
+|username|Invalid username format. Must be letters, numbers and underscores only.|
+|password|Password cannot be blank|
+|email|Email address cannot be blank|
+|general|Error during player registration|

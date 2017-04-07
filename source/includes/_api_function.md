@@ -14,3 +14,6 @@ You will noticed that our list of functions is actually quite short. Most of the
 |identify()| /rpc/identify |POST|
 |register(Username, Password, Email, Invite Code, Acceptance of Terms) | /rpc/register |POST|
 |set_droid_build(Droid ID, Build Details) | /rpc/set_droid_build |POST|
+|set_droid_payout_address(Droid ID, Address) | /rpc/set_droid_payout_address | POST|
+|validate_droid_build(Droid ID, Build Details)| /rpc/validate_droid_build | POST|
+

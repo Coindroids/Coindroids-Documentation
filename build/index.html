@@ -136,9 +136,26 @@
 
 <h2 id="currencies">Currencies</h2>
 
-<p>During our alpha testing, only Bitcoin Testnet is available. </p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Prefix</th>
+<th>Wallet Suggestions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Bitcoin Testnet</td>
+<td>XTN</td>
+<td><a href="https://copay.io">CoPay</a></td>
+</tr>
+<tr>
+<td>Defcoin</td>
+<td>DFC</td>
+<td><a href="https://defcoin.io">Defcoin-QT</a></td>
+</tr>
+</tbody></table>
 
-<p>We suggest the use of <a href="https://copay.io">CoPay</a>, but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. </p>
+<p>We suggest the use of , but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. </p>
 
           <h1 id="droids">Droids</h1>
 
@@ -2826,6 +2843,235 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </tbody></table>
 
+          <h2 id="mempool">/mempool</h2>
+
+<blockquote>
+<p>Grab a list of the actions pending for inclusion in a block, specifically for XTN (currency 1)</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/mempool?currency_id=eq.1"</span> 
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// My Events (GET https://api.coindroids.com/mempool)</span>
+
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/event"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"currency_id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># My Events</span>
+    <span class="c"># GET https://api.coindroids.com/mempool</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/mempool"</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"currency_id"</span><span class="p">:</span> <span class="s">"1"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+{
+    "txid": "a81b5996f2cc956621989749935fa176735ef9d6dd900546e983153052d0b5e3",
+    "tx_vout": 0,
+    "action_type": "Attack",
+    "currency_id": 2,
+    "involved_droids": [
+      4,
+      58
+    ],
+    "player_id": 4,
+    "player_username": "Trunc",
+    "droid_id": 44,
+    "droid_name": "Shelly",
+    "actor": {
+      "id": 44,
+      "name": "Shelly",
+      "avatar_links": [
+        "img.jpg",
+        "img.png"
+      ]
+    },
+    "target": {
+      "id": 58,
+      "name": "Handsy",
+      "avatar_links": [
+        "img.jpg",
+        "img.png"
+      ]
+    },
+    "value": 1190000,
+    "timestamp": "2016-08-01T05:29:55.893535+00:00"
+  }
+]
+</code></pre>
+
+<p>The mempool endpoint is used to retrieve actions pending for unconfirmed transactions. It&rsquo;s accuracy is not guaranteed. </p>
+
+<h3 id="response-details">Response Details</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency_id</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>txid</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tx_vout</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>action_type</td>
+<td>Action Type</td>
+<td><em>see data type for options</em></td>
+</tr>
+<tr>
+<td>value</td>
+<td>Whole Number</td>
+<td></td>
+</tr>
+<tr>
+<td>player_id</td>
+<td>Whole Number</td>
+<td>The player of the droid who initiated the action</td>
+</tr>
+<tr>
+<td>player_username</td>
+<td>String</td>
+<td>The username of the player who initiated the action</td>
+</tr>
+<tr>
+<td>involved_droids</td>
+<td>DroidIDs[]</td>
+<td>An array of all the droids involved in teh action.</td>
+</tr>
+<tr>
+<td>droid_id</td>
+<td>Whole Number</td>
+<td>The droid who initiated the action</td>
+</tr>
+<tr>
+<td>droid_name</td>
+<td>String</td>
+<td>The name of the droid who initiated the action</td>
+</tr>
+<tr>
+<td>actor</td>
+<td>Short Object</td>
+<td>The target of the action, either another droid or an item</td>
+</tr>
+<tr>
+<td>target</td>
+<td>Short Object</td>
+<td>The name of the target. Currently only when the target is a droid</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Timestamp</td>
+<td>When the action happened</td>
+</tr>
+</tbody></table>
+
+<p>TODO: Explain the Actions and Outcomes</p>
+
+<h3 id="action-types">Action Types</h3>
+
+<table><thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Item Equip</td>
+<td></td>
+</tr>
+<tr>
+<td>Purse Filling</td>
+<td></td>
+</tr>
+<tr>
+<td>Item Use</td>
+<td></td>
+</tr>
+<tr>
+<td>Deficit</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid Destruction</td>
+<td></td>
+</tr>
+<tr>
+<td>Attack</td>
+<td></td>
+</tr>
+<tr>
+<td>Ammunition Spillage</td>
+<td></td>
+</tr>
+<tr>
+<td>Registration</td>
+<td></td>
+</tr>
+<tr>
+<td>Item Purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>Change</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid Level-Up</td>
+<td></td>
+</tr>
+<tr>
+<td>Droid Resurrection</td>
+<td></td>
+</tr>
+</tbody></table>
+
           <h2 id="payout">/payout</h2>
 
 <blockquote>
@@ -3608,6 +3854,10 @@ If you notice that the Coindroids universe is no longer recognizing your transac
 </tr>
 </thead><tbody>
 <tr>
+<td>Profile</td>
+<td>The user profile as if queried by the /player object</td>
+</tr>
+<tr>
 <td>Token</td>
 <td>The JWT authorization token for API requests</td>
 </tr>
@@ -3739,21 +3989,26 @@ If you notice that the Coindroids universe is no longer recognizing your transac
 </tr>
 </thead><tbody>
 <tr>
+<td>Profile</td>
+<td>The user profile as if queried by the /player object</td>
+</tr>
+<tr>
 <td>Token</td>
 <td>The JWT authorization token for API requests</td>
 </tr>
 </tbody></table>
 
-          <h2 id="rpc-set_droid_build">/rpc/set_droid_build</h2>
+          
+          <h2 id="rpc-verify_droid_build">/rpc/verify_droid_build</h2>
 
 <aside class='warning'>
 This RPC call requires that the request include the Authorization token
 </aside>
 
-<p>Your droid is an ever evolving beast and the Coindroids universe is no different. Ensure your droid is always built to impress (and annihilate) through the set_droid_build call. </p>
+<p>Your droid is an ever evolving beast and the Coindroids universe is no different. Ensure your droid is always built to impress (and annihilate) through the verify_droid_build call. </p>
 
 <aside class='notice'>
-Builds are not updated immediately, they are validated and put into a pending state. Droid builds are applied during the Block Processing procedures.
+You must use set_droid_build if you want the changes to commit 
 </aside>
 
 <h3 id="parameters">Parameters</h3>
@@ -3790,517 +4045,6 @@ Builds are not updated immediately, they are validated and put into a pending st
 <td>The droid object as if called through the /droid endpoint.</td>
 </tr>
 </tbody></table>
-
-          <h1 id="ccss-compliance">CCSS Compliance</h1>
-
-<p>The <a href="https://cryptoconsortium.github.io/CCSS/">CCSS</a> is an open security standard curated by <a href="https://cryptoconsortium.org">C4</a>. The original matrix can be found <a href="https://cryptoconsortium.github.io/CCSS/Matrix/">here</a>. </p>
-
-<p>The details below are the current results of our self-evaluation and in some cases reflect our intentions upon launch and not our currently implemented aspects. This document allows us to be open in our how we secure our platform, while also providing a case study for the CCSS.  </p>
-
-<p>Our current security grade is <em>Uncertified</em>, our target is <em>Level I</em>. Our rebuttal of this marking is provided within related matrix sections. </p>
-
-<table >
-<thead>
-  <tr>
-    <th id='header_category'>Category</th>
-    <th id='header_aspect'>Aspect</th>
-    <th id='header_component'>Component</th>
-    <th id='header_uncertifiable'>Uncertified</th>
-    <th id='header_level_i'>Level</th>
-    <th id='header_level_ii'>Level II</th>
-    <th id='header_level_iii'>Level III</th>
-  </tr>
-</thead>
-<tbody>
-  
-    
-    <tr>
-      
-
-      
-        
-        
-
-        <td rowspan=28>Cryptographic Asset Management</li>
-
-      
-
-      <td rowspan=3>Key / Seed Generation</td>
-
-      
-        
-        <td>Operator-created Key / Seed</td>
-        <td>Keys/seeds are issued to the keyholder by another actor</td>
-        <td></td>
-        <td></td>
-        <td>Keys/seeds are created by the key/seed operator themselves</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Creation methodology is validated</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed creation methodology is validated prior to use</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>DRBG Compliance</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed is created using a NIST SP 800-90A compliant DRBG that has been seeded with multiple cryptographically-secure sources of entropy</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=6>Wallet Creation</td>
-
-      
-        
-        <td>Unique address per transaction</td>
-        <td>Wallets/addresses are reused for system addresses, including Attack, Item Purchase, Change and Cold storage. Static addresses for Attack addresses, despite being against the CCSS guidelines, is needed for gameplay mechanics. Other addresses are static to provider a more efficient backend as every additional address monitored is can be a large tax on the system. <br> We are not convinced that address re-use is a security hazard as long as deterministic k values are used during signing.  </td>
-        <td></td>
-        <td></td>
-        <td>Users can choose to use unique addresses for every transaction sent into the Coindroids system.</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Multiple keys for signing</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Transactions require signatures from 2 or more keys</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Redundant key for recovery</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Redundant keys are assigned for recovery purposes (i.e. 2of3, 3of5, etc.)</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Deterministic wallets</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Addresses are assigned deterministically</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Geographic distribution of keys</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Keys are distributed across multiple separate locations</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Organizational distribution of keys</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=7>Key Storage</td>
-
-      
-        
-        <td>Primary keys are stored encrypted</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed is stored with strong encryption</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup key exists</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed backup is stored in a separate location from primary key/seed</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup key has environmental protection</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed backup is protected from environmental damage</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup key is access-controlled</td>
-        <td></td>
-        <td></td>
-        <td>Key/seed backup is protected by access controls to prevent unauthorized access (i.e. safe/safe deposit box)</td>
-        <td>Key/seed backup is protected by access controls to prevent unauthorized access (i.e. safe/safe deposit box)</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup key has tamper-evident seal</td>
-        <td></td>
-        <td></td>
-        <td>Key/seed backup employs tamper-evident seal</td>
-        <td>Key/seed backup employs tamper-evident seal</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup key is encrypted</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed backup is stored with strong encryption equal/better than that used to protect primary key</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup key is protected from EMP</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed backup is resistant to ElectroMagnetic Pulses (EMPs)</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=8>Key Usage</td>
-
-      
-        
-        <td>Key access requires user/pass/nth factor</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Access to key/seed requires an identifier and at least 3 other factors (password, MFA token, in-person verification by guard, IP address whitelist, physical key to gain access to secured storage, countersigning organization)</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Keys are only used in a trusted environment</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Keys/seeds are only used in trusted environments</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Operator reference checks</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed holders have references checked</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Operator ID checks</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Key/seed holders have identify verified</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Operator background checks</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Spends are verified before signing</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Verification of fund destinations and amounts are performed prior to key usage</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>No two keys are used on one device</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>No two keys belonging to the same wallet are present on any one device</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>DRBG Compliance</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>The &lsquo;k&rsquo; values in digital signatures are created using a NIST SP 800-90A compliant DRBG OR The 'k&rsquo; values are created deterministically according to RFC 6979</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=2>Key Compromise Protocol (KCP)</td>
-
-      
-        
-        <td>KCP Exists</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>A written checklist/procedure document exists that outlines procedures for each actor to carry out in order to remove the risk of compromise. Document is maintained as warranted by changes to the system.</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>KCP Training + Rehearsals</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Regular training is provided to keyholders to ensure they are prepared to invoke the protocol when required.</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=2>Keyholder Grant/Revoke Policies & Procedures</td>
-
-      
-        
-        <td>Grant/Revoke Procedures/Checklist</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>A written checklist/procedure document exists that is followed for on/offboarding. The checklist outlines every permission to grant/revoke for every role in the information system</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Grant/Revoke Audit Trail</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>An audit trail records every change of access including who performed the change</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-        
-        
-
-        <td rowspan=9>Operations</li>
-
-      
-
-      <td rowspan=1>Security Audits / Pentests</td>
-
-      
-        
-        <td>Security Audit</td>
-        <td></td>
-        <td></td>
-        <td>A security audit has been completed by another entity who did not assist in the development of the system</td>
-        <td>External security audits are conducted regularly (at least 1/yr)</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=2>Data Sanitization Policy (DSP)</td>
-
-      
-        
-        <td>DSP Exists</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Detailed policy covering sanitization requirements, procedures, and validation steps for every media type used by business</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Audit Trail of all media sanitization</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Audit trails are maintained for every piece of sanitized media</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=1>Proof of Reserve (PoR)</td>
-
-      
-        
-        <td>Proof of Reserve Audits</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>The ledger is openly viewable by all, so no PoR audits are necessary</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-    
-    <tr>
-      
-
-      
-
-      <td rowspan=2>Audit Logs</td>
-
-      
-        
-        <td>Application Audit Logs</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Full audit trail exists of all user/admin actions</td>
-        </tr>
-        
-      
-        
-          <tr>
-        
-        <td>Backup of Audit Logs</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Backups of audit data are performed regularly</td>
-        </tr>
-        
-      
-
-    </tr>
-  
-</tbody>
-</table>
 
       </div>
       <div class="dark-box">

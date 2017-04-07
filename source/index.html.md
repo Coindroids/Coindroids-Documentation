@@ -20,7 +20,9 @@ includes:
   - api_object
   - api_object_badge
   - api_object_currency
+  - api_object_currency_stats_historic
   - api_object_droid
+  - api_object_droid_stats_historic
   - api_object_event
   - api_object_garage
   - api_object_item
@@ -34,8 +36,9 @@ includes:
   - api_function_identify
   - api_function_register
   - api_function_set_droid_build
-  - api_function_verify_droid_build
-
+  - api_function_set_droid_payout_address
+  - api_function_validate_droid_build
+  
 search: true
 ---
 
@@ -45,24 +48,34 @@ After the robotic uprising and humanity's falls (typical humans), the androids h
 
 ## What is Coindroids?
 
-Coindroids is a battle game where player actions are triggered through blockchain-based transactions. Each action has real consequence and a potential for great reward. 
+[Coindroids](https://www.coindroids.com) is a game like no other. It is completely skill-based, played with money, and played for money. Your actions are transactions, so you must choose them wisely. Your success will depend as much on your quick thinking as it will your methodical attention to detail throughout our ongoing story.
 
-There is no such thing as luck to a coindroid. Every action should be carefully calculated!
+## Coins Supported
 
-## Development Status
+<img src="/images/ltc-100px.png" width='100px' style='display:inline-block;'> 
+<img src="/images/xtn-100px.png"  width='100px' style='display:inline-block;'> 
+<img src="/images/dfc-100px.png"  width='100px' style='display:inline-block;'>
 
-The Coindroids system is currently in *Alpha Testing*.  
-
-If you are a highly technical user and would like to assist with the Alpha, please get in touch with us via @coindroids on twitter.   
-
-## Currencies
 
 |Name|Prefix|Wallet Suggestions|
 |----|------|-----|
+|Litecoin|LTC|[Exodus](https://exodus.io), [Loafwallet](http://loafwallet.xyz), [Coinomi](https://coinomi.com), [Litevault.net](https://litevault.net)|
 |Bitcoin Testnet|XTN|[CoPay](https://copay.io)|
 |Defcoin|DFC|[Defcoin-QT](https://defcoin.io)|
 
-We suggest the use of , but any wallet that supports Testnet can be used. Testnet coins can be supplied for all alpha users. 
+
+## Development Status
+
+The Coindroids system is currently in *Alpha Testing*. It's playable but gameplay is constantly changing to improve the experience.  
+
+If you understand the risks and would like to assist with the Alpha, please get in touch with us via @coindroids on twitter.  
+
+### Documentation Status
+
+This documentation was last updated 2017-04-07 
+If this documentation could be a status before Alpha, it would be. 
+
+
 
 
 

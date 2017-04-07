@@ -1,19 +1,19 @@
 ## /mempool
 
-> Grab a list of the actions pending for inclusion in a block, specifically for XTN (currency 1)
+> Grab a list of the actions pending for inclusion in a block, specifically for LTC (currency 4)
 
 ```shell
-curl -X "GET" "https://api.coindroids.com/mempool?currency_id=eq.1" 
+curl -X "GET" "https://api.coindroids.com/mempool?currency_id=eq.4" 
 ```
 
 ```javascript
-// My Events (GET https://api.coindroids.com/mempool)
+// Mempool (GET https://api.coindroids.com/mempool)
 
 jQuery.ajax({
-    url: "https://api.coindroids.com/event",
+    url: "https://api.coindroids.com/mempool",
     type: "GET",
     data: {
-        "currency_id": "1",
+        "currency_id": "4",
     },
 })
 .done(function(data, textStatus, jqXHR) {
@@ -36,14 +36,14 @@ import requests
 
 
 def send_request():
-    # My Events
+    # Mempool
     # GET https://api.coindroids.com/mempool
 
     try:
         response = requests.get(
             url="https://api.coindroids.com/mempool",
             params={
-                "currency_id": "1",
+                "currency_id": "4",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -58,39 +58,32 @@ def send_request():
 
 ```
 [
-{
-    "txid": "a81b5996f2cc956621989749935fa176735ef9d6dd900546e983153052d0b5e3",
-    "tx_vout": 0,
+  {
+    "txid": "d975668b75106dd58df62c8acd673e0022ddd6861fba134eadcdbea9366420b5",
+    "tx_vout": 1,
     "action_type": "Attack",
-    "currency_id": 2,
+    "currency_id": 4,
     "involved_droids": [
-      4,
-      58
+      17,
+      36
     ],
-    "player_id": 4,
-    "player_username": "Trunc",
-    "droid_id": 44,
-    "droid_name": "Shelly",
+    "player_id": 1,
+    "player_username": "Abstrct",
+    "droid_id": 17,
+    "droid_name": "Cmdr",
     "actor": {
-      "id": 44,
-      "name": "Shelly",
-      "avatar_links": [
-        "img.jpg",
-        "img.png"
-      ]
+      "id": 17,
+      "name": "Cmdr",
     },
     "target": {
-      "id": 58,
-      "name": "Handsy",
-      "avatar_links": [
-        "img.jpg",
-        "img.png"
-      ]
+      "id": 36,
+      "name": "coblee",
     },
-    "value": 1190000,
-    "timestamp": "2016-08-01T05:29:55.893535+00:00"
+    "value": 1215000,
+    "timestamp": "2017-04-07T15:26:29.189017+00:00"
   }
 ]
+
 ```
 
 The mempool endpoint is used to retrieve actions pending for unconfirmed transactions. It's accuracy is not guaranteed. 
