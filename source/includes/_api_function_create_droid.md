@@ -79,8 +79,8 @@ This RPC call requires that the request include the Authorization token
 
 ### Response Details
 
-|Name | Description|
-|----|----|
+|Name |Type| Description|
+|----|---|---|
 |droid| Droid Object |The droid object as if called through the /droid endpoint. Includines the following details (droid.*) |
 |droid.id | Whole Number| The ID of the Droid|
 |droid.name | String| The science-given name of the Droid |
