@@ -4350,11 +4350,6 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </thead><tbody>
 <tr>
-<td>name</td>
-<td>CHARACTER VARYING</td>
-<td>Your droids new classy moniker</td>
-</tr>
-<tr>
 <td>model</td>
 <td>Model</td>
 <td>See the list of models available for new droids below</td>
@@ -4363,6 +4358,11 @@ This RPC call requires that the request include the Authorization token
 <td>currency_id</td>
 <td>Bigint</td>
 <td>See the /currency endpoint for available currencies</td>
+</tr>
+<tr>
+<td>name</td>
+<td>CHARACTER VARYING</td>
+<td>Your droids new classy moniker</td>
 </tr>
 </tbody></table>
 
@@ -4375,8 +4375,294 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </thead><tbody>
 <tr>
-<td>Droid</td>
-<td>The droid object as if called through the /droid endpoint.</td>
+<td>droid</td>
+<td>Droid Object</td>
+</tr>
+<tr>
+<td>droid.id</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.currency_id</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.currency_code</td>
+<td>Netcode</td>
+</tr>
+<tr>
+<td>droid.player_id</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.username</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.attack_address</td>
+<td>Cryptocurrency Address</td>
+</tr>
+<tr>
+<td>droid.primary_ammunition_clip</td>
+<td>Cryptocurrency Address</td>
+</tr>
+<tr>
+<td>droid.additional_ammunition_clips</td>
+<td>Cryptocurrency Address[]</td>
+</tr>
+<tr>
+<td>droid.level</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.experience</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.health_current</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.health_max</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.purse_current</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.is_npc</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>droid.is_active</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>droid.is_shielded</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>droid.is_covered</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>droid.death_height</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.is_dead</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>droid.last_attack</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.created_at</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>droid.build</td>
+<td>Items[]</td>
+</tr>
+<tr>
+<td>droid.build[].item_id</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.build[].name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.build[].class</td>
+<td>Class Type</td>
+</tr>
+<tr>
+<td>droid.build[].image</td>
+<td>File Path</td>
+</tr>
+<tr>
+<td>droid.build[].model</td>
+<td>Model Type</td>
+</tr>
+<tr>
+<td>droid.build[].details</td>
+<td>Item Details Object</td>
+</tr>
+<tr>
+<td>droid.build[].item_type</td>
+<td>Item Type</td>
+</tr>
+<tr>
+<td>droid.build[].short_name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.build[].description</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.build[].level_required</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.build[].real_item_type</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.attribute</td>
+<td>Attributes</td>
+</tr>
+<tr>
+<td>droid.attribute.ems</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>droid.attribute.class</td>
+<td>Class Type</td>
+</tr>
+<tr>
+<td>droid.attribute.model</td>
+<td>Model Type</td>
+</tr>
+<tr>
+<td>droid.attribute.defense</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>droid.attribute.accuracy</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>droid.attribute.clip_size</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.attribute.base_damage</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>droid.attribute.weapon_unlock</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>droid.attribute.accuracy_likely</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>droid.attribute.blueprint</td>
+<td>Droid Blueprint Object</td>
+</tr>
+<tr>
+<td>droid.composition</td>
+<td>Composition Objects</td>
+</tr>
+<tr>
+<td>droid.pending_build</td>
+<td>Build Object</td>
+</tr>
+<tr>
+<td>droid.currency_in</td>
+<td>Satoshi</td>
+</tr>
+<tr>
+<td>droid.currency_out</td>
+<td>Satoshi</td>
+</tr>
+<tr>
+<td>droid.highest_payout</td>
+<td>Satoshi</td>
+</tr>
+<tr>
+<td>droid.attacks</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.targeted</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.deaths</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.average_damage_performed</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.total_damage_performed</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.total_damage_defended</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.most_targeted_id</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.most_targeted_name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>droid.worst_enemy_id</td>
+<td>Whole Number</td>
+</tr>
+<tr>
+<td>droid.worst_enemy_name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Error[]</td>
+</tr>
+<tr>
+<td>errors[].field</td>
+<td>String</td>
+</tr>
+<tr>
+<td>errors[].message</td>
+<td>String</td>
+</tr>
+</tbody></table>
+
+<h3 id="potential-errors">Potential Errors</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Droid name has illegal characters [0-9a-zA-Z-_]{3,20}</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Droid name is taken</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Player already has a droid under this currency</td>
+</tr>
+<tr>
+<td>model</td>
+<td>Base model unavailable to Player</td>
+</tr>
+<tr>
+<td>unknown</td>
+<td>An unknown error has occured</td>
+</tr>
+<tr>
+<td>session</td>
+<td>Player must be logged in to perform this action</td>
 </tr>
 </tbody></table>
 
