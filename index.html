@@ -4371,264 +4371,329 @@ This RPC call requires that the request include the Authorization token
 <table><thead>
 <tr>
 <th>Name</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>droid</td>
 <td>Droid Object</td>
+<td>The droid object as if called through the /droid endpoint. Includines the following details (droid.*)</td>
 </tr>
 <tr>
 <td>droid.id</td>
 <td>Whole Number</td>
+<td>The ID of the Droid</td>
 </tr>
 <tr>
 <td>droid.name</td>
 <td>String</td>
+<td>The science-given name of the Droid</td>
 </tr>
 <tr>
 <td>droid.currency_id</td>
 <td>Whole Number</td>
+<td>The ID of the currency realm the droid is in</td>
 </tr>
 <tr>
 <td>droid.currency_code</td>
 <td>Netcode</td>
+<td>The three letter code for a currency (i.e. LTC)</td>
 </tr>
 <tr>
 <td>droid.player_id</td>
 <td>Whole Number</td>
+<td>The ID of the droids squishy overlord</td>
 </tr>
 <tr>
 <td>droid.username</td>
 <td>String</td>
+<td>Name of the droids squishy overlord</td>
 </tr>
 <tr>
 <td>droid.attack_address</td>
 <td>Cryptocurrency Address</td>
+<td>The address other players can use to attack this droid</td>
 </tr>
 <tr>
 <td>droid.primary_ammunition_clip</td>
 <td>Cryptocurrency Address</td>
+<td>The primary address used for payouts involving this droid</td>
 </tr>
 <tr>
 <td>droid.additional_ammunition_clips</td>
 <td>Cryptocurrency Address[]</td>
+<td>Additional addresses tracked for droid actions involving this droid</td>
 </tr>
 <tr>
 <td>droid.level</td>
 <td>Whole Number</td>
+<td>The level of a droid</td>
 </tr>
 <tr>
 <td>droid.experience</td>
 <td>Whole Number</td>
+<td>The total experience gained by this droid to date</td>
 </tr>
 <tr>
 <td>droid.health_current</td>
 <td>Whole Number</td>
+<td>The current state of the health for a droid going into the next processing block</td>
 </tr>
 <tr>
 <td>droid.health_max</td>
 <td>Whole Number</td>
+<td>The maximum health that this droid can have</td>
 </tr>
 <tr>
 <td>droid.purse_current</td>
 <td>Whole Number</td>
+<td>The current state of the purse for a droid going into the next block processing</td>
 </tr>
 <tr>
 <td>droid.is_npc</td>
 <td>Boolean</td>
+<td><em>[True, False]</em> Is this human controlled or a coindroids bot instance?</td>
 </tr>
 <tr>
 <td>droid.is_active</td>
 <td>Boolean</td>
+<td>Has this droid been properly registered to a player wallet</td>
 </tr>
 <tr>
 <td>droid.is_shielded</td>
 <td>Boolean</td>
+<td>Is the droid currently in a Shielding status?</td>
 </tr>
 <tr>
 <td>droid.is_covered</td>
 <td>Boolean</td>
+<td>Is the droid currently in a Covered status?</td>
 </tr>
 <tr>
 <td>droid.death_height</td>
 <td>Whole Number</td>
+<td>The height in which the droid died (NULL if not currently dead)</td>
 </tr>
 <tr>
 <td>droid.is_dead</td>
 <td>Boolean</td>
+<td>Is the droid currently dead?</td>
 </tr>
 <tr>
 <td>droid.last_attack</td>
 <td>Whole Number</td>
+<td>The height of the last Attack action performed by this droid</td>
 </tr>
 <tr>
 <td>droid.created_at</td>
 <td>Timestamp</td>
+<td>The date and time of droid creation</td>
 </tr>
 <tr>
 <td>droid.build</td>
 <td>Items[]</td>
+<td>A description of the items which make up the build of this droid</td>
 </tr>
 <tr>
 <td>droid.build[].item_id</td>
 <td>Whole Number</td>
+<td>The ID of the item equipped in the build</td>
 </tr>
 <tr>
 <td>droid.build[].name</td>
 <td>String</td>
+<td>The name of the item equipped in the build</td>
 </tr>
 <tr>
 <td>droid.build[].class</td>
 <td>Class Type</td>
+<td>The class of the item equipped in the build</td>
 </tr>
 <tr>
 <td>droid.build[].image</td>
 <td>File Path</td>
+<td>The path to the static image hosted for the item</td>
 </tr>
 <tr>
 <td>droid.build[].model</td>
 <td>Model Type</td>
+<td>The model of the item equipped in the build</td>
 </tr>
 <tr>
 <td>droid.build[].details</td>
 <td>Item Details Object</td>
+<td>The full attributes of the item equipped in the build</td>
 </tr>
 <tr>
 <td>droid.build[].item_type</td>
 <td>Item Type</td>
+<td>The type of the item equipped in the build</td>
 </tr>
 <tr>
 <td>droid.build[].short_name</td>
 <td>String</td>
+<td>A short identifier of the equipped item</td>
 </tr>
 <tr>
 <td>droid.build[].description</td>
 <td>String</td>
+<td>A long description of the equipped item</td>
 </tr>
 <tr>
 <td>droid.build[].level_required</td>
 <td>Whole Number</td>
+<td>The level that must be met for the item to be equippable</td>
 </tr>
 <tr>
 <td>droid.build[].real_item_type</td>
 <td>String</td>
+<td>Another Item Type field that made sense at the time but I don&rsquo;t quite recall why this is here</td>
 </tr>
 <tr>
 <td>droid.attribute</td>
 <td>Attributes</td>
+<td>The culminating stats of a droid build. Includes the following details (attribute.*)</td>
 </tr>
 <tr>
 <td>droid.attribute.ems</td>
 <td>Numeric</td>
+<td>Value between 0-100%, used when calculating EMI</td>
 </tr>
 <tr>
 <td>droid.attribute.class</td>
 <td>Class Type</td>
+<td>The resulting Class of the droid build</td>
 </tr>
 <tr>
 <td>droid.attribute.model</td>
 <td>Model Type</td>
+<td>The resulting Model of the droid build</td>
 </tr>
 <tr>
 <td>droid.attribute.defense</td>
 <td>Numeric</td>
+<td>Value between 0-100%, used during attack calculations</td>
 </tr>
 <tr>
 <td>droid.attribute.accuracy</td>
 <td>Numeric</td>
+<td>Value between 0-100%, used during attack calculations</td>
 </tr>
 <tr>
 <td>droid.attribute.clip_size</td>
 <td>Whole Number</td>
+<td>The number of bullets (i.e. Tokens) that can be fired per block</td>
 </tr>
 <tr>
 <td>droid.attribute.base_damage</td>
 <td>Numeric</td>
+<td>Value between 0-100%, used during attack calculations</td>
 </tr>
 <tr>
 <td>droid.attribute.weapon_unlock</td>
 <td>Numeric</td>
+<td>Value between 0-100%, used during attack calculations</td>
 </tr>
 <tr>
 <td>droid.attribute.accuracy_likely</td>
 <td>Numeric</td>
+<td>Value between 0-100%, the average accuracy to expect from the build</td>
 </tr>
 <tr>
 <td>droid.attribute.blueprint</td>
 <td>Droid Blueprint Object</td>
+<td>An object that denotes each item and the position it occupies on the droid</td>
 </tr>
 <tr>
 <td>droid.composition</td>
 <td>Composition Objects</td>
+<td>The makeup of the droids materials (composition.<item_id>.*)</td>
 </tr>
 <tr>
 <td>droid.pending_build</td>
 <td>Build Object</td>
+<td>The full new build of a droid including build, composition, part_list and attribute</td>
 </tr>
 <tr>
 <td>droid.currency_in</td>
 <td>Satoshi</td>
+<td>Total amount of value sent to the system from this droid</td>
 </tr>
 <tr>
 <td>droid.currency_out</td>
 <td>Satoshi</td>
+<td>Total amount of payouts sent to this droid from the system</td>
 </tr>
 <tr>
 <td>droid.highest_payout</td>
 <td>Satoshi</td>
+<td>Largest payout won by the droid (currently includes refunds from voided actions)</td>
 </tr>
 <tr>
 <td>droid.attacks</td>
 <td>Whole Number</td>
+<td>Total number of attacks the droid has made</td>
 </tr>
 <tr>
 <td>droid.targeted</td>
 <td>Whole Number</td>
+<td>Total number of attacks by other droids against this droid</td>
 </tr>
 <tr>
 <td>droid.deaths</td>
 <td>Whole Number</td>
+<td>Total deaths this droid has experienced</td>
 </tr>
 <tr>
 <td>droid.average_damage_performed</td>
 <td>Whole Number</td>
+<td>Average damage done by the droid in an attack</td>
 </tr>
 <tr>
 <td>droid.total_damage_performed</td>
 <td>Whole Number</td>
+<td>Total damage performed by this droid across all attacks</td>
 </tr>
 <tr>
 <td>droid.total_damage_defended</td>
 <td>Whole Number</td>
+<td>Total damage defended against by this droid across all attacks against it</td>
 </tr>
 <tr>
 <td>droid.most_targeted_id</td>
 <td>Whole Number</td>
+<td>The target this droid attacks most often</td>
 </tr>
 <tr>
 <td>droid.most_targeted_name</td>
 <td>String</td>
+<td>The name of the target this droid attacks most often</td>
 </tr>
 <tr>
 <td>droid.worst_enemy_id</td>
 <td>Whole Number</td>
+<td>The droid that targets this droid the most</td>
 </tr>
 <tr>
 <td>droid.worst_enemy_name</td>
 <td>String</td>
+<td>The name of the droid that targets this droid the most</td>
 </tr>
 <tr>
 <td>errors</td>
 <td>Error[]</td>
+<td>An array of errors with the following attributes (errors[].*)</td>
 </tr>
 <tr>
 <td>errors[].field</td>
 <td>String</td>
+<td>Error Label</td>
 </tr>
 <tr>
 <td>errors[].message</td>
 <td>String</td>
+<td>Error descrption</td>
 </tr>
 </tbody></table>
 
