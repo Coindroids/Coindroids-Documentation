@@ -53,14 +53,12 @@ After the robotic uprising and humanity's falls (typical humans), the androids h
 ## Coins Supported
 
 <img src="/images/ltc-100px.png" width='100px' style='display:inline-block;'> 
-<img src="/images/xtn-100px.png"  width='100px' style='display:inline-block;'> 
 <img src="/images/dfc-100px.png"  width='100px' style='display:inline-block;'>
 
 
 |Name|Prefix|Wallet Suggestions|
 |----|------|-----|
 |Litecoin|LTC|[Exodus](https://exodus.io), [Loafwallet](http://loafwallet.xyz), [Coinomi](https://coinomi.com), [Litevault.net](https://litevault.net)|
-|Bitcoin Testnet|XTN|[CoPay](https://copay.io)|
 |Defcoin|DFC|[Defcoin-QT](https://defcoin.io)|
 
 
