@@ -141,24 +141,24 @@
 <tr>
 <td>Litecoin</td>
 <td>LTC</td>
-<td><a href="https://exodus.io">Exodus</a>, <a href="http://loafwallet.xyz">Loafwallet</a>, <a href="https://coinomi.com">Coinomi</a>, <a href="https://litevault.net">Litevault.net</a></td>
+<td><a href="https://exodus.io">Exodus</a>, <a href="http://loafwallet.org">Loafwallet</a>, <a href="https://coinomi.com">Coinomi</a>, <a href="https://litevault.net">Litevault.net</a></td>
 </tr>
 <tr>
 <td>Defcoin</td>
 <td>DFC</td>
-<td><a href="https://defcoin.io">Defcoin-QT</a></td>
+<td><a href="https://defcoin.io">Defcoin-QT</a>, <a href="http://beerwallet.org">Beerwallet</a>, <a href="http://coinomi.com">Coinomi</a></td>
 </tr>
 </tbody></table>
 
 <h2 id="development-status">Development Status</h2>
 
-<p>The Coindroids system is currently in <em>Alpha Testing</em>. It&rsquo;s playable but gameplay is constantly changing to improve the experience.  </p>
+<p>The Coindroids system is currently in <em>Beta Testing</em>. It&rsquo;s playable but gameplay is constantly changing to improve the experience.  </p>
 
-<p>If you understand the risks and would like to assist with the Alpha, please get in touch with us via @coindroids on twitter.  </p>
+<p>If you understand the risks and would like to play the beta, please get in touch with us via @coindroids on twitter.  </p>
 
 <h3 id="documentation-status">Documentation Status</h3>
 
-<p>This documentation was last updated 2017-04-07 
+<p>This documentation was last updated 2017-09-30 
 If this documentation could be a status before Alpha, it would be. </p>
 
           <h1 id="droids">Droids</h1>
@@ -1495,18 +1495,8 @@ Not all type coercions are possible, and you will get an error describing any pr
 <td>GET</td>
 </tr>
 <tr>
-<td>Historic Currency Stats</td>
-<td>/currency_stats_historic</td>
-<td>GET</td>
-</tr>
-<tr>
 <td>Droid</td>
 <td>/droid</td>
-<td>GET</td>
-</tr>
-<tr>
-<td>Historical Droid Stats</td>
-<td>/droid_stats_historic</td>
 <td>GET</td>
 </tr>
 <tr>
@@ -1623,16 +1613,8 @@ Not all type coercions are possible, and you will get an error describing any pr
       "height": 1181605,
       "version": 4,
       "mined_time": "2017-04-07T23:38:12+00:00"
-    },
-    "largest_payout": 198900000,
-    "overall_purse_sum": 59596207,
-    "total_number_of_attacks": 522,
-    "total_amount_of_attacks": 858731000,
-    "total_number_of_item_purchases": 49,
-    "total_droids": 29,
-    "percentage_of_droids": 0.67441860465116279070,
-    "pending_payouts": 87
-  }
+    }
+   }
 ]
 </code></pre>
 
@@ -1761,214 +1743,6 @@ Not all type coercions are possible, and you will get an error describing any pr
 <td>last_ingested.mined_time</td>
 <td>Timestamp</td>
 <td>The actual time the block was mined</td>
-</tr>
-<tr>
-<td>largest_payout</td>
-<td>Satoshi</td>
-<td>The lagest payout sent out in the currency. Currently includes payouts returned due to voided actions (Unregistered play, Max attack amount, Item overage, etc )</td>
-</tr>
-<tr>
-<td>overall_purse_sum</td>
-<td>Satoshi</td>
-<td>The amount currently found across all available purses</td>
-</tr>
-<tr>
-<td>total_number_of_attacks</td>
-<td>Whole Number</td>
-<td>The total number of attacks taken place on this currency. Currently includes voided attacks</td>
-</tr>
-<tr>
-<td>total_amonunt_of_attacks</td>
-<td>Satoshi</td>
-<td>The total sum of transaction amounts sent as attacks on this currency. Currently includes voided attacks</td>
-</tr>
-<tr>
-<td>total_number_of_item_purchases</td>
-<td>Whole Number</td>
-<td>The total number of item purchases actions taken place on this currency. Currently includes voided purchases</td>
-</tr>
-<tr>
-<td>total_droids</td>
-<td>Whole Number</td>
-<td>Total total number of droids playing under this currency</td>
-</tr>
-<tr>
-<td>percentage_of_droids</td>
-<td>Numeric</td>
-<td>The percantage of droids fighting under this currency compared to others</td>
-</tr>
-<tr>
-<td>pending_payouts</td>
-<td>Whole Number</td>
-<td>The total number of waiting payouts, including those that don&rsquo;t meet the payout threshold</td>
-</tr>
-</tbody></table>
-
-          <h2 id="currency_stats_historic">/currency_stats_historic</h2>
-<pre class="highlight javascript"><code><span class="c1">// Historic stats on Currency (GET https://api.coindroids.com/currency_stats_historic)</span>
-
-<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/currency_stats_historic"</span><span class="p">,</span>
-    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"currency_id"</span><span class="p">:</span> <span class="s2">"eq.4"</span><span class="p">,</span>
-        <span class="s2">"order"</span><span class="p">:</span> <span class="s2">"height.desc"</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Range"</span><span class="p">:</span> <span class="s2">"0-2"</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="cm">/* ... */</span>
-<span class="p">});</span>
-
-
-
-</code></pre>
-<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
-<span class="c"># `pip install requests`</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-
-
-<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
-    <span class="c"># Historic stats on Currency</span>
-    <span class="c"># GET https://api.coindroids.com/currency_stats_historic</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/currency_stats_historic"</span><span class="p">,</span>
-            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"currency_id"</span><span class="p">:</span> <span class="s">"eq.4"</span><span class="p">,</span>
-                <span class="s">"order"</span><span class="p">:</span> <span class="s">"height.desc"</span><span class="p">,</span>
-            <span class="p">},</span>
-            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-2"</span><span class="p">,</span>
-            <span class="p">},</span>
-        <span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
-
-
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.coindroids.com/currency_stats_historic?currency_id=eq.4&amp;order=height.desc"</span> <span class="se">\</span>
-     -H <span class="s2">"Range: 0-2"</span>
-</code></pre>
-
-<blockquote>
-<p>The JSON returned will be formatted as: </p>
-</blockquote>
-<pre class="highlight plaintext"><code>[
-  {
-    "currency_id": 4,
-    "height": 1181553,
-    "largest_payout": 198900000,
-    "overall_purse_sum": 58721417,
-    "total_number_of_attacks": 521,
-    "total_amount_of_attacks": 857111000,
-    "total_number_of_item_purchases": 49,
-    "total_droids": 29,
-    "percentage_of_droids": 0.67441860465116279070,
-    "pending_payouts": 86
-  },
-  {
-    "currency_id": 4,
-    "height": 1181552,
-    "largest_payout": 198900000,
-    "overall_purse_sum": 58721417,
-    "total_number_of_attacks": 521,
-    "total_amount_of_attacks": 857111000,
-    "total_number_of_item_purchases": 49,
-    "total_droids": 29,
-    "percentage_of_droids": 0.67441860465116279070,
-    "pending_payouts": 86
-  },
-  {
-    "currency_id": 4,
-    "height": 1181551,
-    "largest_payout": 198900000,
-    "overall_purse_sum": 58721417,
-    "total_number_of_attacks": 521,
-    "total_amount_of_attacks": 857111000,
-    "total_number_of_item_purchases": 49,
-    "total_droids": 29,
-    "percentage_of_droids": 0.67441860465116279070,
-    "pending_payouts": 86
-  }
-]
-</code></pre>
-
-<p>This endpoint gives you full access to all the currency related data.</p>
-
-<h3 id="response-details">Response Details</h3>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>currency_id</td>
-<td>Whole Number</td>
-<td>The ID of the Currency</td>
-</tr>
-<tr>
-<td>height</td>
-<td>Whole Number</td>
-<td>The height the stats were taken from</td>
-</tr>
-<tr>
-<td>largest_payout</td>
-<td>Satoshi</td>
-<td>The lagest payout sent out in the currency. Currently includes payouts returned due to voided actions (Unregistered play, Max attack amount, Item overage, etc )</td>
-</tr>
-<tr>
-<td>overall_purse_sum</td>
-<td>Satoshi</td>
-<td>The amount currently found across all available purses</td>
-</tr>
-<tr>
-<td>total_number_of_attacks</td>
-<td>Whole Number</td>
-<td>The total number of attacks taken place on this currency. Currently includes voided attacks</td>
-</tr>
-<tr>
-<td>total_amonunt_of_attacks</td>
-<td>Satoshi</td>
-<td>The total sum of transaction amounts sent as attacks on this currency. Currently includes voided attacks</td>
-</tr>
-<tr>
-<td>total_number_of_item_purchases</td>
-<td>Whole Number</td>
-<td>The total number of item purchases actions taken place on this currency. Currently includes voided purchases</td>
-</tr>
-<tr>
-<td>total_droids</td>
-<td>Whole Number</td>
-<td>Total total number of droids playing under this currency</td>
-</tr>
-<tr>
-<td>percentage_of_droids</td>
-<td>Numeric</td>
-<td>The percantage of droids fighting under this currency compared to others</td>
-</tr>
-<tr>
-<td>pending_payouts</td>
-<td>Whole Number</td>
-<td>The number of payouts waiting in the system, including those that don&rsquo;t need the payout threshold</td>
 </tr>
 </tbody></table>
 
@@ -2155,20 +1929,7 @@ Not all type coercions are possible, and you will get an error describing any pr
         0.04
       ]
     },
-    "pending_build": null,
-    "currency_in": 458117000,
-    "currency_out": 113367420,
-    "highest_payout": 27298282,
-    "attacks": 311,
-    "targeted": 34,
-    "deaths": 3,
-    "average_damage_performed": 9.3257328990228013,
-    "total_damage_performed": 2863,
-    "total_damage_defended": 27,
-    "most_targeted_id": 25,
-    "most_targeted_name": "sailias",
-    "worst_enemy_id": 38,
-    "worst_enemy_name": "Finite"
+    "pending_build": null
   }
 ]
 </code></pre>
@@ -2416,270 +2177,6 @@ Not all type coercions are possible, and you will get an error describing any pr
 <td>pending_build</td>
 <td>Build Object</td>
 <td>The full new build of a droid including build, composition, part_list and attribute</td>
-</tr>
-<tr>
-<td>currency_in</td>
-<td>Satoshi</td>
-<td>Total amount of value sent to the system from this droid</td>
-</tr>
-<tr>
-<td>currency_out</td>
-<td>Satoshi</td>
-<td>Total amount of payouts sent to this droid from the system</td>
-</tr>
-<tr>
-<td>highest_payout</td>
-<td>Satoshi</td>
-<td>Largest payout won by the droid (currently includes refunds from voided actions)</td>
-</tr>
-<tr>
-<td>attacks</td>
-<td>Whole Number</td>
-<td>Total number of attacks the droid has made</td>
-</tr>
-<tr>
-<td>targeted</td>
-<td>Whole Number</td>
-<td>Total number of attacks by other droids against this droid</td>
-</tr>
-<tr>
-<td>deaths</td>
-<td>Whole Number</td>
-<td>Total deaths this droid has experienced</td>
-</tr>
-<tr>
-<td>average_damage_performed</td>
-<td>Whole Number</td>
-<td>Average damage done by the droid in an attack</td>
-</tr>
-<tr>
-<td>total_damage_performed</td>
-<td>Whole Number</td>
-<td>Total damage performed by this droid across all attacks</td>
-</tr>
-<tr>
-<td>total_damage_defended</td>
-<td>Whole Number</td>
-<td>Total damage defended against by this droid across all attacks against it</td>
-</tr>
-<tr>
-<td>most_targeted_id</td>
-<td>Whole Number</td>
-<td>The target this droid attacks most often</td>
-</tr>
-<tr>
-<td>most_targeted_name</td>
-<td>String</td>
-<td>The name of the target this droid attacks most often</td>
-</tr>
-<tr>
-<td>worst_enemy_id</td>
-<td>Whole Number</td>
-<td>The droid that targets this droid the most</td>
-</tr>
-<tr>
-<td>worst_enemy_name</td>
-<td>String</td>
-<td>The name of the droid that targets this droid the most</td>
-</tr>
-</tbody></table>
-
-          <h2 id="droid_stats_historic">/droid_stats_historic</h2>
-<pre class="highlight javascript"><code><span class="c1">// Historic stats for Droids (GET https://api.coindroids.com/droid_stats_historic)</span>
-
-<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.coindroids.com/droid_stats_historic"</span><span class="p">,</span>
-    <span class="na">type</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"droid_id"</span><span class="p">:</span> <span class="s2">"eq.4"</span><span class="p">,</span>
-        <span class="s2">"order"</span><span class="p">:</span> <span class="s2">"height.desc"</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"Range"</span><span class="p">:</span> <span class="s2">"0-2"</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Succeeded: "</span> <span class="o">+</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"HTTP Request Failed"</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="cm">/* ... */</span>
-<span class="p">});</span>
-
-
-
-</code></pre>
-<pre class="highlight python"><code><span class="c"># Install the Python Requests library:</span>
-<span class="c"># `pip install requests`</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-
-
-<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
-    <span class="c"># Historic stats for Droids</span>
-    <span class="c"># GET https://api.coindroids.com/droid_stats_historic</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="n">url</span><span class="o">=</span><span class="s">"https://api.coindroids.com/droid_stats_historic"</span><span class="p">,</span>
-            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"droid_id"</span><span class="p">:</span> <span class="s">"eq.4"</span><span class="p">,</span>
-                <span class="s">"order"</span><span class="p">:</span> <span class="s">"height.desc"</span><span class="p">,</span>
-            <span class="p">},</span>
-            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-2"</span><span class="p">,</span>
-            <span class="p">},</span>
-        <span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
-
-
-
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.coindroids.com/droid_stats_historic?droid_id=eq.4&amp;order=height.desc"</span> <span class="se">\</span>
-     -H <span class="s2">"Range: 0-2"</span>
-</code></pre>
-
-<blockquote>
-<p>The JSON returned will be formatted as: </p>
-</blockquote>
-<pre class="highlight plaintext"><code>[
-  {
-    "height": 1116682,
-    "droid_id": 4,
-    "level": 7,
-    "experience": 16,
-    "health": 7,
-    "purse": 171060,
-    "currency_in": 7060000,
-    "currency_out": 33939328,
-    "highest_payout": 10857857,
-    "attacks": 4,
-    "deaths": 3,
-    "average_damage_performed": 13.2500000000000000,
-    "total_damage_performed": 53,
-    "total_damage_defended": 469
-  },
-  {
-    "height": 1116681,
-    "droid_id": 4,
-    "level": 7,
-    "experience": 16,
-    "health": 7,
-    "purse": 171060,
-    "currency_in": 7060000,
-    "currency_out": 33939328,
-    "highest_payout": 10857857,
-    "attacks": 4,
-    "deaths": 3,
-    "average_damage_performed": 13.2500000000000000,
-    "total_damage_performed": 53,
-    "total_damage_defended": 469
-  },
-  {
-    "height": 1116680,
-    "droid_id": 4,
-    "level": 7,
-    "experience": 16,
-    "health": 7,
-    "purse": 171060,
-    "currency_in": 7060000,
-    "currency_out": 33939328,
-    "highest_payout": 10857857,
-    "attacks": 4,
-    "deaths": 3,
-    "average_damage_performed": 13.2500000000000000,
-    "total_damage_performed": 53,
-    "total_damage_defended": 469
-  }
-]
-</code></pre>
-
-<p>The heart of the Coindroids system, the /droid API endpoint. </p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>player_id</td>
-<td>Whole Number</td>
-<td>The ID of the Droid</td>
-</tr>
-<tr>
-<td>height</td>
-<td>Whole Number</td>
-<td>The height in which the stats were taken from</td>
-</tr>
-<tr>
-<td>level</td>
-<td>Whole Number</td>
-<td>The level of a droid</td>
-</tr>
-<tr>
-<td>experience</td>
-<td>Whole Number</td>
-<td>The total experience gained by this droid to date</td>
-</tr>
-<tr>
-<td>health</td>
-<td>Whole Number</td>
-<td>The current state of the health for a droid going into the next processing block</td>
-</tr>
-<tr>
-<td>purse</td>
-<td>Whole Number</td>
-<td>The current state of the purse for a droid going into the next block processing</td>
-</tr>
-<tr>
-<td>currency_in</td>
-<td>Satoshi</td>
-<td>Total amount of value sent to the system from this droid</td>
-</tr>
-<tr>
-<td>currency_out</td>
-<td>Satoshi</td>
-<td>Total amount of payouts sent to this droid from the system</td>
-</tr>
-<tr>
-<td>highest_payout</td>
-<td>Satoshi</td>
-<td>Largest payout won by the droid (currently includes refunds from voided actions)</td>
-</tr>
-<tr>
-<td>attacks</td>
-<td>Whole Number</td>
-<td>Total number of attacks the droid has made</td>
-</tr>
-<tr>
-<td>deaths</td>
-<td>Whole Number</td>
-<td>Total deaths this droid has experienced</td>
-</tr>
-<tr>
-<td>average_damage_performed</td>
-<td>Whole Number</td>
-<td>Average damage done by the droid in an attack</td>
-</tr>
-<tr>
-<td>total_damage_performed</td>
-<td>Whole Number</td>
-<td>Total damage performed by this droid across all attacks</td>
-</tr>
-<tr>
-<td>total_damage_defended</td>
-<td>Whole Number</td>
-<td>Total damage defended against by this droid across all attacks against it</td>
 </tr>
 </tbody></table>
 
@@ -3802,7 +3299,7 @@ This RPC call requires that the request include the Authorization token
                 <span class="s">"order"</span><span class="p">:</span> <span class="s">"block_height.desc"</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-10"</span><span class="p">,</span>
+                <span class="s">"Range"</span><span class="p">:</span> <span class="s">"0-2"</span><span class="p">,</span>
             <span class="p">},</span>
         <span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -3813,7 +3310,7 @@ This RPC call requires that the request include the Authorization token
         <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
 </code></pre>
 <pre class="highlight shell"><code>curl -X <span class="s2">"GET"</span> <span class="s2">"https://api.coindroids.com/payout?order=block_height.desc"</span> <span class="se">\</span>
-    -H <span class="s2">"Range: 0-10"</span>
+    -H <span class="s2">"Range: 0-2"</span>
 
 </code></pre>
 
@@ -3822,51 +3319,30 @@ This RPC call requires that the request include the Authorization token
 </blockquote>
 <pre class="highlight plaintext"><code>[
   {
-    "currency": "Bitcoin Testnet",
-    "block_height": 868029,
-    "actions": [
-      "Attack"
-    ],
-    "outcome_type": "Refund of overpayment",
-    "amount": 0.00700000000000000000,
-    "player": "Trunc",
-    "droid": "Trunk"
-  },
-  {
-    "currency": "Bitcoin Testnet",
-    "block_height": 868029,
-    "actions": [
-      "Attack"
-    ],
-    "outcome_type": "Refund of overpayment",
-    "amount": 0.00410000000000000000,
-    "player": "Trunc",
-    "droid": "Trunk"
-  },
-  {
-    "currency": "Bitcoin Testnet",
-    "block_height": 868029,
-    "actions": [
-      "Attack",
-      "Attack"
-    ],
+    "currency_id": 4,
+    "action_block_height": 1286199,
+    "settlement_txid": null,
     "outcome_type": "Droid destroyed",
-    "amount": 0.07186051000000000000,
-    "player": "Trogdor",
-    "droid": "Trogdor1"
+    "action_type": "Attack",
+    "action_id": 1229566,
+    "amount": 2641427,
+    "droid_id": 17,
+    "address": "LfK1GXhTE3hrEY9uxjxrT3T8QX18kKJBs5",
+    "is_orphaned": false,
+    "is_garnished": false
   },
   {
-    "currency": "Bitcoin Testnet",
-    "block_height": 868028,
-    "actions": [
-      "Attack",
-      "Attack",
-      "Attack"
-    ],
-    "outcome_type": "Droid destroyed",
-    "amount": 0.0000000000000000000000000000,
-    "player": "Trunc",
-    "droid": "Rob1t"
+    "currency_id": 4,
+    "action_block_height": 1286180,
+    "settlement_txid": null,
+    "outcome_type": "Clip size exceeded",
+    "action_type": "Attack",
+    "action_id": 1229445,
+    "amount": 1190000,
+    "droid_id": 17,
+    "address": "LfK1GXhTE3hrEY9uxjxrT3T8QX18kKJBs5",
+    "is_orphaned": false,
+    "is_garnished": false
   }
 ]
 </code></pre>
@@ -3883,39 +3359,64 @@ This RPC call requires that the request include the Authorization token
 </tr>
 </thead><tbody>
 <tr>
-<td>currency</td>
-<td>String</td>
-<td>The name of the currency network the payout was sent on</td>
+<td>currency_id</td>
+<td>Whoel Number</td>
+<td>The ID of the currency network the payout was sent on</td>
 </tr>
 <tr>
-<td>block_height</td>
+<td>action_block_height</td>
 <td>Whole Number</td>
 <td>The height of the block it was included in</td>
 </tr>
 <tr>
-<td>actions</td>
-<td>Action Type[]</td>
-<td>The action type(s) that triggered the payout</td>
+<td>settlement_txid</td>
+<td>Transaction ID</td>
+<td>The TXID of the settlement the payout has been included on</td>
 </tr>
 <tr>
 <td>outcome_type</td>
-<td>Outcome Type[]</td>
-<td>The outcome type(s) that triggered the payout</td>
+<td>Outcome Type</td>
+<td>The outcome type that triggered the payout</td>
+</tr>
+<tr>
+<td>action_type</td>
+<td>Action Type</td>
+<td>The action type that triggered the payout</td>
+</tr>
+<tr>
+<td>outcome_id</td>
+<td>While Number</td>
+<td>The ID of the outcome that triggered the payout</td>
+</tr>
+<tr>
+<td>action_id</td>
+<td>While Number</td>
+<td>The ID of the action that triggered the payout</td>
 </tr>
 <tr>
 <td>amount</td>
 <td>Numeric</td>
-<td>The amount sent out</td>
+<td>The amount sent out, in satoshis</td>
 </tr>
 <tr>
-<td>player</td>
+<td>address</td>
 <td>String</td>
-<td>The name of the player who received the payout (where applicable)</td>
+<td>The address that the funds are destined to be sent to</td>
 </tr>
 <tr>
-<td>droid</td>
-<td>String</td>
-<td>The name of the Droid who received the payout (where applicable)</td>
+<td>droid_id</td>
+<td>Whole Number</td>
+<td>The ID of the Droid who received the payout (where applicable)</td>
+</tr>
+<tr>
+<td>is_garnished</td>
+<td>Boolean</td>
+<td>Used in the rare event of a chain re-org</td>
+</tr>
+<tr>
+<td>is_orphaned</td>
+<td>Boolean</td>
+<td>Used in the rare event of a chain re-org</td>
 </tr>
 </tbody></table>
 
